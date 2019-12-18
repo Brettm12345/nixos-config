@@ -33,8 +33,8 @@ in {
         type = with types;
           submodule {
             options = {
-              bg = color "background";
-              fg = color "foreground";
+              background = color "background";
+              foreground = color "foreground";
               normal = colorList "normal";
               bright = colorList "bright";
             };
@@ -44,8 +44,8 @@ in {
   };
   config = {
     themes.colors = {
-      bg = "#212337";
-      fg = "#afbeee";
+      background = "#212337";
+      foreground = "#afbeee";
       normal = {
         black = "#2a2e48";
         red = "#ff5370";

@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
   services.openssh = {
-    enable = true;
+    enable = false;
     passwordAuthentication = false;
     permitRootLogin = "no";
     forwardX11 = true;

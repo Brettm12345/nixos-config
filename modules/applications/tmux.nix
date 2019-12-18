@@ -93,17 +93,17 @@
       bind -T copy-mode-vi L send -X end-of-line
 
       set -g status-position bottom
-      set -g status-style 'bg=default fg=colour15'
+      set -g status-style 'background=default foreground=colour15'
       set -g status-interval 1
       set -g status-left ""
       set -g status-justify left
-      set -g status-right '#{prefix_highlight} #[bg=colour0,fg=colour8] %l:%M %P #[bg=default] #[bg=colour0,fg=colour8] #S '
+      set -g status-right '#{prefix_highlight} #[background=colour0,foreground=colour8] %l:%M %P #[background=default] #[background=colour0,foreground=colour8] #S '
       set -g status-right-length 40
       set -g status-left-length 40
 
       # The messages
-      set -g message-style 'fg=colour7 bg=default'
-      set -g message-command-style 'fg=colour5 bg=default'
+      set -g message-style 'foreground=colour7 background=default'
+      set -g message-command-style 'foreground=colour5 background=default'
 
       # loud or quiet?
       set-option -g visual-activity off
@@ -113,21 +113,21 @@
       set-option -g bell-action none
 
       # The modes
-      setw -g clock-mode-style 'fg=colour8 bg=default'
-      setw -g mode-style 'fg=colour3 bg=colour0'
+      setw -g clock-mode-style 'foreground=colour8 background=default'
+      setw -g mode-style 'foreground=colour3 background=colour0'
 
       # The panes
-      set -g pane-border-style 'bg=default fg=colour0'
-      set -g pane-active-border-style 'bg=default fg=colour8'
+      set -g pane-border-style 'background=default foreground=colour0'
+      set -g pane-active-border-style 'background=default foreground=colour8'
 
       # Window status
       set -g window-status-format ' #(if [ #{pane_current_command} = "fish" ]; then basename #{pane_current_path}; elif [ #{pane_current_command} = "weechat" ]; then echo "#T"; elif [ #{pane_current_command} = "ncmpcpp" ]; then echo "#T"; elif [ #{pane_current_command} = "nvim" ]; then echo "#T"; else echo "#{pane_current_command}"; fi;) '
       set -g window-status-current-format ' #(if [ #{pane_current_command} = "fish" ]; then basename #{pane_current_path}; elif [ #{pane_current_command} = "weechat" ]; then echo "#T"; elif [ #{pane_current_command} = "ncmpcpp" ]; then echo "#T"; elif [ #{pane_current_command} = "nvim" ]; then echo "#T"; else echo "#{pane_current_command}"; fi;) '
       set -g window-status-separator " "
-      set -g window-status-style 'fg=colour8 bg=colour0'
-      set -g window-status-current-style 'fg=colour7 bg=colour0'
-      setw -g window-status-activity-style 'fg=default bg=colour0'
-      setw -g window-status-bell-style 'fg=colour3 bg=colour3 bright'
+      set -g window-status-style 'foreground=colour8 background=colour0'
+      set -g window-status-current-style 'foreground=colour7 background=colour0'
+      setw -g window-status-activity-style 'foreground=default background=colour0'
+      setw -g window-status-bell-style 'foreground=colour3 background=colour3 bright'
     '';
     plugins = with pkgs.tmuxPlugins; [
       sessionist
@@ -149,14 +149,14 @@
         plugin = prefix-highlight;
         extraConfig = ''
           set -g @prefix_highlight_prefix_prompt "Wait"
-          set -g @prefix_highlight_fg "colour4"
-          set -g @prefix_highlight_bg 'colour0'
+          set -g @prefix_highlight_foreground "colour4"
+          set -g @prefix_highlight_background 'colour0'
           set -g @prefix_highlight_output_suffix ""
-          set -g @prefix_highlight_empty_attr "fg=colour8,bg=colour0"
+          set -g @prefix_highlight_empty_attr "foreground=colour8,background=colour0"
           set -g @prefix_highlight_empty_prompt " Tmux "
           set -g @prefix_highlight_show_copy_mode "on"
           set -g @prefix_highlight_copy_prompt "Copy"
-          set -g @prefix_highlight_copy_mode_attr "fg=colour3,bg=colour0"
+          set -g @prefix_highlight_copy_mode_attr "foreground=colour3,background=colour0"
         '';
       }
     ];

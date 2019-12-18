@@ -1,11 +1,9 @@
 { ... }: {
   imports = [
     ./secrets.nix
-    ./applications
-    ./dev
     ./applications.nix
-    ./boot.nix
     ./colors.nix
+    ./boot.nix
     ./fonts.nix
     ./hardware.nix
     ./network.nix
@@ -15,5 +13,7 @@
     ./virtualization.nix
     ./xdg.nix
     ./xserver.nix
+    ./applications
+    ./dev
   ];
 }

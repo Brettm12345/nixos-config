@@ -25,7 +25,7 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
     xdg.configFile."kdeglobals".text = genIni {
       "Colors:Button" = {
         BackgroundAlternate = thmDec.bright.black;
-        BackgroundNormal = thmDec.bg;
+        BackgroundNormal = thmDec.background;
         DecorationFocus = thmDec.bright.black;
         DecorationHover = thmDec.bright.black;
         ForegroundActive = thmDec.normal.blue;
@@ -33,13 +33,13 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         ForegroundLink = thmDec.normal.cyan;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.bright.magenta;
       };
       "Colors:Complementary" = {
         BackgroundAlternate = thmDec.normal.black;
-        BackgroundNormal = thmDec.bg;
+        BackgroundNormal = thmDec.background;
         DecorationFocus = thmDec.normal.blue;
         DecorationHover = thmDec.normal.blue;
         ForegroundActive = thmDec.normal.yellow;
@@ -47,7 +47,7 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         ForegroundLink = thmDec.normal.blue;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.normal.magenta;
       };
@@ -56,18 +56,18 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         BackgroundNormal = thmDec.bright.black;
         DecorationFocus = thmDec.bright.black;
         DecorationHover = thmDec.bright.black;
-        ForegroundActive = thmDec.fg;
-        ForegroundInactive = thmDec.fg;
+        ForegroundActive = thmDec.foreground;
+        ForegroundInactive = thmDec.foreground;
         ForegroundLink = thmDec.normal.cyan;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.normal.magenta;
       };
       "Colors:Tooltip" = {
         BackgroundAlternate = thmDec.normal.black;
-        BackgroundNormal = thmDec.bg;
+        BackgroundNormal = thmDec.background;
         DecorationFocus = thmDec.normal.blue;
         DecorationHover = thmDec.normal.blue;
         ForegroundActive = thmDec.normal.blue;
@@ -75,13 +75,13 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         ForegroundLink = thmDec.normal.blue;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.bright.magenta;
       };
       "Colors:View" = {
-        BackgroundAlternate = thmDec.bg;
-        BackgroundNormal = thmDec.bg;
+        BackgroundAlternate = thmDec.background;
+        BackgroundNormal = thmDec.background;
         DecorationFocus = thmDec.normal.black;
         DecorationHover = thmDec.normal.black;
         ForegroundActive = thmDec.normal.white;
@@ -89,13 +89,13 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         ForegroundLink = thmDec.normal.cyan;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.bright.magenta;
       };
       "Colors:Window" = {
-        BackgroundAlternate = thmDec.bg;
-        BackgroundNormal = thmDec.bg;
+        BackgroundAlternate = thmDec.background;
+        BackgroundNormal = thmDec.background;
         DecorationFocus = thmDec.normal.blue;
         DecorationHover = thmDec.normal.black;
         ForegroundActive = thmDec.bright.black;
@@ -103,7 +103,7 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
         ForegroundLink = thmDec.normal.blue;
         ForegroundNegative = thmDec.normal.red;
         ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.fg;
+        ForegroundNormal = thmDec.foreground;
         ForegroundPositive = thmDec.normal.green;
         ForegroundVisited = thmDec.bright.magenta;
       };

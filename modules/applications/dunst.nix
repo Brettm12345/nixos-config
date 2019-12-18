@@ -1,21 +1,22 @@
-{ pkgs, config, ... }:
-let
-  thm = config.themes.colors;
-  fnt = config.themes.fonts;
-
-in {
+{ pkgs, config, lib, ... }:
+let thm = config.themes;
+in with thm.colors;
+with thm.fonts;
+with lib;
+with pkgs;
+with builtins; {
   home-manager.users.brett = {
     services.dunst = {
       enable = true;
       iconTheme = {
         name = "Papirus-Dark";
-        package = pkgs.papirus-icon-theme;
+        package = papirus-icon-theme;
       };
       settings = {
         global = {
           geometry = "1000x50-10+10";
           transparency = 10;
-          font = fnt.sansSerif;
+          font = sansSerif;
           padding = 16;
           horizontal_padding = 16;
           word_wrap = true;
@@ -23,25 +24,16 @@ in {
           format = "<b>%s</b> %b";
           markup = "full";
         };
-
-        urgency_low = {
-          background = thm.bg;
-          foreground = thm.fg;
-          timeout = 4;
+      } // mapAttrs' (name: value:
+        nameValuePair "urgency_${name}" {
+          background = background;
+          foregorund = foreground;
+          timeout = value;
+        }) {
+          low = 4;
+          normal = 6;
+          critical = 0;
         };
-
-        urgency_normal = {
-          background = thm.bg;
-          foreground = thm.fg;
-          timeout = 6;
-        };
-
-        urgency_critical = {
-          background = thm.bg;
-          foreground = thm.bg;
-          timeout = 0;
-        };
-      };
     };
   };
 }

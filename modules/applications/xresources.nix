@@ -3,8 +3,8 @@ let thm = config.themes.colors;
 in {
   home-manager.users.brett = {
     xresources.properties = (with thm; {
-      "*background" = bg;
-      "*foreground" = fg;
+      "*background" = background;
+      "*foreground" = foreground;
     }) // (with thm.normal; {
       "*color0" = black;
       "*color1" = red;

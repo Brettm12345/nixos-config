@@ -34,8 +34,8 @@ in {
       sizeHints = true;
       urgentOnBell = true;
       highlightColor = thm.bright.black;
-      backgroundColor = thm.bg;
-      foregroundColor = thm.fg;
+      backgroundColor = thm.background;
+      foregroundColor = thm.foreground;
       optionsExtra = ''
         bold_is_bright = false
         cell_height_scale = 1.1
