@@ -1,20 +1,21 @@
-{ ... }:
-let home = "/home/brett";
-in {
-  home-manager.users.brett.xdg = {
-    enable = true;
-    configHome = "${home}/.config";
-    cacheHome = "${home}/var/cache";
-    dataHome = "${home}/usr/share";
-    userDirs = {
+{ config, ... }:
+let
+  makeDirs = data:
+    builtins.mapAttrs (_: path: "/home/brett/${path}") data // {
       enable = true;
-      desktop = "${home}/usr/dsk";
-      documents = "${home}/usr/doc";
-      download = "${home}/usr/dwl";
-      music = "${home}/usr/msc";
-      pictures = "${home}/usr/img";
-      templates = "${home}/usr/tmp";
-      videos = "${home}/usr/vid";
     };
+  dirs = makeDirs {
+    configHome = ".config";
+    cacheHome = "var/cache";
+    dataHome = "usr/share";
   };
-}
+  userDirs = makeDirs {
+    desktop = "usr/dsk";
+    documents = "usr/doc";
+    download = "usr/dwl";
+    music = "usr/msc";
+    pictures = "usr/img";
+    templates = "usr/tmp";
+    videos = "usr/vid";
+  };
+in { home-manager.users.brett = { xdg = dirs // { inherit userDirs; }; }; }

@@ -2,7 +2,6 @@
 with lib;
 with types;
 let
-  secrets = import ../secret.nix;
   secret = description:
     mkOption {
       inherit description;
@@ -18,5 +17,5 @@ in {
     passwordHash = secret "The root password hash";
     id_rsa = secret "Ssh rsa private key";
   };
-  config.secrets = secrets;
+  config.secrets = import ../secret.nix;
 }
