@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "command": "sudo nixos-rebuild switch",
+      "type": "shell",
+      "args": [],
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": "build"
+    }
+  ]
+}

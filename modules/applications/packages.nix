@@ -1,0 +1,49 @@
+{ pkgs, config, lib, ... }: {
+  environment.systemPackages = (with pkgs; [
+    kded
+    plasma-integration
+    kinit
+    plasma5.xdg-desktop-portal-kde
+    papirus-icon-theme
+    gnome3.adwaita-icon-theme
+    stdman
+    qt5.qtsvg
+    plasma-browser-integration
+    ktorrent
+  ]) ++ (with pkgs.kdeApplications; [
+    ark
+    dolphin
+    dolphin-plugins
+    ffmpegthumbs
+    gwenview
+    kcachegrind
+    kcolorchooser
+    kdenlive
+    kolourpaint
+    okular
+  ]);
+  home-manager.users.brett.home.packages = with pkgs; [
+    bibata-cursors
+    chromium
+    clang
+    clang-tools
+    curl
+    dunst
+    dmenu
+    gnome3.dconf
+    ffmpeg-full
+    neovim
+    gitAndTools.hub
+    gnupg
+    gopass
+    grc
+    libnotify
+    lldb
+    ranger
+    vscode
+    unrar
+    wget
+    xdg_utils
+    zip
+  ];
+}

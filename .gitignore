@@ -1,0 +1,11 @@
+secret.nix
+*~
+\#*\#
+auto-save-list
+tramp
+.\#*
+result
+*\.qcow2
+nixpkgs
+home-manager
+result
