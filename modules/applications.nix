@@ -42,7 +42,7 @@ with import ../support.nix { inherit lib config pkgs; }; {
     home-manager.users.brett.xdg.configFile."mimeapps.list.home".text =
       with config.defaultApplications;
       let
-        apps = builtins.mapAttrs (name: value: "${value.desktop}.desktop;") {
+        apps = builtins.mapAttrs (_: value: "${value.desktop}.desktop;") {
           "text/html" = browser;
           "image/*" = { desktop = "org.kde.gwenview"; };
           "application/zip" = archive;

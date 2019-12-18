@@ -1,7 +1,7 @@
-{ pkgs, config, lib, ... }:
-let fnt = config.themes.fonts;
-    thm = config.themes.colors;
-    padding = "10px";
+{ config, ... }:
+let
+  thm = config.themes.colors;
+  padding = "10px";
 in {
   home-manager.users.brett = {
     xdg.configFile."gtk-3.0/gtk.css".text = ''

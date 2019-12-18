@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, config, ... }: {
   fonts = {
     fonts = with pkgs; [
       terminus_font

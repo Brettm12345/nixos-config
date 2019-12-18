@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ config, ... }:
 let
   fuzzyConfig = {
     enable = true;

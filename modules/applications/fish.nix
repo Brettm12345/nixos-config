@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   home-manager.users.brett = {
     programs.fish.enable = true;
     home.packages = with pkgs; [ exa ];

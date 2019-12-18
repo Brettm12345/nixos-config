@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 let thm = config.themes.colors;
 in {
   home-manager.users.brett = {

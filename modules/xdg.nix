@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ ... }:
 let home = "/home/brett";
 in {
   home-manager.users.brett.xdg = {

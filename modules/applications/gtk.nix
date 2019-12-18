@@ -4,7 +4,7 @@ let
   fnt = config.themes.fonts;
 in {
   nixpkgs.overlays = [
-    (self: super: {
+    (self: _: {
       juno = self.stdenv.mkDerivation rec {
         name = gtkTheme;
         src = pkgs.imports.juno;

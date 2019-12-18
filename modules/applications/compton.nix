@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: {
+{ ... }: {
   home-manager.users.brett = {
     # programs.autorandr.hooks.preswitch.compton = "systemctl --user stop compton";
     # programs.autorandr.hooks.postswitch.compton = "systemctl --user start compton";

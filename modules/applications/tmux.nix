@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   home-manager.users.brett.programs.tmux = {
     enable = true;
     terminal = "tmux-256color";

@@ -1,9 +1,7 @@
 let
   imports = import ../nix/sources.nix;
   new = import imports.nixpkgs-unstable { config.allowUnfree = true; };
-  filterGit =
-    builtins.filterSource (type: name: name != ".git" || type != "directory");
-in { pkgs, lib, config, ... }: {
+in { lib, ... }: {
   nixpkgs.overlays = [
     (self: super: rec {
       inherit imports;
@@ -38,10 +36,12 @@ in { pkgs, lib, config, ... }: {
       all-hies = import imports.all-hies { };
     })
   ];
-  nixpkgs.pkgs = import imports.nixpkgs { config = {
-    allowUnfree = true;
-    allowBroken = true;
-  }; };
+  nixpkgs.pkgs = import imports.nixpkgs {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
   environment.etc.nixpkgs.source = imports.nixpkgs;
   nix = rec {
     nixPath = lib.mkForce [

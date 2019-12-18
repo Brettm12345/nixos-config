@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, ... }:
 let
   thm = config.themes.colors;
   fnt = config.themes.fonts;

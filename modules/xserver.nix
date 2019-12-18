@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: {
+{ ... }: {
   services.xserver = {
     enable = true;
     enableTCP = true;
