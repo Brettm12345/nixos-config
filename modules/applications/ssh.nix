@@ -12,7 +12,6 @@
       enable = true;
       controlMaster = "auto";
       controlPersist = "yes";
-      controlPath = "$HOME/var/ssh/sockets/socket-%r@%h:%p";
       matchBlocks = {
         "*" = {
           identityFile = toString (pkgs.writeTextFile {
