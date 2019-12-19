@@ -1,7 +1,7 @@
 { config, ... }:
 let
   makeDirs = data:
-    builtins.mapAttrs (_: path: "/home/brett/${path}") data // {
+    builtins.mapAttrs (_: path: "$HOME/${path}") data // {
       enable = true;
     };
   dirs = makeDirs {

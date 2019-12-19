@@ -1,7 +1,8 @@
 let
   imports = import ../nix/sources.nix;
   new = import imports.nixpkgs-unstable { config.allowUnfree = true; };
-in { lib, ... }: {
+in { lib, ... }:
+with builtins; {
   nixpkgs.overlays = [
     (self: super: rec {
       inherit imports;
@@ -11,7 +12,7 @@ in { lib, ... }: {
       inherit (import imports.niv { }) niv;
       neovim = unstable.neovim;
       dmenu = super.dmenu.override {
-        patches = builtins.map builtins.fetchurl [
+        patches = map fetchurl [
           {
             url =
               "https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff";
@@ -48,16 +49,14 @@ in { lib, ... }: {
       "nixpkgs=/etc/nixpkgs"
       "nixos-config=/etc/nixos/configuration.nix"
     ];
+    trustedUsers = [ "root" "brett" "@wheel" ];
+    optimise.automatic = true;
     binaryCaches = [
-      "https://cache.dhall-lang.org"
       "https://cache.nixos.org"
+      "https://cache.dhall-lang.org"
       "https://brettm12345.cachix.org"
       "https://all-hies.cachix.org"
     ];
-
-    trustedUsers = [ "root" "brett" "@wheel" ];
-
-    optimise.automatic = true;
     binaryCachePublicKeys = [
       "cache.dhall-lang.org:I9/H18WHd60olG5GsIjolp7CtepSgJmM2CsO813VTmM="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

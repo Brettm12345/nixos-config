@@ -1,5 +1,11 @@
 { pkgs, config, lib, ... }:
-let thm = config.themes;
+let
+  thm = config.themes;
+  timeouts = {
+    low = 4;
+    normal = 6;
+    critical = 0;
+  };
 in with thm.colors;
 with thm.fonts;
 with lib;
@@ -24,16 +30,10 @@ with builtins; {
           format = "<b>%s</b> %b";
           markup = "full";
         };
-      } // mapAttrs' (name: value:
+      } // mapAttrs' (name: timeout:
         nameValuePair "urgency_${name}" {
-          background = background;
-          foregorund = foreground;
-          timeout = value;
-        }) {
-          low = 4;
-          normal = 6;
-          critical = 0;
-        };
+          inherit background foreground timeout;
+        }) timeouts;
     };
   };
 }
