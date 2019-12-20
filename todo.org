@@ -1,0 +1,6 @@
+#+TITLE: Todo
+
+* Tasks [1/2]
+- [ ] Add neovim config
+- [X] Add git config
+- [ ] Add slack with themes

@@ -1,5 +1,6 @@
-{ pkgs, config, ... }: {
+{ config, pkgs, ... }: {
   fonts = {
+    enableDefaultFonts = true;
     fonts = with pkgs; [
       terminus_font
       opensans-ttf
@@ -21,6 +22,5 @@
         serif = [ serif "Roboto Slab 13" ];
       };
     };
-    enableDefaultFonts = true;
   };
 }

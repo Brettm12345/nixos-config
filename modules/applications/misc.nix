@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, lib, pkgs, ... }:
+with import ../../support.nix { inherit lib config pkgs; }; {
   systemd.coredump.enable = true;
   environment.sessionVariables = with config.defaultApplications.editor; {
     EDITOR = cmd;
@@ -8,33 +9,42 @@
   services.atd.enable = true;
   home-manager.users.brett = {
     home = {
-      activation."mimeapps-remove" = {
-        before = [ "linkGeneration" ];
-        after = [ ];
-        data = "rm -f /home/brett/.config/mimeapps.list";
-      };
+      activation."mimeapps-remove" =
+        afterLinkGen "rm -f /home/brett/.config/mimeapps.list";
+      packages = with pkgs; [
+        bibata-cursors
+        chromium
+        clang
+        clang-tools
+        curl
+        dunst
+        dmenu
+        gnome3.dconf
+        ffmpeg-full
+        neovim
+        gitAndTools.hub
+        gnupg
+        gopass
+        grc
+        libnotify
+        lldb
+        ranger
+        stdman
+        vscode
+        unrar
+        wget
+        xdg_utils
+        zip
+      ];
     };
+
     services.gpg-agent = {
       enable = true;
       defaultCacheTtl = 1800;
       enableSshSupport = true;
     };
 
-    programs = let
-      fuzzyConfig = {
-        enable = true;
-        defaultCommand =
-          "dash -c 'git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f --ignore-file $XDG_CONFIG_HOME/git/gitignore . $HOME'";
-        defaultOptions = [
-          "--cycle"
-          "--color=16,fg+:2,background+:0,hl:4,hl+:4,prompt:4,pointer:8"
-        ];
-      };
-    in {
-      fzf = fuzzyConfig;
-      skim = fuzzyConfig;
-      command-not-found.enable = true;
-    };
+    programs.command-not-found.enable = true;
     systemd.user.startServices = true;
   };
 }

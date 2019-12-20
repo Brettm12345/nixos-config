@@ -1,21 +1,20 @@
 { config, ... }:
+with builtins;
 let
-  makeDirs = data:
-    builtins.mapAttrs (_: path: "$HOME/${path}") data // {
-      enable = true;
-    };
-  dirs = makeDirs {
+  home = "/home/brett";
+  makeDirs = pathFn: data: mapAttrs (_: pathFn) data // { enable = true; };
+  dirs = makeDirs (path: "${home}/${path}") {
     configHome = ".config";
     cacheHome = "var/cache";
     dataHome = "usr/share";
   };
-  userDirs = makeDirs {
-    desktop = "usr/dsk";
-    documents = "usr/doc";
-    download = "usr/dwl";
-    music = "usr/msc";
-    pictures = "usr/img";
-    templates = "usr/tmp";
-    videos = "usr/vid";
+  userDirs = makeDirs (path: "${home}/usr/${path}") {
+    desktop = "dsk";
+    documents = "doc";
+    download = "dwl";
+    music = "msc";
+    pictures = "img";
+    templates = "tmp";
+    videos = "vid";
   };
-in { home-manager.users.brett = { xdg = dirs // { inherit userDirs; }; }; }
+in { home-manager.users.brett.xdg = dirs // { inherit userDirs; }; }

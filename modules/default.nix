@@ -1,13 +1,14 @@
 { ... }: {
   imports = [
+    ./theme
     ./secrets.nix
     ./applications.nix
-    ./colors.nix
     ./boot.nix
-    ./fonts.nix
+    ./gtk.nix
+    ./fontconfig.nix
     ./hardware.nix
     ./network.nix
-    ./packages.nix
+    ./overlay.nix
     ./services.nix
     ./users.nix
     ./virtualization.nix

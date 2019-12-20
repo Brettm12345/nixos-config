@@ -1,7 +1,7 @@
 let
   imports = import ../nix/sources.nix;
   new = import imports.nixpkgs-unstable { config.allowUnfree = true; };
-in { lib, ... }:
+in { lib, pkgs, ... }:
 with builtins; {
   nixpkgs.overlays = [
     (self: super: rec {
@@ -11,6 +11,16 @@ with builtins; {
       bs-platform = self.callPackage imports.bs-platform { };
       inherit (import imports.niv { }) niv;
       neovim = unstable.neovim;
+      juno = self.stdenv.mkDerivation rec {
+        name = "Juno";
+        src = imports.juno;
+        propagatedUserEnvPkgs = [ pkgs.gtk-engine-murrine ];
+        sourceRoot = ".";
+        installPhase = ''
+          mkdir -p $out/share/themes/Juno
+          cp -a ./source/* $out/share/themes/Juno
+        '';
+      };
       dmenu = super.dmenu.override {
         patches = map fetchurl [
           {
@@ -32,7 +42,7 @@ with builtins; {
         ];
       };
       chromium = super.chromium.override {
-        commandLineArgs = "--force-dark-mode --force-device-scale-factor=1.2";
+        commandLineArgs = "--force-dark-mode --force-device-scale-factor=1.3";
       };
       all-hies = import imports.all-hies { };
     })

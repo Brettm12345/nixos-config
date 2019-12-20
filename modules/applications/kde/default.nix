@@ -1,7 +1,24 @@
 { pkgs, lib, config, ... }:
-with import ../../../support.nix { inherit lib config pkgs; }; {
+with import ../../../support.nix { inherit lib config pkgs; };
+let
+  fnt = config.themes.fonts;
+  default = with thmDec; {
+    BackgroundAlternate = background;
+    BackgroundNormal = background;
+    DecorationFocus = bright.black;
+    DecorationHover = normal.black;
+    ForegroundActive = normal.blue;
+    ForegroundInactive = normal.black;
+    ForegroundLink = normal.cyan;
+    ForegroundNegative = normal.red;
+    ForegroundNeutral = normal.yellow;
+    ForegroundNormal = foreground;
+    ForegroundPositive = normal.green;
+    ForegroundVisited = normal.magenta;
+  };
+in {
   xdg.portal.enable = true;
-  # services.flatpak.enable = true;
+  services.flatpak.enable = true;
   xdg.portal.extraPortals = [ pkgs.plasma5.xdg-desktop-portal-kde ];
   environment.sessionVariables = {
     QT_XFT = "true";
@@ -20,114 +37,63 @@ with import ../../../support.nix { inherit lib config pkgs; }; {
   ];
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
   home-manager.users.brett = {
-    home.packages = [ pkgs.qt5ct ];
+    home.packages = (with pkgs;
+      [
+        qt5ct
+        plasma-browser-integration
+        ktorrent
+        qt5.qtsvg
+        kded
+        plasma-integration
+        kinit
+      ] ++ (with pkgs.kdeApplications; [
+        ark
+        dolphin
+        dolphin-plugins
+        ffmpegthumbs
+        gwenview
+        kcachegrind
+        kcolorchooser
+        kdenlive
+        kolourpaint
+        okular
+      ]));
     xdg.configFile."qt5ct/qt5ct.conf".source = ./qt5ct.conf;
-    xdg.configFile."kdeglobals".text = genIni {
-      "Colors:Button" = {
-        BackgroundAlternate = thmDec.bright.black;
-        BackgroundNormal = thmDec.background;
-        DecorationFocus = thmDec.bright.black;
-        DecorationHover = thmDec.bright.black;
-        ForegroundActive = thmDec.normal.blue;
-        ForegroundInactive = thmDec.normal.black;
-        ForegroundLink = thmDec.normal.cyan;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.bright.magenta;
+    xdg.configFile."kdeglobals".text = with thmDec;
+      genIni {
+        "Colors:Button" = default;
+        "Colors:Complementary" = default;
+        "Colors:Selection" = {
+          BackgroundAlternate = bright.black;
+          BackgroundNormal = bright.black;
+          ForegroundActive = foreground;
+          ForegroundInactive = foreground;
+          ForegroundNormal = foreground;
+        } // default;
+        "Colors:Tooltip" = default;
+        "Colors:View" = default;
+        "Colors:Window" = default;
+        General = with fnt; rec {
+          ColorScheme = "Generated";
+          Name = "Generated";
+          fixed = "${monospace},11,-1,5,50,0,0,0,0,0";
+          font = "${sansSerif},11,-1,5,50,0,0,0,0,0";
+          menuFont = font;
+          shadeSortColumn = true;
+          smallestReadableFont = "${sansSerif},8,-1,5,57,0,0,0,0,0,Medium";
+          toolBarFont = "${sansSerif},11,-1,5,50,0,0,0,0,0";
+        };
+        KDE = {
+          DoubleClickInterval = 400;
+          ShowDeleteCommand = true;
+          SingleClick = false;
+          StartDragDist = 4;
+          StartDragTime = 500;
+          WheelScrollLines = 3;
+          contrast = 4;
+          widgetStyle = "Breeze";
+        };
+        Icons = { Theme = "Papirus-Dark"; };
       };
-      "Colors:Complementary" = {
-        BackgroundAlternate = thmDec.normal.black;
-        BackgroundNormal = thmDec.background;
-        DecorationFocus = thmDec.normal.blue;
-        DecorationHover = thmDec.normal.blue;
-        ForegroundActive = thmDec.normal.yellow;
-        ForegroundInactive = thmDec.normal.black;
-        ForegroundLink = thmDec.normal.blue;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.normal.magenta;
-      };
-      "Colors:Selection" = {
-        BackgroundAlternate = thmDec.bright.black;
-        BackgroundNormal = thmDec.bright.black;
-        DecorationFocus = thmDec.bright.black;
-        DecorationHover = thmDec.bright.black;
-        ForegroundActive = thmDec.foreground;
-        ForegroundInactive = thmDec.foreground;
-        ForegroundLink = thmDec.normal.cyan;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.normal.magenta;
-      };
-      "Colors:Tooltip" = {
-        BackgroundAlternate = thmDec.normal.black;
-        BackgroundNormal = thmDec.background;
-        DecorationFocus = thmDec.normal.blue;
-        DecorationHover = thmDec.normal.blue;
-        ForegroundActive = thmDec.normal.blue;
-        ForegroundInactive = thmDec.normal.black;
-        ForegroundLink = thmDec.normal.blue;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.bright.magenta;
-      };
-      "Colors:View" = {
-        BackgroundAlternate = thmDec.background;
-        BackgroundNormal = thmDec.background;
-        DecorationFocus = thmDec.normal.black;
-        DecorationHover = thmDec.normal.black;
-        ForegroundActive = thmDec.normal.white;
-        ForegroundInactive = thmDec.normal.black;
-        ForegroundLink = thmDec.normal.cyan;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.bright.magenta;
-      };
-      "Colors:Window" = {
-        BackgroundAlternate = thmDec.background;
-        BackgroundNormal = thmDec.background;
-        DecorationFocus = thmDec.normal.blue;
-        DecorationHover = thmDec.normal.black;
-        ForegroundActive = thmDec.bright.black;
-        ForegroundInactive = thmDec.normal.black;
-        ForegroundLink = thmDec.normal.blue;
-        ForegroundNegative = thmDec.normal.red;
-        ForegroundNeutral = thmDec.normal.yellow;
-        ForegroundNormal = thmDec.foreground;
-        ForegroundPositive = thmDec.normal.green;
-        ForegroundVisited = thmDec.bright.magenta;
-      };
-      General = {
-        ColorScheme = "Generated";
-        Name = "Generated";
-        fixed = "Roboto Mono,11,-1,5,50,0,0,0,0,0";
-        font = "Roboto,11,-1,5,50,0,0,0,0,0";
-        menuFont = "Roboto,11,-1,5,50,0,0,0,0,0";
-        shadeSortColumn = true;
-        smallestReadableFont = "Roboto,8,-1,5,57,0,0,0,0,0,Medium";
-        toolBarFont = "Roboto,11,-1,5,50,0,0,0,0,0";
-      };
-      KDE = {
-        DoubleClickInterval = 400;
-        ShowDeleteCommand = true;
-        SingleClick = false;
-        StartDragDist = 4;
-        StartDragTime = 500;
-        WheelScrollLines = 3;
-        contrast = 4;
-        widgetStyle = "Breeze";
-      };
-      Icons = { Theme = "Papirus-Dark"; };
-    };
   };
 }
