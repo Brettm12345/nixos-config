@@ -1,6 +1,5 @@
-{ config, pkgs, ... }:
-let thm = config.themes.colors;
-in {
+{ config, pkgs, lib, ... }:
+with import ../../support.nix { inherit lib config pkgs; }; {
   home-manager.users.brett = {
     xresources.properties = (with thm; {
       "*background" = background;
@@ -24,11 +23,5 @@ in {
       "*color14" = cyan;
       "*color15" = white;
     });
-    home.activation.xrdb = {
-      after = [ "linkGeneration" ];
-      before = [ ];
-      data =
-        "DISPLAY=:0 ${pkgs.xorg.xrdb}/bin/xrdb -merge ${config.users.users.brett.home}/.Xresources";
-    };
   };
 }

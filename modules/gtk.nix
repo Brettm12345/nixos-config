@@ -8,4 +8,8 @@
     iconTheme = icons;
     font.name = fonts.sansSerif;
   };
+  home-manager.users.brett.xsession.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata Ice";
+  };
 }

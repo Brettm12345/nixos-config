@@ -37,6 +37,16 @@ in {
       options = {
         background = color "background";
         foreground = color "foreground";
+        alt = color "alt";
+        base0 = color "base0";
+        base1 = color "base1";
+        base2 = color "base2";
+        base3 = color "base3";
+        base4 = color "base4";
+        base5 = color "base5";
+        base6 = color "base6";
+        base7 = color "base7";
+        base8 = color "base8";
         normal = colorList "normal";
         bright = colorList "bright";
       };

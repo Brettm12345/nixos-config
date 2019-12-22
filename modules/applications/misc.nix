@@ -12,10 +12,10 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       activation."mimeapps-remove" =
         afterLinkGen "rm -f /home/brett/.config/mimeapps.list";
       packages = with pkgs; [
-        bibata-cursors
         chromium
         clang
         clang-tools
+        bibata-cursors
         curl
         dunst
         dmenu
@@ -28,8 +28,10 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         grc
         libnotify
         lldb
+        slack
         ranger
         stdman
+        imports.taffybar-config
         vscode
         unrar
         wget
@@ -44,7 +46,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       enableSshSupport = true;
     };
 
-    programs.command-not-found.enable = true;
+    # programs.command-not-found.enable = true;
     systemd.user.startServices = true;
   };
 }

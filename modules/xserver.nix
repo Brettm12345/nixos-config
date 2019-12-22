@@ -1,11 +1,18 @@
-{ ... }: {
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ sddm-theme-goodnight ];
+  # https://twitter.com/ttuegel/status/997561239659270145
+  environment.pathsToLink = [ "/share" ];
   services.xserver = {
     enable = true;
     enableTCP = true;
     autoRepeatDelay = 300;
     autoRepeatInterval = 55;
     videoDrivers = [ "nvidia" ];
-    displayManager.lightdm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "goodnight";
+      autoLogin = { user = "brett"; };
+    };
     layout = "us";
     libinput = {
       enable = true;

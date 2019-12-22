@@ -1,0 +1,119 @@
+/*-*- mode: css; -*-*/
+
+* {
+  background: #212337;
+  background-dark: #191a2a;
+  background-alt: #2a2e48;
+  background-light: #292e46;
+  background-color: @background;
+  foreground: #dcebff;
+  foreground-light: #e4f3fa;
+  highlight: bold underline #c7f59b;
+  active-color: #baacff;
+  main-color: #70b0ff;
+  urgent-color: #ff757f;
+  text-color: @foreground;
+}
+
+entry,
+inputbar,
+prompt,
+textbox-prompt-colon {
+  background-color: @background-alt;
+}
+
+button {
+  spacing: 0;
+  text-color: @foreground;
+}
+
+button.selected {
+  background-color: @background-light;
+  text-color: @foreground-light;
+}
+
+case-indicator {
+  spacing: 0;
+  text-color: @foreground;
+}
+
+entry {
+  padding: 10px 10px 10px 0;
+  spacing: 0;
+  text-color: @main-color;
+}
+
+element {
+  padding: 12px;
+  margin: 4px 0;
+  border: 0 0 0 8px;
+}
+
+element.normal {
+  background-color: @background-alt;
+  border-color: @background-alt;
+}
+
+element.normal.active {
+  text-color: @active-color;
+}
+
+element.normal.urgent {
+  text-color: @urgent-color;
+}
+
+element.selected {
+  background-color: @background-dark;
+  border-color: @main-color;
+  highlight: @highlight;
+  text-color: @foreground-light;
+}
+
+element.selected.active {
+  text-color: @active-color;
+}
+
+element.selected.urgent {
+  text-color: @urgent-color;
+}
+
+inputbar {
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+  margin: 4px 0;
+  spacing: 0;
+}
+
+listview {
+  fixed-height: 0;
+  spacing: 2px;
+}
+
+mainbox {
+  padding: 10px;
+  border: 1px;
+  border-color: #000000;
+  border-radius: 6px;
+}
+
+message {
+  padding: 1px;
+}
+
+prompt {
+  padding: 10px 20px;
+  background-color: @main-color;
+  spacing: 0;
+  text-color: @background;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  padding: 10px;
+  margin: 0 0.3em 0 0;
+  str: "  ";
+}
+
+textbox {
+  padding: 10px;
+  text-color: @foreground;
+}

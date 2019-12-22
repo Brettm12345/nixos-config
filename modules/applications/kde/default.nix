@@ -3,15 +3,15 @@ with import ../../../support.nix { inherit lib config pkgs; };
 let
   fnt = config.themes.fonts;
   default = with thmDec; {
-    BackgroundAlternate = background;
-    BackgroundNormal = background;
+    BackgroundAlternate = alt;
+    BackgroundNormal = alt;
     DecorationFocus = bright.black;
     DecorationHover = normal.black;
-    ForegroundActive = normal.blue;
-    ForegroundInactive = normal.black;
-    ForegroundLink = normal.cyan;
+    ForegroundActive = normal.magenta;
+    ForegroundInactive = base5;
+    ForegroundLink = normal.blue;
     ForegroundNegative = normal.red;
-    ForegroundNeutral = normal.yellow;
+    ForegroundNeutral = normal.blue;
     ForegroundNormal = foreground;
     ForegroundPositive = normal.green;
     ForegroundVisited = normal.magenta;
@@ -35,6 +35,7 @@ in {
     firefox
     systemd
   ];
+  services.xserver.desktopManager.plasma5.enable = true;
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
   home-manager.users.brett = {
     home.packages = (with pkgs;
@@ -58,42 +59,43 @@ in {
         kolourpaint
         okular
       ]));
-    xdg.configFile."qt5ct/qt5ct.conf".source = ./qt5ct.conf;
-    xdg.configFile."kdeglobals".text = with thmDec;
+    # xdg.configFile."qt5ct/qt5ct.conf".source = ./qt5ct.conf;
+    xdg.dataFile."color-schemes/Generated.colors".text = with thmDec;
       genIni {
-        "Colors:Button" = default;
+        "Colors:Button" = {
+          BackgroundNormal = base2;
+          BackgroundAlternate = base2;
+        } // default;
         "Colors:Complementary" = default;
         "Colors:Selection" = {
-          BackgroundAlternate = bright.black;
-          BackgroundNormal = bright.black;
-          ForegroundActive = foreground;
-          ForegroundInactive = foreground;
-          ForegroundNormal = foreground;
+          BackgroundAlternate = base5;
+          BackgroundNormal = base5;
+          ForegroundActive = bright.white;
+          ForegroundInactive = normal.white;
+          ForegroundNormal = bright.white;
         } // default;
-        "Colors:Tooltip" = default;
+        "Colors:Tooltip" = {
+          BackgroundAlternate = base0;
+          BackgroundNormal = base0;
+        } // default;
         "Colors:View" = default;
-        "Colors:Window" = default;
-        General = with fnt; rec {
-          ColorScheme = "Generated";
-          Name = "Generated";
-          fixed = "${monospace},11,-1,5,50,0,0,0,0,0";
-          font = "${sansSerif},11,-1,5,50,0,0,0,0,0";
-          menuFont = font;
-          shadeSortColumn = true;
-          smallestReadableFont = "${sansSerif},8,-1,5,57,0,0,0,0,0,Medium";
-          toolBarFont = "${sansSerif},11,-1,5,50,0,0,0,0,0";
-        };
-        KDE = {
-          DoubleClickInterval = 400;
-          ShowDeleteCommand = true;
-          SingleClick = false;
-          StartDragDist = 4;
-          StartDragTime = 500;
-          WheelScrollLines = 3;
-          contrast = 4;
-          widgetStyle = "Breeze";
-        };
-        Icons = { Theme = "Papirus-Dark"; };
+        "Colors:Window" = {
+          BackgroundAlternate = background;
+          BackgroundNormal = background;
+        } // default;
       };
+    xdg.configFile."kdeglobals".text = genIni {
+      General = with fnt; rec {
+        ColorScheme = "Generated";
+        Name = "Generated";
+        fixed = "${monospace},11,-1,5,50,0,0,0,0,0";
+        font = "${sansSerif},11,-1,5,50,0,0,0,0,0";
+        menuFont = font;
+        shadeSortColumn = true;
+        smallestReadableFont = "${sansSerif},8,-1,5,57,0,0,0,0,0,Medium";
+        toolBarFont = "${sansSerif},11,-1,5,50,0,0,0,0,0";
+      };
+      Icons = { Theme = "Papirus-Dark"; };
+    };
   };
 }

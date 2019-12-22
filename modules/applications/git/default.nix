@@ -16,7 +16,7 @@
         core = {
           fileMode = false;
           quotepath = false;
-          pager = "diff-so-fancy | less --tabs=4 -RFX";
+          pager = "~/.cargo/bin/delta --theme Material-Theme-Palenight";
           excludesFile = "~/.config/git/ignore";
           whitespace = "trailing-space";
           patch = "!git --no-pager diff --no-color";

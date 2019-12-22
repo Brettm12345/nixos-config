@@ -9,6 +9,9 @@
       roboto-slab
       nerdfonts
       noto-fonts
+      fira
+      fira-code
+      fira-mono
       noto-fonts-emoji
       hasklig
       material-design-icons
@@ -16,6 +19,11 @@
     ];
     fontconfig = {
       enable = true;
+      ultimate = {
+        enable = true;
+        preset = "ultimate5";
+      };
+      dpi = 110;
       defaultFonts = with config.themes.fonts; {
         monospace = [ monospace "Roboto Mono 13" ];
         sansSerif = [ sansSerif "Roboto 13" ];

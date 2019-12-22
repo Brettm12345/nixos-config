@@ -6,7 +6,7 @@ let
   dirs = makeDirs (path: "${home}/${path}") {
     configHome = ".config";
     cacheHome = "var/cache";
-    dataHome = "usr/share";
+    dataHome = ".local/share";
   };
   userDirs = makeDirs (path: "${home}/usr/${path}") {
     desktop = "dsk";

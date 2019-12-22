@@ -36,18 +36,6 @@ in {
   nix.requireSignedBinaryCaches = false;
   security.sudo = {
     enable = true;
-    extraRules = [
-      {
-        users = [ "brett" ];
-        commands = [{
-          command = "/run/current-system/sw/bin/nixos-rebuild";
-          options = [ "SETENV" "NOPASSWD" ];
-        }];
-      }
-      {
-        groups = [ "wheel" ];
-        commands = [ "ALL" ];
-      }
-    ];
+    wheelNeedsPassword = false;
   };
 }

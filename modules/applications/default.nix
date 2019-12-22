@@ -2,6 +2,7 @@
   imports = [
     ./kde
     ./git
+    ./rofi
     ./tmux
     ./bat.nix
     ./compton.nix
