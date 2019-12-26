@@ -1,6 +1,7 @@
 #+TITLE: Todo
 
-* Tasks [1/2]
+* Tasks [1/4]
 - [ ] Add neovim config
 - [X] Add git config
-- [ ] Add slack with themes
+- [-] Add slack with themes
+- [-] Make a =/lib/= directory for all of my helper functions
