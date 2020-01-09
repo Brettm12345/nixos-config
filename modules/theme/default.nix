@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 with lib;
 let
+  colors = [ "black" "red" "green" "yellow" "blue" "magenta" "cyan" "white" ];
   lighten = import ./lighten.nix { inherit pkgs; };
-  brighten = _: color: lighten 0.19 color;
   bases = color:
     mapAttrs (_: base: lighten base color) {
       alt = -1.5e-2;
@@ -14,18 +14,21 @@ let
       base5 = 0.12;
       base6 = 0.42;
       base7 = 0.52;
-      base8 = 0.575;
     };
-
-  transformColors = { normal, background, foreground }:
-    {
-      inherit normal background foreground;
-      bright = mapAttrs brighten normal;
-    } // bases background;
-  colors = transformColors (import ./colors.nix);
-  fonts = import ./fonts.nix;
-  icons = import ./icons.nix { inherit pkgs; };
+  basePair = i: nameValuePair "base${toString i}";
+  transformColors = theme:
+    with theme; rec {
+      inherit background foreground;
+      grayscale = bases background;
+      normal = getAttrs colors theme;
+      bright = mapAttrs (_: lighten 1.9e-2) normal;
+      base16 = listToAttrs (imap0 basePair (attrValues normal));
+    };
 in {
   options.themes = import ./options.nix { inherit config lib pkgs; };
-  config.themes = { inherit colors fonts icons; };
+  config.themes = {
+    colors = transformColors (import ./colors.nix);
+    fonts = import ./fonts.nix;
+    icons = import ./icons.nix { inherit pkgs; };
+  };
 }

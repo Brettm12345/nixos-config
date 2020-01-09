@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./dhall.nix
+    # ./dhall.nix
     ./go.nix
     ./haskell.nix
     ./javascript.nix

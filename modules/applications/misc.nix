@@ -21,13 +21,15 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         dmenu
         gnome3.dconf
         ffmpeg-full
-        neovim
         gitAndTools.hub
         gnupg
         gopass
         grc
         libnotify
         lldb
+        ripgrep
+        platinum-searcher
+        silver-searcher
         slack
         ranger
         stdman
@@ -40,13 +42,13 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       ];
     };
 
-    services.gpg-agent = {
-      enable = true;
-      defaultCacheTtl = 1800;
-      enableSshSupport = true;
-    };
+    # services.gpg-agent = {
+    #   enable = true;
+    #   defaultCacheTtl = 1800;
+    #   enableSshSupport = true;
+    # };
 
-    # programs.command-not-found.enable = true;
+    programs.command-not-found.enable = true;
     systemd.user.startServices = true;
   };
 }

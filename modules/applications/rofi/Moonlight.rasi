@@ -1,97 +1,110 @@
 /*-*- mode: css; -*-*/
 
 * {
-  background: #212337;
+  text-color: var(foreground);
   background-dark: #191a2a;
-  background-alt: #2a2e48;
-  background-light: #292e46;
-  background-color: @background;
-  foreground: #dcebff;
   foreground-light: #e4f3fa;
+  urgent-color: #ff757f;
+  foreground: #dcebff;
+  background-color: var(background);
+  background-light: #292e46;
   highlight: bold underline #c7f59b;
   active-color: #baacff;
-  main-color: #70b0ff;
-  urgent-color: #ff757f;
-  text-color: @foreground;
+  border: #121523ab;
+  background: #212337;
+  background-alt: #1e2132;
+  main-color: #82aaff;
 }
 
-entry,
-inputbar,
-prompt,
+entry {
+  padding: 10px 10px 10px 0px;
+  background-color: var(background-alt);
+  border-color: var(border);
+  spacing: 0;
+  border: 1px;
+  text-color: var(main-color);
+}
+
+inputbar {
+  background-color: var(background-alt);
+  margin: 4px 0px;
+  spacing: 0;
+  children: [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+prompt {
+  padding: 10px 20px;
+  background-color: var(main-color);
+  spacing: 0;
+  text-color: var(background);
+}
+
 textbox-prompt-colon {
-  background-color: @background-alt;
+  padding: 10px;
+  background-color: var(background-alt);
+  margin: 0px 0.3em 0px 0px;
+  expand: false;
+  str: "  ";
 }
 
 button {
   spacing: 0;
-  text-color: @foreground;
+  text-color: var(foreground);
 }
 
-button.selected {
-  background-color: @background-light;
-  text-color: @foreground-light;
+button selected {
+  background-color: var(background-light);
+  text-color: var(foreground-light);
 }
 
 case-indicator {
   spacing: 0;
-  text-color: @foreground;
-}
-
-entry {
-  padding: 10px 10px 10px 0;
-  spacing: 0;
-  text-color: @main-color;
+  text-color: var(foreground);
 }
 
 element {
   padding: 12px;
-  margin: 4px 0;
-  border: 0 0 0 8px;
+  margin: 4px 0px;
+  border: 0px 0px 0px 8px;
 }
 
-element.normal {
-  background-color: @background-alt;
-  border-color: @background-alt;
+element normal {
+  background-color: var(background-alt);
+  border-color: var(background-alt);
 }
 
-element.normal.active {
-  text-color: @active-color;
+element normal.active {
+  text-color: var(active-color);
 }
 
-element.normal.urgent {
-  text-color: @urgent-color;
+element normal.urgent {
+  text-color: var(urgent-color);
 }
 
-element.selected {
-  background-color: @background-dark;
-  border-color: @main-color;
-  highlight: @highlight;
-  text-color: @foreground-light;
+element selected {
+  background-color: var(background-dark);
+  highlight: var(highlight);
+  border-color: var(main-color);
+  text-color: var(foreground-light);
 }
 
-element.selected.active {
-  text-color: @active-color;
+element selected.active {
+  text-color: var(active-color);
 }
 
-element.selected.urgent {
-  text-color: @urgent-color;
-}
-
-inputbar {
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
-  margin: 4px 0;
-  spacing: 0;
+element selected.urgent {
+  text-color: var(urgent-color);
 }
 
 listview {
-  fixed-height: 0;
   spacing: 2px;
+  fixed-height: 0;
 }
 
 mainbox {
   padding: 10px;
+  border-color: rgba (0, 0, 0, 100 %);
   border: 1px;
-  border-color: #000000;
   border-radius: 6px;
 }
 
@@ -99,21 +112,7 @@ message {
   padding: 1px;
 }
 
-prompt {
-  padding: 10px 20px;
-  background-color: @main-color;
-  spacing: 0;
-  text-color: @background;
-}
-
-textbox-prompt-colon {
-  expand: false;
-  padding: 10px;
-  margin: 0 0.3em 0 0;
-  str: "  ";
-}
-
 textbox {
   padding: 10px;
-  text-color: @foreground;
+  text-color: var(foreground);
 }

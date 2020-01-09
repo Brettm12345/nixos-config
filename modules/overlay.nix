@@ -1,8 +1,9 @@
 let
   imports = import ../nix/sources.nix;
   new = import imports.nixpkgs-unstable { config.allowUnfree = true; };
-in { lib, pkgs, ... }:
-with builtins; {
+in { lib, pkgs, config, ... }:
+with builtins;
+with import ../support.nix { inherit lib pkgs config; }; {
   nixpkgs.overlays = [
     (self: super:
       with self;
@@ -10,9 +11,22 @@ with builtins; {
         inherit imports;
         unstable = new;
         nixfmt = callPackage imports.nixfmt { };
+        doom-emacs = callPackage imports.nix-doom-emacs {
+          doomPrivateDir = "${xdg.configHome}/doom";
+        };
         xmonad = callPackage imports.xmonad-config { };
+        organizr = mkDerivation {
+          name = "organizr";
+          src = imports.organizr;
+          installPhase = ''
+            mkdir -p $out/config
+            cp -R . $out/
+            ln -s /var/lib/organizr/config.php $out/config/config.php
+          '';
+        };
         taffybar = callPackage imports.taffybar-config { };
         bs-platform = callPackage imports.bs-platform { };
+        termite = self.termite;
         pastel = unstable.pastel;
         inherit (import imports.niv { }) niv;
         neovim = unstable.neovim;
@@ -54,28 +68,10 @@ with builtins; {
           '';
         };
         slack = super.slack.override { theme = super.slack-theme-black; };
-        compton = super.compton.overrideAttrs
-          (old: { src = imports.compton.src; } // old);
-        dmenu = super.dmenu.override {
-          patches = map fetchurl [
-            {
-              url =
-                "https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff";
-              sha256 = "0v609mmz3i5dlfdf4b8wcp48njxp1i5g5vy7phw3zg1wn936yzsg";
-            }
-            {
-              url =
-                "https://tools.suckless.org/dmenu/patches/numbers/dmenu-numbers-4.9.diff";
-              sha256 =
-                "f79de21544b83fa1e86f0aed5e849b1922ebae8d822e492fbc9066c0f07ddb69";
-            }
-            {
-              url =
-                "https://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff";
-              sha256 = "0yababzi655mhpgixzgbca2hjckj16ykzj626zy4i0sirmcyg8fr";
-            }
-          ];
-        };
+
+        compton =
+          super.compton.overrideAttrs (old: { src = imports.compton; } // old);
+
         chromium = super.chromium.override {
           commandLineArgs = "--force-dark-mode --force-device-scale-factor=1.3";
         };

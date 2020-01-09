@@ -1,12 +1,12 @@
 { ... }: {
   boot = {
+    plymouth.enable = true;
     loader = {
+      efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
         consoleMode = "max";
       };
-      efi.canTouchEfiVariables = true;
     };
-    plymouth.enable = true;
   };
 }

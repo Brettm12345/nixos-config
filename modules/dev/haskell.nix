@@ -13,6 +13,7 @@
       :def pf        \str -> return $ ":! pointfree " ++ show str
       :def pointful  \str -> return $ ":! pointful " ++ show str
     '';
+
     home.packages = (with pkgs; [
       ctags
       cabal2nix

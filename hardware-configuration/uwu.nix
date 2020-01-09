@@ -3,7 +3,14 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, ... }:
 
-{
+let
+  options = builtins.mapAttrs (fsType: options: { inherit fsType options; }) {
+    btrfs = [ ];
+    vfat = [ ];
+    ntfs = [ "rw" "uid=1000" ];
+  };
+
+in with options; {
   imports = [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix> ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" ];
@@ -25,6 +32,11 @@
     device = "/dev/disk/by-uuid/d2a64d3d-dc23-414b-83bb-b675188e7611";
     fsType = "btrfs";
   };
+  fileSystems."/mnt/media" = {
+    device = "/dev/sdc1";
+    fsType = "btrfs";
+  };
+  fileSystems."/mnt/tv" = { device = "/dev/sdd1"; } // ntfs;
 
   swapDevices =
     [{ device = "/dev/disk/by-uuid/7700f7df-5d2a-4046-b070-2b2c4b97cfa7"; }];

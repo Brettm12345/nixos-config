@@ -1,10 +1,13 @@
-{ config, ... }:
+{ config, lib, ... }:
+with lib;
+with config.themes;
 let
-  thm = config.themes.colors;
+  foldLines = concatStringsSep "\n" foldl';
   padding = "10px";
+  mkColors = x: foldLines (i: c: "color${i + x} = ${c}") attrValues;
 in {
   home-manager.users.brett = {
-    xdg.configFile."gtk-3.0/gtk.css".text = ''
+    gtk.gtk3.extraCss = ''
       VteTerminal,
       vte-terminal {
         -vteterminal-inner-border: ${padding};
@@ -13,54 +16,41 @@ in {
         padding: ${padding};
       }
     '';
-    programs.termite = {
-      enable = true;
-      allowBold = false;
-      audibleBell = false;
-      clickableUrl = true;
-      cursorBlink = "on";
-      cursorShape = "ibeam";
-      dynamicTitle = true;
-      filterUnmatchedUrls = true;
-      font = "Operator Mono Lig 12";
-      iconName = "terminal";
-      modifyOtherKeys = true;
-      mouseAutohide = true;
-      scrollOnKeystroke = true;
-      scrollOnOutput = false;
-      scrollbackLines = 10000;
-      scrollbar = "off";
-      searchWrap = true;
-      sizeHints = true;
-      urgentOnBell = true;
-      highlightColor = thm.bright.black;
-      backgroundColor = thm.background;
-      foregroundColor = thm.foreground;
-      optionsExtra = ''
-        bold_is_bright = false
-        cell_height_scale = 1.1
-        hyperlinks = true
-      '';
-      colorsExtra = ((with thm.normal; ''
-        color0 = ${black}
-        color1 = ${red}
-        color2 = ${green}
-        color3 = ${yellow}
-        color4 = ${blue}
-        color5 = ${magenta}
-        color6 = ${cyan}
-        color7 = ${white}
-      '') + (with thm.bright; ''
-        color8 = ${black}
-        color9 = ${red}
-        color10 = ${green}
-        color11 = ${yellow}
-        color12 = ${blue}
-        color13 = ${magenta}
-        color14 = ${cyan}
-        color15 = ${white}
-      ''));
-    };
+    programs.termite = with colors;
+      with fonts; {
+        allowBold = false;
+        audibleBell = false;
+        backgroundColor = background;
+        browser = config.defaultApplications.browser.cmd;
+        clickableUrl = true;
+        colorsExtra = foldLines (i: mkColors i * 8) [ normal bright ];
+        cursorBlink = "on";
+        cursorColor = normal.blue;
+        cursorShape = "ibeam";
+        dynamicTitle = true;
+        enable = true;
+        filterUnmatchedUrls = true;
+        font = "${monospace} 12";
+        foregroundBoldColor = bright.white;
+        foregroundColor = foreground;
+        fullscreen = true;
+        highlightColor = grayscale.base3;
+        iconName = "terminal";
+        modifyOtherKeys = true;
+        mouseAutohide = true;
+        optionsExtra = ''
+          bold_is_bright = false
+          cell_height_scale = 1.1
+          hyperlinks = true
+        '';
+        scrollOnKeystroke = true;
+        scrollOnOutput = false;
+        scrollbackLines = 10000;
+        scrollbar = "off";
+        searchWrap = true;
+        sizeHints = true;
+        urgentOnBell = true;
+      };
   };
 
 }

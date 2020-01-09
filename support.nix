@@ -1,31 +1,33 @@
-{ pkgs, config, lib, ... }:
+{ config, lib, ... }:
 with builtins;
-let
-  mkKeyValue = key: value:
+with lib; rec {
+  mkIniGen = quote:
     let
-      mvalue = if isBool value then
-        (if value then "true" else "false")
-      else if (isString value && key != "include-file") then
-        value
-      else
-        toString value;
-    in "${key}=${mvalue}";
-
-  attrsToList = x:
-    (map (key: {
-      name = key;
-      value = getAttr key x;
-    }) (attrNames x));
-
-  concat' = concatStringsSep "\n";
-
-in rec {
-  genIni = lib.generators.toINI { inherit mkKeyValue; };
-  genIniOrdered = lst:
-    (concat' (map ({ name ? "widget", ... }@attrs:
-      concat' "\n" ([ "[${name}]" ]
-        ++ (map ({ name, value }: mkKeyValue name value)
-          (attrsToList (removeAttrs attrs [ "name" ]))))) lst)) + "\n";
+      quot = str: if quote then ''"${str}"'' else quote;
+      mkKeyValue = key: value:
+        let
+          mVal = if isBool value then
+            (if value then "true" else "false")
+          else if (isString value && key != "include-file") then
+            quot value
+          else
+            quot (toString value);
+        in "${key}=${toString mVal}";
+    in generators.toINI { inherit mkKeyValue; };
+  genToml = mkIniGen true;
+  genIni = mkIniGen false;
+  genIniOrdered = let
+    attrsToList = x:
+      (map (name: {
+        inherit name;
+        value = getAttr name x;
+      }) (attrNames x));
+    concat' = concatStringsSep "\n";
+  in lst:
+  (concat' (map ({ name ? "widget", ... }@attrs:
+    concat' "\n" ([ "[${name}]" ]
+      ++ (map ({ name, value }: mkKeyValue name value)
+        (attrsToList (removeAttrs attrs [ "name" ]))))) lst)) + "\n";
 
   afterLinkGen = data: {
     after = [ "linkGeneration" ];
@@ -34,9 +36,11 @@ in rec {
   };
 
   hex2dec = import ./hex2dec.nix;
-  lighten = import ./lighten.nix { inherit pkgs; };
+  merge = fold (a: b: a // b) { };
+  pairWith = f: n: nameValuePair n (f n);
+  mergeWith = f: l: listToAttrs (map (pairWith f) l);
 
   thm = config.themes.colors;
-  thmLight = lib.mapAttrsRecursive (_: color: lighten "0.19" color) thm;
-  thmDec = lib.mapAttrsRecursive (_: color: hex2dec color) thm;
+  # thmLight = mapAttrsRecursive (_: lighten "0.19") thm;
+  thmDec = lib.mapAttrsRecursive (_: hex2dec) thm;
 }

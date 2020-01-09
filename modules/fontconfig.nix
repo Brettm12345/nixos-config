@@ -25,9 +25,9 @@
       };
       dpi = 110;
       defaultFonts = with config.themes.fonts; {
-        monospace = [ monospace "Roboto Mono 13" ];
-        sansSerif = [ sansSerif "Roboto 13" ];
-        serif = [ serif "Roboto Slab 13" ];
+        monospace = [ monospace ];
+        sansSerif = [ sansSerif ];
+        serif = [ serif ];
       };
     };
   };

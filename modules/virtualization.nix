@@ -6,7 +6,7 @@
       autoPrune.enable = true;
     };
     virtualbox.host = {
-      enable = true;
+      enable = false;
       enableHardening = false;
       enableExtensionPack = true;
     };
