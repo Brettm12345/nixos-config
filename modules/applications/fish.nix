@@ -21,7 +21,7 @@
     promptInit = ''
       ${pkgs.direnv}/bin/direnv hook fish | source
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-      ${pkgs.starship}/bin/starship fish | source
+      ${pkgs.starship}/bin/starship init fish | source
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
   };
