@@ -1,6 +1,6 @@
 {
   sansSerif = "Proxima Nova Cond Semibold";
   serif = "Noto Serif";
-  monospace = "Operator Mono Lig";
-  monospace-alt = "Operator Mono SSm Lig";
+  monospace = "JetBrains Mono Medium";
+  monospace-alt = "JetBrains Mono Medium";
 }

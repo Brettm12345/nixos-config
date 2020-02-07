@@ -37,6 +37,6 @@ in rec {
   lighten = import ./lighten.nix { inherit pkgs; };
 
   thm = config.themes.colors;
-  thmLight = lib.mapAttrsRecursive (_: color: lighten "0.19" color) thm;
-  thmDec = lib.mapAttrsRecursive (_: color: hex2dec color) thm;
+  thmLight = lib.mapAttrsRecursive (_: lighten "0.19") thm;
+  thmDec = lib.mapAttrsRecursive (_: hex2dec) thm;
 }

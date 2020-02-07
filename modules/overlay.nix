@@ -84,6 +84,10 @@ with import ../support.nix { inherit lib pkgs config; }; {
       allowBroken = true;
     };
   };
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channels/nixos-19.09";
+  };
   environment.etc.nixpkgs.source = imports.nixpkgs;
   nix = rec {
     extraOptions = "binary-caches-parallel-connections = 5";

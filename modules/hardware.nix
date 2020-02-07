@@ -5,6 +5,7 @@
       enable = true;
       enableGraphical = true;
     };
+    pulseaudio.enable = true;
     opengl = {
       enable = true;
       driSupport = true;

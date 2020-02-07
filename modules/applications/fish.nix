@@ -16,7 +16,7 @@
       set -x MANPAGER "nvim -c 'set ft=man' -"
       set -x BROWSER "${pkgs.chromium}/bin/chromium"
       set -x EDITOR "nvim"
-      set -x NPM_DIR "$XDG_DATA_HOME/yarn/global/bin"
+      set -x NPM_DIR "$HOME/.npm/bin"
       set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin" "$HOME/.local/bin"
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';

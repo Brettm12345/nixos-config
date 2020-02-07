@@ -11,17 +11,20 @@ with import ../../support.nix { inherit lib config pkgs; }; {
     xdg.configFile."starship.toml".text = with lib;
       with builtins;
       let
-        symbols =
-          mapAttrs' (name: symbol: nameValuePair name { inherit symbol; });
+        fromKey = key:
+          mapAttrs' (name: value: nameValuePair name { "${key}" = value; });
+        symbols = fromKey "symbol";
+        style = fromKey "style";
         disable = x:
           listToAttrs (map (name: nameValuePair name { disabled = true; }) x);
       in genToml (symbols {
         aws = " ";
         conda = " ";
-        git_branch = " ";
+        git_branch = " ";
         golang = " ";
         package = " ";
-      } // disable [ "battery" ] // {
+        rust = " ";
+      } // style { directory = "blue"; } // disable [ "battery" ] // {
         character.style_success = "purple";
         git_status = {
           prefix = "";
