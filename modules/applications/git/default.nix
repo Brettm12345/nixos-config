@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home-manager.users.brett = {
-    home.packages = with pkgs.gitAndTools; [ hub ];
+    home.packages = with pkgs.gitAndTools; [ hub delta ];
     programs.git = {
       enable = true;
       userName = "brettm12345";
@@ -16,7 +16,8 @@
         core = {
           fileMode = false;
           quotepath = false;
-          pager = "~/.cargo/bin/delta --theme Material-Theme-Palenight";
+          pager =
+            "${pkgs.gitAndTools.delta}/bin/delta --theme Material-Theme-Palenight";
           excludesFile = "~/.config/git/ignore";
           whitespace = "trailing-space";
           patch = "!git --no-pager diff --no-color";

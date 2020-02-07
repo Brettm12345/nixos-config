@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ any-nix-shell exa ];
+  environment.systemPackages = with pkgs; [ any-nix-shell exa grc ];
   programs.command-not-found.enable = true;
   programs.fish = {
     enable = true;
@@ -11,10 +11,11 @@
       git = "${pkgs.gitAndTools.hub}/bin/hub";
     };
     promptInit = ''
-      any-nix-shell fish --info-right | source
-      set -x MANPAGER "nvim -c 'set ft=man' -"
+      set -U fish_greeting
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      set -x MANPAGER "${pkgs.neovim}/bin/nvim -c 'set ft=man' -"
       set -x BROWSER "${pkgs.chromium}/bin/chromium"
-      set -x EDITOR "nvim"
+      set -x EDITOR "${pkgs.neovim}/bin/nvim"
       set -x NPM_DIR "$HOME/.npm/bin"
       set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin" "$HOME/.local/bin"
       starship init fish | source

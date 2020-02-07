@@ -111,12 +111,12 @@
         "branch": "master",
         "description": "Manage a user environment using Nix",
         "homepage": "",
-        "owner": "rycee",
+        "owner": "brettm12345",
         "repo": "home-manager",
-        "rev": "f487b527ec420b888c52df1c4f8c31439201edb7",
-        "sha256": "1cvkm09wrvha292lygdff2xxk15c7klvf1kln0hp30r6dkf3dv04",
+        "rev": "e42ae716acbed70eca10706bfcf43b4d865eed04",
+        "sha256": "0d3f861jdfyhzmhy8dgqimw0azbg9xczad6f2jvl9nyh9lyl9x5q",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/f487b527ec420b888c52df1c4f8c31439201edb7.tar.gz",
+        "url": "https://github.com/brettm12345/home-manager/archive/e42ae716acbed70eca10706bfcf43b4d865eed04.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "juno": {
