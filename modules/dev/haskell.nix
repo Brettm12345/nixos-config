@@ -30,7 +30,6 @@
       hpack # yaml based package format
       hspec # testing framework
       pointfree # http://pointfree.io/
-      pointful # https://github.com/23Skidoo/pointful
       stylish-haskell # pretty printer
       tasty # testing framework
       weeder # dead code detection

@@ -34,9 +34,5 @@ in rec {
   };
 
   hex2dec = import ./hex2dec.nix;
-  lighten = import ./lighten.nix { inherit pkgs; };
-
-  thm = config.themes.colors;
-  thmLight = lib.mapAttrsRecursive (_: lighten "0.19") thm;
-  thmDec = lib.mapAttrsRecursive (_: hex2dec) thm;
+  fromyaml = import ./fromyaml.nix { inherit pkgs; };
 }
