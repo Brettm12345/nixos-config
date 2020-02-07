@@ -8,11 +8,10 @@
       ls = "exa -F --icons --git-ignore";
       ll = "exa -F --icons -l --git -h --git-ignore";
       la = "exa -F --icons -l --git -a -h -g";
-      git = "hub";
+      git = "${pkgs.gitAndTools.hub}/bin/hub";
     };
     promptInit = ''
       any-nix-shell fish --info-right | source
-      starship init fish | source
       set -x MANPAGER "nvim -c 'set ft=man' -"
       set -x BROWSER "${pkgs.chromium}/bin/chromium"
       set -x EDITOR "nvim"
