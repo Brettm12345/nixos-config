@@ -23,7 +23,7 @@ in {
         backgroundColor = background;
         browser = config.defaultApplications.browser.cmd;
         clickableUrl = true;
-        colorsExtra = foldLines (i: mkColors i * 8) [ normal bright ];
+        colorsExtra = (foldLines (i: mkColors i * 8) [ normal bright ]);
         cursorBlink = "on";
         cursorColor = normal.blue;
         cursorShape = "ibeam";
