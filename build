@@ -3,7 +3,7 @@
 
 unset IN_NIX_SHELL
 
-nixpkgs=$(nix eval --raw '(import ./nix/sources.nix).nixpkgs')
+nixpkgs=$(nix eval --raw '(import ./nix/sources.nix).nixpkgs-unstable')
 
 nix-store --realise $nixpkgs
 

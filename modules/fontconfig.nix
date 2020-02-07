@@ -19,10 +19,6 @@
     ];
     fontconfig = {
       enable = true;
-      ultimate = {
-        enable = true;
-        preset = "ultimate5";
-      };
       dpi = 110;
       defaultFonts = with config.themes.fonts; {
         monospace = [ monospace ];

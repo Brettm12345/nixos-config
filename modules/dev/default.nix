@@ -2,7 +2,7 @@
   imports = [
     # ./dhall.nix
     ./go.nix
-    ./haskell.nix
+    # ./haskell.nix
     ./javascript.nix
     ./misc.nix
     ./nix.nix

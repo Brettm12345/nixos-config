@@ -1,5 +1,5 @@
 .PHONY: install result
-install: result; SHELL=/bin/sh pkexec $$PWD/switch $$PWD
+install: result; SHELL=/bin/sh sudo $$PWD/switch $$PWD
 
 secret.nix: secret.nix.gpg; gpg -dq $< > $@
 

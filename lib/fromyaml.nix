@@ -1,4 +1,4 @@
-{ pkgs ? import <nixos-unstable> }:
+{ pkgs }:
 yaml:
 builtins.fromJSON (builtins.readFile (pkgs.stdenv.mkDerivation {
   name = "fromYAML";
