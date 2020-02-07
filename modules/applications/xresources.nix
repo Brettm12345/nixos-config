@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
-with import ../../support.nix { inherit lib config pkgs; }; {
+let colors = config.themes.colors;
+in {
   home-manager.users.brett = {
-    xresources.properties = (with thm; {
+    xresources.properties = (with colors; {
       "*background" = background;
       "*foreground" = foreground;
-    }) // (with thm.normal; {
+    }) // (with colors.normal; {
       "*color0" = black;
       "*color1" = red;
       "*color2" = green;
@@ -13,7 +14,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       "*color5" = magenta;
       "*color6" = cyan;
       "*color7" = white;
-    }) // (with thm.bright; {
+    }) // (with colors.bright; {
       "*color8" = black;
       "*color9" = red;
       "*color10" = green;
