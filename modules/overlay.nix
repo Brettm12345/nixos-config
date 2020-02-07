@@ -27,9 +27,7 @@ with import ../support.nix { inherit lib pkgs config; }; {
         taffybar = callPackage imports.taffybar-config { };
         bs-platform = callPackage imports.bs-platform { };
         termite = self.termite;
-        pastel = unstable.pastel;
         inherit (import imports.niv { }) niv;
-        neovim = unstable.neovim;
         sddm-theme-goodnight = mkDerivation {
           name = "sddm-theme-goodnight";
           installPhase = ''

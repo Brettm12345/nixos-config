@@ -4,10 +4,10 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      l = "exa -F --git-ignore -1";
-      ls = "exa -F --git-ignore";
-      ll = "exa -l --git -h -F --git-ignore";
-      la = "exa -F -l --git -a -h -g";
+      l = "exa -F --icons --git-ignore -1";
+      ls = "exa -F --icons --git-ignore";
+      ll = "exa -F --icons -l --git -h --git-ignore";
+      la = "exa -F --icons -l --git -a -h -g";
       git = "hub";
     };
     promptInit = ''
