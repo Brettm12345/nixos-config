@@ -7,8 +7,8 @@ with import ../support.nix { inherit lib config pkgs; }; {
   config = rec {
     defaultApplications = with pkgs; {
       term = {
-        cmd = "${termite}/bin/termite";
-        desktop = "termite";
+        cmd = "${kitty}/bin/kitty";
+        desktop = "kitty";
       };
       editor = {
         cmd = "${neovim}/bin/nvim";
@@ -62,8 +62,7 @@ with import ../support.nix { inherit lib config pkgs; }; {
             "application/vnd.oasis.opendocument.text" = text_processor;
             "text/csv" = spreadsheet;
             "application/vnd.oasis.opendocument.spreadsheet" = spreadsheet;
-            "text/plain" =
-              editor; # This actually makes Emacs an editor for everything... XDG is wierd
+            "text/plain" = editor;
           };
         in genIni {
           "Default Applications" = apps;
