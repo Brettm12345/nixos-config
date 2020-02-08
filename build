@@ -10,17 +10,15 @@ nix-store --realise $nixpkgs
 export NIX_PATH=nixpkgs=$nixpkgs:nixos-config=/etc/nixos/configuration.nix
 
 if [[ -n $INSIDE_EMACS ]]; then
-  nix-build $nixpkgs/nixos -A system $@
+  nix-build $nixpkgs/nixos -A system "$@"
 else
-  nix build -f $nixpkgs/nixos system $@
+  nix build -f $nixpkgs/nixos system "$@"
 fi &&
   {
     git add .
-    d=$(date +%s)
-    # The quickest way to commit
     git commit -t <(
       echo -n "Update "
-      echo -n $(git diff HEAD --name-only) | tr "\n" ", "
+      echo -n "$(git diff HEAD --name-only)" | tr "\n" ", "
     ) --no-edit --no-gpg-sign
     git tag latestBuild --force
   }
