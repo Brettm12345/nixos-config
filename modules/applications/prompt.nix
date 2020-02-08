@@ -21,12 +21,12 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           conda = " ";
           git_branch = " ";
           golang = " ";
-          haskell = " ";
           package = " ";
-          rust = " ";
+          rust = " ";
         } // style {
           directory = "blue";
           haskell = "purple";
+          rust = "208";
         } // disable [ "battery" ] // {
           character.style_success = "purple";
           git_status = {
