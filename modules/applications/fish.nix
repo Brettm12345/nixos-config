@@ -18,9 +18,11 @@
       set -x NPM_DIR "$HOME/.npm/bin"
       set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin" "$HOME/.local/bin"
     '';
+    shellInit = ''
+      direnv hook fish | source
+    '';
     promptInit = ''
-      ${pkgs.direnv}/bin/direnv hook fish | source
-      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish  | source
       $HOME/.cargo/bin/starship init fish | source
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
