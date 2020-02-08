@@ -21,13 +21,13 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           conda = " ";
           git_branch = " ";
           golang = " ";
-          haskell = " ";
           package = " ";
-        } // style {
-          directory = "blue";
-          haskell = "purple";
-        } // disable [ "battery" ] // {
+        } // style { directory = "blue"; } // disable [ "battery" ] // {
           character.style_success = "purple";
+          haskell = {
+            symbol = " ";
+            style = "purple";
+          };
           rust = {
             symbol = " ";
             style = "208 bold";
