@@ -13,7 +13,7 @@ with pkgs;
 with builtins; {
   home-manager.users.brett = {
     services.dunst = {
-      enable = true;
+      enable = false;
       iconTheme = {
         name = "Papirus-Dark";
         package = papirus-icon-theme;
