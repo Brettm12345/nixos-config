@@ -23,7 +23,10 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           golang = " ";
           package = " ";
           rust = " ";
-        } // style { directory = "blue"; } // disable [ "battery" ] // {
+        } // style {
+          directory = "blue";
+          haskell = "purple";
+        } // disable [ "battery" ] // {
           character.style_success = "purple";
           git_status = {
             prefix = "";
