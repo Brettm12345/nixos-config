@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home-manager.users.brett = {
     services.compton = {
-      enable = true;
+      enable = false;
       backend = "xrender";
       shadow = true;
       package = pkgs.compton;
