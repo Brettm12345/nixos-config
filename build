@@ -5,7 +5,7 @@ unset IN_NIX_SHELL
 
 nixpkgs=$(nix eval --raw '(import ./nix/sources.nix).nixpkgs-unstable')
 
-nix-store --indirect --realise $nixpkgs
+nix-store --add-root nixpkgs --realise $nixpkgs
 
 export NIX_PATH=nixpkgs=$nixpkgs:nixos-config=/etc/nixos/configuration.nix
 
