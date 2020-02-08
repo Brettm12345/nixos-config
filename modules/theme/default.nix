@@ -15,7 +15,7 @@ let
       base6 = 0.42;
       base7 = 0.52;
     };
-  basePair = i: nameValuePair "base${toString i}";
+  basePair = i: nameValuePair "color${toString i}";
   transformColors = theme:
     with theme; rec {
       inherit background foreground;
