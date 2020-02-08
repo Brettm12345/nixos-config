@@ -23,7 +23,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           golang = " ";
           haskell = " ";
           package = " ";
-          rust = " ";
+          rust = " ";
         } // style {
           directory = "blue";
           haskell = "purple";
