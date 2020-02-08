@@ -26,7 +26,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         } // style {
           directory = "blue";
           haskell = "purple";
-          rust = "208";
         } // disable [ "battery" ] // {
           character.style_success = "purple";
           git_status = {
