@@ -21,6 +21,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           conda = " ";
           git_branch = " ";
           golang = " ";
+          haskell = " ";
           package = " ";
           rust = " ";
         } // style {
