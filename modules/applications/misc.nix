@@ -33,7 +33,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         slack
         ranger
         stdman
-        imports.taffybar-config
         vscode
         unrar
         wget

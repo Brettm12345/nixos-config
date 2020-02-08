@@ -22,6 +22,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
           git_branch = " ";
           golang = " ";
           package = " ";
+          python = " ";
         } // style { directory = "blue"; } // disable [ "battery" ] // {
           character.style_success = "purple";
           haskell = {
