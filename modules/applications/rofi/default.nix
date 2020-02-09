@@ -16,11 +16,11 @@ let
     display-keys = "";
     display-pass = "";
     display-window = " ";
-    display-windowcd = "";
+    display-windowcd = " ";
     display-run = "";
-    display-ssh = "";
-    display-drun = "";
-    display-combi = "";
+    display-ssh = " ";
+    display-drun = " ";
+    display-combi = " ";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";
     separator-style = "none";
