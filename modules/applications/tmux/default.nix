@@ -4,7 +4,7 @@
     terminal = "tmux-256color";
     baseIndex = 1;
     keyMode = "vi";
-    shortcut = ";";
+    shortcut = "';'";
     aggressiveResize = true;
     historyLimit = 10000;
     reverseSplit = true;
