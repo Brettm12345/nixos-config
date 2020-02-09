@@ -14,7 +14,7 @@
     loginShellInit = ''
       set -U fish_greeting
       set -x NPM_DIR "$HOME/.npm/bin"
-      set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin" "$HOME/.local/bin"
+      set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$HOME/.cargo/bin" "$HOME/.local/bin"
     '';
     promptInit = ''
       bind -M insert \co 'open-project'

@@ -3,6 +3,9 @@
     acpid.enable = true;
     accounts-daemon.enable = true;
     avahi.enable = true;
+    irqbalance.enable = true;
+    udisks2.enable = true;
+    earlyoom.enable = true;
     upower.enable = true;
     tor = {
       enable = true;
