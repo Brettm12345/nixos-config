@@ -15,12 +15,12 @@ let
     icon-theme = "Papirus";
     display-keys = "";
     display-pass = "";
-    display-window = "";
+    display-window = " ";
     display-windowcd = "";
-    display-run = "";
+    display-run = "";
     display-ssh = "";
-    display-drun = "";
-    display-combi = "";
+    display-drun = "";
+    display-combi = "";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";
     separator-style = "none";
