@@ -3,8 +3,6 @@
   # hardware.nvidia.modesetting.enable = true;
   # https://twitter.com/ttuegel/status/997561239659270145
   environment.pathsToLink = [ "/share" ];
-  systemd.services.display-manager.conflicts =
-    [ "getty@tty7.service" "plymouth-quit.service" ];
   services.xserver = {
     enable = true;
     enableTCP = true;
@@ -19,7 +17,7 @@
         [greeter]
         show-password-label = false
         [greeter-theme]
-        background-image = ""
+        background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
     };
     # displayManager.sddm = {
