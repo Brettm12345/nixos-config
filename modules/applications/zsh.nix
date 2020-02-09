@@ -9,16 +9,21 @@
       source ~/.zinit/bin/zinit.zsh
     '';
     initExtra = ''
+      zinit ice wait"0a" compile'{src/*.zsh,src/strategies/*}' lucid
       zinit light zsh-users/zsh-autosuggestions
+
+      zinit ice wait"0b" lucid
       zinit light hlissner/zsh-autopair
-      zinit light ohmyzsh/ohmyzsh
+
       zinit ice wait as"completion" lucid
       zinit snippet OMZ::plugins/gitfast/_git
 
+      zinit light softmoth/zsh-vim-mode
       zinit ice wait atinit"zpcompinit" lucid
       zinit light zdharma/fast-syntax-highlighting
 
       bindkey '^e' autosuggest-accept
+
     '';
     plugins = [{
       name = "fast-syntax-highlighting";
