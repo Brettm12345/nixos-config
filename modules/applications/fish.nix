@@ -12,7 +12,6 @@
     };
     loginShellInit = ''
       set -U fish_greeting
-      set -x MANPAGER "${pkgs.neovim}/bin/nvim -c 'set ft=man' -"
       set -x BROWSER "${pkgs.chromium}/bin/chromium"
       set -x EDITOR "${pkgs.neovim}/bin/nvim"
       set -x NPM_DIR "$HOME/.npm/bin"
