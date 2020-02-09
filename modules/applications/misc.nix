@@ -17,7 +17,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         clang-tools
         bibata-cursors
         curl
-        dunst
         dmenu
         gnome3.dconf
         ffmpeg-full
