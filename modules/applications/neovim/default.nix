@@ -23,15 +23,6 @@ let
           ];
         }];
       };
-      # plug.plugins = with plugins; [
-      #   moonlight
-      #   direnv-vim
-      #   vim-vinegar
-      #   polyglot
-      #   vim-surround
-      #   vim-commentary
-      #   vim-repeat
-      # ];
     };
   });
 in with lib; {
