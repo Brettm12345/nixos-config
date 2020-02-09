@@ -4,12 +4,14 @@ let
     combi-modi = with lib;
       concatStringsSep "," [
         "window"
+        "windowcd"
         "drun"
         "run"
         "projects:~/bin/rofi-projects"
       ];
     modi = "combi,keys,${combi-modi}";
     icon-theme = "Papirus";
+    display-projects = " ";
     display-keys = "גּ ";
     display-window = " ";
     display-windowcd = " ";
@@ -17,6 +19,7 @@ let
     display-ssh = " ";
     display-drun = " ";
     display-combi = " ";
+    matching = "fuzzy";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";
     separator-style = "none";
