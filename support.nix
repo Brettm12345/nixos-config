@@ -35,7 +35,7 @@ with lib; rec {
     inherit data;
   };
 
-  hex2dec = import ./hex2dec.nix;
+  hex2dec = import ./lib/hex2dec.nix;
   merge = fold (a: b: a // b) { };
   pairWith = f: n: nameValuePair n (f n);
   mergeWith = f: l: listToAttrs (map (pairWith f) l);
