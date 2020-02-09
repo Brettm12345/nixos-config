@@ -7,6 +7,7 @@
     ./tmux
     ./neovim
     ./bat.nix
+    ./fff.nix
     ./direnv.nix
     ./compton.nix
     ./dunst.nix
