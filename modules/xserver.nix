@@ -12,6 +12,16 @@
     autoRepeatInterval = 55;
     videoDrivers = [ "nouveau" ];
     displayManager.lightdm.enable = true;
+    displayManager.lightdm.greeters.mini = {
+      enable = true;
+      user = "brett";
+      extraConfig = ''
+        [greeter]
+        show-password-label = false
+        [greeter-theme]
+        background-image = ""
+      '';
+    };
     # displayManager.sddm = {
     #   enable = true;
     #   theme = "goodnight";
