@@ -6,7 +6,7 @@
     autocd = true;
     enableCompletion = true;
     initExtraBeforeCompInit = ''
-      source ${pkgs.imports.zinit}/zinit.zsh
+      source ~/.zinit/bin/zinit.zsh
     '';
     initExtra = ''
       zinit light zsh-users/zsh-autosuggestions
