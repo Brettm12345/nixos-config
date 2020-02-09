@@ -17,8 +17,8 @@ let
     display-windowcd = " ";
     display-run = " ";
     display-ssh = " ";
-    display-drun = "  ";
-    display-combi = "  ";
+    display-drun = "   ";
+    display-combi = "   ";
     matching = "fuzzy";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";

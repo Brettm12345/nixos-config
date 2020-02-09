@@ -113,10 +113,10 @@
         "homepage": "",
         "owner": "brettm12345",
         "repo": "home-manager",
-        "rev": "e42ae716acbed70eca10706bfcf43b4d865eed04",
-        "sha256": "0d3f861jdfyhzmhy8dgqimw0azbg9xczad6f2jvl9nyh9lyl9x5q",
+        "rev": "686c8d1fa8aa1c593aff895a28a0b2fe3defee76",
+        "sha256": "1wgwmpl4lm0qavjqcw2fxl4zv37amqqpzdrdy7mxf7w5j5hh497a",
         "type": "tarball",
-        "url": "https://github.com/brettm12345/home-manager/archive/e42ae716acbed70eca10706bfcf43b4d865eed04.tar.gz",
+        "url": "https://github.com/brettm12345/home-manager/archive/686c8d1fa8aa1c593aff895a28a0b2fe3defee76.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "juno": {
@@ -318,10 +318,10 @@
         "homepage": "",
         "owner": "brettm12345",
         "repo": "xmonad-config",
-        "rev": "513b35042aedd74d6b91097213180da4603de849",
-        "sha256": "1y1rpj5vg8nmz77q7j3k4z7avj8sd8p0m6mfxq6pji11jxklm2qf",
+        "rev": "35a3af5d2435e3497a41eb8f70782af231dfe4d2",
+        "sha256": "1r1hkj5j5zjj5zqyy11waszv7d0ck4pb6lk6d82xmpccyvwkshsn",
         "type": "tarball",
-        "url": "https://github.com/brettm12345/xmonad-config/archive/513b35042aedd74d6b91097213180da4603de849.tar.gz",
+        "url": "https://github.com/brettm12345/xmonad-config/archive/35a3af5d2435e3497a41eb8f70782af231dfe4d2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

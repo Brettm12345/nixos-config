@@ -7,39 +7,33 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       enableBashIntegration = true;
       enableFishIntegration = false;
       enableZshIntegration = true;
-      settings = with lib;
-        with builtins;
-        let
-          fromKey = key:
-            mapAttrs' (name: value: nameValuePair name { "${key}" = value; });
-          symbols = fromKey "symbol";
-          style = fromKey "style";
-          disable = x:
-            listToAttrs (map (name: nameValuePair name { disabled = true; }) x);
-        in (symbols {
-          aws = " ";
-          conda = " ";
-          git_branch = " ";
-          golang = " ";
-          package = " ";
-          python = " ";
-        } // style { directory = "blue"; } // disable [ "battery" ] // {
-          character.style_success = "purple";
-          haskell = {
-            symbol = " ";
-            style = "purple";
-          };
-          rust = {
-            symbol = " ";
-            style = "208 bold";
-          };
-          git_status = {
-            prefix = "";
-            suffix = " ";
-            style = "yellow";
-          };
-          nix_shell.use_name = true;
-        });
+      disabled = [ "battery" ];
+      symbols = {
+        aws = " ";
+        conda = " ";
+        git_branch = " ";
+        golang = " ";
+        package = " ";
+        python = " ";
+      };
+      styles.directory = "blue";
+      settings = {
+        character.style_success = "purple";
+        nix_shell.use_name = true;
+        haskell = {
+          symbol = " ";
+          style = "purple";
+        };
+        rust = {
+          symbol = " ";
+          style = "208 bold";
+        };
+        git_status = {
+          prefix = "";
+          suffix = " ";
+          style = "yellow";
+        };
+      };
     };
   };
 }
