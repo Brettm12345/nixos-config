@@ -7,7 +7,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       enableBashIntegration = true;
       enableFishIntegration = false;
       enableZshIntegration = true;
-      disabled = [ "battery" "haskell" ];
+      disabled = [ "battery" ];
       symbols = {
         aws = " ";
         conda = " ";
