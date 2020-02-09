@@ -1,8 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ any-nix-shell exa grc ];
-  programs.command-not-found.enable = true;
-  programs.fish = {
-    enable = true;
+  environment = {
+    systemPackages = with pkgs; [ any-nix-shell exa grc ];
     shellAliases = {
       o = "open-project";
       l = "${pkgs.exa}/bin/exa -F --icons --git-ignore -1";
@@ -11,6 +9,10 @@
       la = "${pkgs.exa}/bin/exa -F --icons -l --git -a -h -g";
       git = "${pkgs.gitAndTools.hub}/bin/hub";
     };
+  };
+  programs.command-not-found.enable = true;
+  programs.fish = {
+    enable = true;
     loginShellInit = ''
       set -U fish_greeting
       set -x NPM_DIR "$HOME/.npm/bin"

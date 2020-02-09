@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "04902245b21c644711d476c6630ca4cd516d086b",
-        "sha256": "1k152xhpqq6q35y1sgdr83d05ziv065sx0li0akqy622d1915wpc",
+        "rev": "8b899516101a1af7657aacf15f52fe0e540e4a31",
+        "sha256": "0wq3jdp4g697dxqwykzwrbrphlp1vans0l3b27dc9k6pvnj1w7k9",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/04902245b21c644711d476c6630ca4cd516d086b.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/8b899516101a1af7657aacf15f52fe0e540e4a31.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "UserChrome-Tweaks": {
@@ -77,10 +77,10 @@
         "homepage": "",
         "owner": "hlissner",
         "repo": "doom-emacs",
-        "rev": "456b501aad3d3baecc61576ac94223e0a7c769db",
-        "sha256": "18pm7ywvxx2w3ghqhcr0mlfl8j05pl0rhawaazqfi38dv8x2yjbl",
+        "rev": "af9d8257f18f3eb2c0ee7b751c4f6d69be4a93dd",
+        "sha256": "1ssmdzc0dpjbcnws0481fh05r73bvar4b7gfb5fk4q7xmnnnk2qx",
         "type": "tarball",
-        "url": "https://github.com/hlissner/doom-emacs/archive/456b501aad3d3baecc61576ac94223e0a7c769db.tar.gz",
+        "url": "https://github.com/hlissner/doom-emacs/archive/af9d8257f18f3eb2c0ee7b751c4f6d69be4a93dd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "easy-purescript-nix": {
