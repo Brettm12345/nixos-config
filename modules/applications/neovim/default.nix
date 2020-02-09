@@ -15,13 +15,27 @@ let
         pluginDictionaries = [{
           names = [
             "moonlight"
+            "vim-tmux"
+            "vim-cool"
+            "vim-tmux-navigator"
+            "editorconfig-vim"
+            "tmux-complete-vim"
+            "vim-sleuth"
+            "vim-endwise"
             "direnv-vim"
+            "polyglot"
             "vim-surround"
             "vim-commentary"
             "vim-repeat"
             "vim-gitgutter"
           ];
-        }];
+        }
+        # { names = [ "vim-textobj-comment" "vim-textobj-user" ]; }
+        # {
+        #   names = [ "jdaddy-vim" ];
+        #   ft_regex = "^.json$";
+        # }
+          ];
       };
     };
   });

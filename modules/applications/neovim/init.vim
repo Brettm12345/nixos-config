@@ -1,9 +1,6 @@
 " vim: foldmethod=marker foldlevel=2
-
-" Neo/vim Settings
-" ===
-
 " General {{{
+colorscheme moonlight
 set mouse=nv                 " Disable mouse in command-line mode
 set modeline                 " automatically setting options from modelines
 set report=0                 " Don't report on line changes
