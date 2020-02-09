@@ -11,26 +11,35 @@ let
     configure = {
       customRC = builtins.readFile ./init.vim;
       vam = {
-        # knownPlugins = plugins;
-        pluginDictionaries = [{
-          names = [
-            "vim-tmux"
-            "vim-cool"
-            "vim-tmux-navigator"
-            "editorconfig-vim"
-            "tmux-complete-vim"
-            "vim-sleuth"
-            "vim-endwise"
-            "direnv-vim"
-            "vim-surround"
-            "vim-commentary"
-            "vim-repeat"
-            "vim-gitgutter"
-          ];
-        }];
+        knownPlugins = plugins;
+        pluginDictionaries = [
+          {
+            names = [
+              "moonlight"
+              "vim-tmux"
+              "vim-cool"
+              "vim-tmux-navigator"
+              "editorconfig-vim"
+              "tmux-complete-vim"
+              "vim-sleuth"
+              "vim-endwise"
+              "direnv-vim"
+              "polyglot"
+              "vim-surround"
+              "vim-commentary"
+              "vim-repeat"
+              "vim-gitgutter"
+            ];
+          }
+          {
+            names = [ "jdaddy-vim" ];
+            ft_regex = "^.json$";
+          }
+        ];
       };
     };
   });
+
 in with lib; {
   home-manager.users.brett = {
     home = {

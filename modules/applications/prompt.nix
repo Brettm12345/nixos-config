@@ -19,7 +19,10 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       styles.directory = "blue";
       settings = {
         character.style_success = "purple";
-        nix_shell.use_name = true;
+        nix_shell = {
+          symbol = " ";
+          use_name = true;
+        };
         haskell = {
           symbol = " ";
           style = "purple";
