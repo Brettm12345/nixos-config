@@ -17,7 +17,7 @@
         [greeter]
         show-password-label = false
         [greeter-theme]
-        password-background-color = ${base1}
+        password-background-color = ${base0}
         window-color = ${base2}
         background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
