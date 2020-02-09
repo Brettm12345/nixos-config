@@ -9,11 +9,12 @@
     autoRepeatDelay = 300;
     autoRepeatInterval = 55;
     videoDrivers = [ "nouveau" ];
-    displayManager.sddm = {
-      enable = true;
-      theme = "goodnight";
-      autoLogin = { user = "brett"; };
-    };
+    displayManager.lightdm.enable = true;
+    # displayManager.sddm = {
+    #   enable = true;
+    #   theme = "goodnight";
+    #   autoLogin = { user = "brett"; };
+    # };
     layout = "us";
     libinput = {
       enable = true;
