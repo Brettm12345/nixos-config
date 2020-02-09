@@ -1,7 +1,6 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   rofiConfig = rec {
-
     combi-modi = with lib;
       concatStringsSep "," [
         "window"
@@ -40,7 +39,7 @@ in {
   home-manager.users.brett.programs.rofi = {
     enable = true;
     cycle = true;
-    font = "monospace 18";
+    font = "${config.themes.fonts.monospace} 16";
     fullscreen = false;
     padding = 10;
     lines = 10;
