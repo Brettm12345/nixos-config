@@ -323,5 +323,17 @@
         "type": "tarball",
         "url": "https://github.com/brettm12345/xmonad-config/archive/35a3af5d2435e3497a41eb8f70782af231dfe4d2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "zinit": {
+        "branch": "master",
+        "description": "Flexible Zsh plugin manager with clean fpath, reports, completion management, Turbo mode, annexes, services, packages",
+        "homepage": "https://zdharma.org/zinit/wiki/",
+        "owner": "zdharma",
+        "repo": "zinit",
+        "rev": "3bf2bee132a75a2dc4305b763de468cfd3704731",
+        "sha256": "1h0wpv94sfw80zmgm3wmsbvl7qdl2fzghf6zi9y1p9pbq45g4ixw",
+        "type": "tarball",
+        "url": "https://github.com/zdharma/zinit/archive/3bf2bee132a75a2dc4305b763de468cfd3704731.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

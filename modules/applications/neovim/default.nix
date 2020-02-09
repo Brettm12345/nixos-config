@@ -11,10 +11,9 @@ let
     configure = {
       customRC = builtins.readFile ./init.vim;
       vam = {
-        knownPlugins = plugins;
+        # knownPlugins = plugins;
         pluginDictionaries = [{
           names = [
-            "moonlight"
             "vim-tmux"
             "vim-cool"
             "vim-tmux-navigator"
@@ -23,20 +22,12 @@ let
             "vim-sleuth"
             "vim-endwise"
             "direnv-vim"
-            "polyglot"
             "vim-surround"
             "vim-commentary"
             "vim-repeat"
             "vim-gitgutter"
-            "jdaddy-vim"
           ];
-        }
-        # { names = [ "vim-textobj-comment" "vim-textobj-user" ]; }
-        # {
-        #   names = [ "jdaddy-vim" ];
-        #   ft_regex = "^.json$";
-        # }
-          ];
+        }];
       };
     };
   });

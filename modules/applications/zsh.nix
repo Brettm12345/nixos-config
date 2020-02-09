@@ -4,8 +4,22 @@
   home-manager.users.brett.programs.zsh = {
     enable = true;
     autocd = true;
-    enableAutosuggestions = true;
     enableCompletion = true;
+    initExtraBeforeCompInit = ''
+      source ${pkgs.imports.zinit}/bin/zinit.zsh
+    '';
+    initExtra = ''
+      zinit light zsh-users/zsh-autosuggestions
+      zinit light hlissner/zsh-autopair
+      zinit light ohmyzsh/ohmyzsh
+      zinit ice wait as"completion" lucid
+      zinit snippet OMZ::plugins/gitfast/_git
+
+      zinit ice wait atinit"zpcompinit" lucid
+      zinit light zdharma/fast-syntax-highlighting
+
+      bindkey '^e' autosuggest-accept
+    '';
     plugins = [{
       name = "fast-syntax-highlighting";
       src = pkgs.fetchFromGitHub {

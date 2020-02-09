@@ -1,4 +1,4 @@
-with import <nixos>;
+with import <nixpkgs>;
 vim_configurable.customize {
   name = "vim";
   vimrcConfig = {
