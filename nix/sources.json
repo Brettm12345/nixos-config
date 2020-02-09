@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c8f8da51920515b942a6720b04b1f0d29da41736",
-        "sha256": "0j9xdl63r2s3dxd9z9z4s3i06y8lwqa199psh4s31vz515p1dinv",
+        "rev": "04902245b21c644711d476c6630ca4cd516d086b",
+        "sha256": "1k152xhpqq6q35y1sgdr83d05ziv065sx0li0akqy622d1915wpc",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/c8f8da51920515b942a6720b04b1f0d29da41736.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/04902245b21c644711d476c6630ca4cd516d086b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "UserChrome-Tweaks": {
@@ -89,10 +89,10 @@
         "homepage": "",
         "owner": "justinwoo",
         "repo": "easy-purescript-nix",
-        "rev": "17d40cef56527d3d337f136d2dbc5514f7742470",
-        "sha256": "0smi1rzdgiwjbrbcnfmq4an0snimxsr9x2kwkic4irwnm9c8wa1d",
+        "rev": "d5f44b9389b290874cc3e479741b746067f19a78",
+        "sha256": "0vswaasg2ik7csi40a0ihpxxzp4c803z7mjd096f3lmjrbw4j4av",
         "type": "tarball",
-        "url": "https://github.com/justinwoo/easy-purescript-nix/archive/17d40cef56527d3d337f136d2dbc5514f7742470.tar.gz",
+        "url": "https://github.com/justinwoo/easy-purescript-nix/archive/d5f44b9389b290874cc3e479741b746067f19a78.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "forgit": {
@@ -173,10 +173,10 @@
         "homepage": "",
         "owner": "vlaci",
         "repo": "nix-doom-emacs",
-        "rev": "2c31356b5b68ed4efee378e0f5a0b88657464213",
-        "sha256": "1ada45mqdx26jzw2dvn48izc3c9a3vqn5pg1aj5p0qdsk2c3jicm",
+        "rev": "2a85aac53da6de1c48d9b1b91848c5fa877b81ce",
+        "sha256": "1x58xa02zqnbxq4cv3kr0lmmrwm0hy3kb31kfdfaidayrl8x9pc8",
         "type": "tarball",
-        "url": "https://github.com/vlaci/nix-doom-emacs/archive/2c31356b5b68ed4efee378e0f5a0b88657464213.tar.gz",
+        "url": "https://github.com/vlaci/nix-doom-emacs/archive/2a85aac53da6de1c48d9b1b91848c5fa877b81ce.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixfmt": {
@@ -318,10 +318,10 @@
         "homepage": "",
         "owner": "brettm12345",
         "repo": "xmonad-config",
-        "rev": "bb2b7729d94628e3032d28f87c32acc02129565b",
-        "sha256": "06v6vy96gap085y164pak7nm9ifbb3cxb44b1q5yb8skidsqf1cb",
+        "rev": "513b35042aedd74d6b91097213180da4603de849",
+        "sha256": "1y1rpj5vg8nmz77q7j3k4z7avj8sd8p0m6mfxq6pji11jxklm2qf",
         "type": "tarball",
-        "url": "https://github.com/brettm12345/xmonad-config/archive/bb2b7729d94628e3032d28f87c32acc02129565b.tar.gz",
+        "url": "https://github.com/brettm12345/xmonad-config/archive/513b35042aedd74d6b91097213180da4603de849.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
