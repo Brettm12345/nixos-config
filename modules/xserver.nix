@@ -3,6 +3,8 @@
   # hardware.nvidia.modesetting.enable = true;
   # https://twitter.com/ttuegel/status/997561239659270145
   environment.pathsToLink = [ "/share" ];
+  systemd.services.display-manager.conflicts =
+    [ "getty@tty7.service" "plymouth-quit.service" ];
   services.xserver = {
     enable = true;
     enableTCP = true;
