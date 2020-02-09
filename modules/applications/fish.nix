@@ -27,5 +27,6 @@
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
   };
+  home-manager.users.brett.programs.fish.enable = true;
   users.users.brett.shell = "/run/current-system/sw/bin/fish";
 }
