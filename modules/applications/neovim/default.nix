@@ -9,7 +9,7 @@ let
     } // pkgs.vimPlugins;
   mynvim = (pkgs.neovim.override {
     configure = {
-      # customRC = builtins.readFile ./init.vim;
+      customRC = builtins.readFile ./init.vim;
       # vam = {
       #   knownPlugins = plugins;
       #   pluginDictionaries = [
@@ -30,7 +30,6 @@ let
       #   ];
       # };
       plug.plugins = with plugins; [
-        # vim-addon-nix
         moonlight
         direnv-vim
         vim-vinegar
