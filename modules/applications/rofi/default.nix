@@ -39,7 +39,7 @@ in {
   home-manager.users.brett.programs.rofi = {
     enable = true;
     cycle = true;
-    font = "${config.themes.fonts.monospace} 16";
+    font = "${config.themes.fonts.monospace-alt} 16";
     fullscreen = false;
     padding = 10;
     lines = 10;
