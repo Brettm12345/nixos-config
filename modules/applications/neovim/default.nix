@@ -9,23 +9,42 @@ let
     } // pkgs.vimPlugins;
   mynvim = (pkgs.neovim.override {
     configure = {
+      # customRC = builtins.readFile ./init.vim;
+      # vam = {
+      #   knownPlugins = plugins;
+      #   pluginDictionaries = [
+      #     {
+      #       names = [
+      #         "moonlight"
+      #         "direnv-vim"
+      #         "vim-surround"
+      #         "vim-commentary"
+      #         "vim-repeat"
+      #         "vim-gitgutter"
+      #       ];
+      #     }
+      #     {
+      #       name = "vim-addon-nix";
+      #       ft_regex = "^nix$";
+      #     }
+      #   ];
+      # };
       plug.plugins = with plugins; [
+        # vim-addon-nix
         moonlight
         direnv-vim
+        vim-vinegar
+        polyglot
         vim-surround
         vim-commentary
         vim-repeat
-        vim-gitgutter
       ];
     };
   });
 in with lib; {
   home-manager.users.brett = {
     home = {
-      packages = with pkgs; [
-        mynvim
-        (neovim-qt.override { neovim = mynvim; })
-      ];
+      packages = with pkgs; [ mynvim ];
       sessionVariables.MANPAGER = "${mynvim}/bin/nvim -c 'set ft=man' -";
     };
   };
