@@ -267,16 +267,6 @@ inoremap <special> <expr> <Esc>[200~ <SID>XTermPasteBegin('')
 cnoremap <special> <Esc>[200~ <nop>
 cnoremap <special> <Esc>[201~ <nop>
 
-" Mouse settings
-" ---
-if has('mouse')
-	if has('mouse_sgr')
-		set ttymouse=sgr
-	else
-		set ttymouse=xterm2
-	endif
-endif
-
 " Cursor-shape
 " Credits: https://github.com/wincent/terminus
 " ---
@@ -333,7 +323,8 @@ endif
 let &t_SI = s:start_insert
 if v:version > 704 || v:version == 704 && has('patch687')
 	let &t_SR = s:start_replace
-end
+endif
+
 let &t_EI = s:end_insert
 
 " Tmux specific settings
