@@ -12,17 +12,11 @@
     };
     loginShellInit = ''
       set -U fish_greeting
-      set -x BROWSER "${pkgs.chromium}/bin/chromium"
-      set -x EDITOR "${pkgs.neovim}/bin/nvim"
       set -x NPM_DIR "$HOME/.npm/bin"
       set -U fish_user_paths "$HOME/bin" "$HOME/.cask/bin" "$HOME/.emacs.d/bin" "$NPM_DIR" "$CARGO_HOME/bin" "$HOME/.local/bin"
     '';
-    shellInit = ''
-      direnv hook fish | source
-    '';
     promptInit = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish  | source
-      $HOME/.cargo/bin/starship init fish | source
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
   };
