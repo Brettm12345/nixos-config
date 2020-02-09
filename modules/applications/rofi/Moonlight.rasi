@@ -5,46 +5,107 @@
   background-dark: #191a2a;
   foreground-light: #e4f3fa;
   urgent-color: #ff757f;
-  foreground: #dcebff;
+  foreground: #c8d3f5;
   background-color: var(background);
   background-light: #292e46;
   highlight: bold underline #c7f59b;
   active-color: #baacff;
-  border: #121523ab;
-  background: #212337;
-  background-alt: #1e2132;
+  foreground-dark: #444a73;
+  border: #000000aa;
+  background: #1d1f31;
+  background-alt: #1b1c2d;
   main-color: #82aaff;
 }
 
-entry {
-  padding: 10px 10px 10px 0px;
-  background-color: var(background-alt);
-  border-color: var(border);
-  spacing: 0;
+mainbox {
+  padding: 10px;
+  border-color: rgba (0, 0, 0, 100 %);
   border: 1px;
-  text-color: var(main-color);
+  border-radius: 6px;
 }
 
 inputbar {
-  background-color: var(background-alt);
+  background-color: var(background-dark);
   margin: 4px 0px;
   spacing: 0;
-  children: [ prompt, textbox-prompt-colon, entry, case-indicator ];
+  children: [ prompt, textbox-prompt-colon, entry ];
 }
 
 prompt {
   padding: 10px 20px;
   background-color: var(main-color);
+  border: 2px;
+  border-color: var(border);
   spacing: 0;
   text-color: var(background);
 }
 
 textbox-prompt-colon {
   padding: 10px;
-  background-color: var(background-alt);
-  margin: 0px 0.3em 0px 0px;
+  border: 1px 0px;
+  font: "monospace";
+  color: var(foreground-dark);
+  border-color: var(border);
+  background-color: var(background-dark);
   expand: false;
-  str: "  ";
+  str: " :: ";
+}
+
+entry {
+  padding: 10px 10px 10px 0px;
+  border: 1px 1px 1px 0px;
+  border-color: var(border);
+  background-color: var(background-dark);
+  spacing: 0;
+  text-color: var(main-color);
+}
+
+message {
+  padding: 1px;
+}
+
+textbox {
+  padding: 10px;
+  text-color: var(foreground);
+}
+
+listview {
+  spacing: 2px;
+  fixed-height: 0;
+}
+
+element {
+  padding: 12px;
+  margin: 4px 0px;
+  border: 0px 0px 0px 8px;
+}
+
+element normal {
+  background-color: var(background-dark);
+  border-color: var(background-dark);
+}
+
+element normal active {
+  text-color: var(active-color);
+}
+
+element normal urgent {
+  text-color: var(urgent-color);
+}
+
+element selected {
+  background-color: var(background-alt);
+  highlight: var(highlight);
+  border-color: var(main-color);
+  text-color: var(foreground-light);
+}
+
+element selected active {
+  text-color: var(active-color);
+}
+
+element selected urgent {
+  text-color: var(urgent-color);
 }
 
 button {
@@ -55,64 +116,4 @@ button {
 button selected {
   background-color: var(background-light);
   text-color: var(foreground-light);
-}
-
-case-indicator {
-  spacing: 0;
-  text-color: var(foreground);
-}
-
-element {
-  padding: 12px;
-  margin: 4px 0px;
-  border: 0px 0px 0px 8px;
-}
-
-element normal {
-  background-color: var(background-alt);
-  border-color: var(background-alt);
-}
-
-element normal.active {
-  text-color: var(active-color);
-}
-
-element normal.urgent {
-  text-color: var(urgent-color);
-}
-
-element selected {
-  background-color: var(background-dark);
-  highlight: var(highlight);
-  border-color: var(main-color);
-  text-color: var(foreground-light);
-}
-
-element selected.active {
-  text-color: var(active-color);
-}
-
-element selected.urgent {
-  text-color: var(urgent-color);
-}
-
-listview {
-  spacing: 2px;
-  fixed-height: 0;
-}
-
-mainbox {
-  padding: 10px;
-  border-color: rgba (0, 0, 0, 100 %);
-  border: 1px;
-  border-radius: 6px;
-}
-
-message {
-  padding: 1px;
-}
-
-textbox {
-  padding: 10px;
-  text-color: var(foreground);
 }
