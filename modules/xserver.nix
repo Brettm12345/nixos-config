@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   environment.systemPackages = with pkgs; [ sddm-theme-goodnight ];
   # hardware.nvidia.modesetting.enable = true;
   # https://twitter.com/ttuegel/status/997561239659270145
@@ -17,6 +17,7 @@
         [greeter]
         show-password-label = false
         [greeter-theme]
+        window-color = ${config.themes.colors.normal.blue}
         background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
     };
