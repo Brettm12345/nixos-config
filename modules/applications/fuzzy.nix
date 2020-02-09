@@ -5,7 +5,8 @@ let
     enableBashIntegration = true;
     enableZshIntegration = true;
     defaultCommand =
-      "dash -c 'git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f --ignore-file $XDG_CONFIG_HOME/git/gitignore . $HOME'";
+      "git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f . $HOME/src";
+
     defaultOptions = [
       "--preview='~/bin/fzf-preview {}'"
       "--height=40%"

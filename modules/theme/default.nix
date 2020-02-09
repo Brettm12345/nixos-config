@@ -22,8 +22,7 @@ let
       grayscale = bases background;
       normal = getAttrs colors theme;
       bright = mapAttrs (_: lighten 1.9e-2) normal;
-      base16 = listToAttrs
-        (imap0 basePair ((attrValues normal) ++ (attrValues bright)));
+      base16 = listToAttrs (imap0 basePair ((attrValues normal)));
     };
 in {
   options.themes = import ./options.nix { inherit config lib pkgs; };

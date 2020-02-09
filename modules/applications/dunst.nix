@@ -21,7 +21,7 @@ with builtins; {
       settings = {
         global = {
           geometry = "1000x50-10+10";
-          transparency = 10;
+          transparency = 0;
           font = sansSerif;
           padding = 16;
           horizontal_padding = 16;
