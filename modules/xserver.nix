@@ -13,11 +13,12 @@
     displayManager.lightdm.greeters.mini = {
       enable = true;
       user = "brett";
-      extraConfig = ''
+      extraConfig = with config.themes.colors.grayscale; ''
         [greeter]
         show-password-label = false
         [greeter-theme]
-        window-color = ${config.themes.colors.grayscale.base1}
+        password-background-color = ${base1}
+        window-color = ${base2}
         background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
     };
