@@ -5,7 +5,7 @@
       grub = {
         efiSupport = true;
         gfxmodeEfi = "1280x1024";
-        device = "nodev";
+        device = "/dev/nvme0n1p4";
       };
       systemd-boot = {
         enable = true;
