@@ -17,7 +17,7 @@
         [greeter]
         show-password-label = false
         [greeter-theme]
-        window-color = ${config.themes.colors.normal.blue}
+        window-color = ${config.themes.colors.grayscale.base1}
         background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
     };
