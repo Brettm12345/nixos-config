@@ -16,7 +16,7 @@
         core = {
           fileMode = false;
           quotepath = false;
-          pager = "${pkgs.gitAndTools.delta}/bin/delta";
+          pager = "~/.cargo/bin/delta --theme Material-Theme-Palenight";
           whitespace = "trailing-space";
           patch = "!git --no-pager diff --no-color";
           autocrlf = false;

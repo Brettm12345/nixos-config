@@ -11,7 +11,6 @@ let
       ];
     modi = "combi,keys,${combi-modi}";
     icon-theme = "Papirus";
-    display-projects = " ";
     display-keys = "גּ ";
     display-window = " ";
     display-windowcd = " ";
