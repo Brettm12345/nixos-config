@@ -40,7 +40,7 @@ in {
   home-manager.users.brett.programs.rofi = {
     enable = true;
     cycle = true;
-    font = "JetBrains Mono Nerd Font";
+    font = "monospace 18";
     fullscreen = false;
     padding = 10;
     lines = 10;
