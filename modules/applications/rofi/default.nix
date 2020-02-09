@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let
   rofiConfig = rec {
+
     combi-modi = with lib;
       concatStringsSep "," [
         "window"
@@ -39,7 +40,7 @@ in {
   home-manager.users.brett.programs.rofi = {
     enable = true;
     cycle = true;
-    font = "Proxima Nova 18";
+    font = "JetBrains Mono Nerd Font";
     fullscreen = false;
     padding = 10;
     lines = 10;
