@@ -6,17 +6,14 @@ let
         "window"
         "drun"
         "run"
-        "keys"
-        "pass:${pkgs.rofi-pass}/bin/rofi-pass"
-        "vscode:~/bin/rofi-vscode"
+        "projects:~/bin/rofi-projects"
       ];
-    modi = "combi,${combi-modi}";
+    modi = "combi,keys,${combi-modi}";
     icon-theme = "Papirus";
-    display-keys = "";
-    display-pass = "";
+    display-keys = "גּ ";
     display-window = " ";
     display-windowcd = " ";
-    display-run = "";
+    display-run = "";
     display-ssh = " ";
     display-drun = " ";
     display-combi = " ";
