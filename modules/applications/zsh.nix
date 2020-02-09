@@ -1,5 +1,6 @@
 { pkgs, config, ... }: {
   environment.pathsToLink = [ "/share/zsh" ];
+  programs.zsh.enable = true;
   home-manager.users.brett.programs.zsh = {
     enable = true;
     autocd = true;
