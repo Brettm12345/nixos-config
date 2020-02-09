@@ -28,6 +28,7 @@ let
             "vim-commentary"
             "vim-repeat"
             "vim-gitgutter"
+            "jdaddy-vim"
           ];
         }
         # { names = [ "vim-textobj-comment" "vim-textobj-user" ]; }
