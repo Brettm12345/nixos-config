@@ -17,6 +17,7 @@
     '';
     promptInit = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish  | source
+      $HOME/.cargo/bin/starship init fish | source
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
   };

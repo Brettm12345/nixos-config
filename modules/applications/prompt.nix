@@ -5,7 +5,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
     programs.starship = {
       enable = true;
       enableBashIntegration = true;
-      enableFishIntegration = true;
+      enableFishIntegration = false;
       enableZshIntegration = true;
       settings = with lib;
         with builtins;
