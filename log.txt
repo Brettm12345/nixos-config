@@ -1,0 +1,78 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.003  000.003: --- NVIM STARTING ---
+000.347  000.344: locale set
+000.743  000.396: inits 1
+000.756  000.013: window checked
+000.761  000.005: parsing arguments
+000.866  000.105: expanding arguments
+000.900  000.035: inits 2
+001.386  000.485: init highlight
+001.463  000.077: waiting for UI
+003.374  001.911: done waiting for UI
+003.387  000.013: initialized screen early for UI
+003.415  000.028: --cmd commands
+011.713  007.716  007.716: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/filetype.vim
+013.196  000.050  000.050: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/ftplugin.vim
+014.309  000.037  000.037: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/indent.vim
+016.072  000.232  000.232: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/syntax/syncolor.vim
+016.572  001.195  000.963: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/syntax/synload.vim
+016.598  001.791  000.597: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/syntax/syntax.vim
+018.555  000.872  000.872: sourcing /nix/store/yavk1q9bxsmhli81b7hlijyhlgs088g8-vimplugin-vim-addon-manager-2018-07-27/share/vim-plugins/vim-addon-manager/autoload/vam.vim
+032.880  000.024  000.024: sourcing /nix/store/4mhg944rws9fh7vscf356d1rpy4i350w-vimplugin-vim-tmux-2019-03-22/share/vim-plugins/vim-tmux/ftdetect/tmux.vim
+033.238  000.023  000.023: sourcing /nix/store/wax3bgqi02jv5vyhlizjxwlyk6jxrl10-vimplugin-direnv-vim-2019-04-30/share/vim-plugins/direnv-vim/ftdetect/direnv.vim
+037.844  004.508  004.508: sourcing /nix/store/v9bk0w46y6q2zk6s8hm0a121l5wlmd28-vimplugin-vim-polyglot-2019-12-31/share/vim-plugins/vim-polyglot/ftdetect/polyglot.vim
+039.804  000.205  000.205: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/syntax/syncolor.vim
+041.859  000.162  000.162: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/syntax/syncolor.vim
+042.832  000.133  000.133: sourcing /nix/store/csnrzriq1fklga0izwqsaqnb7njrvdz0-vimplugin-moonlight/share/vim-plugins/moonlight/autoload/moonlight.vim
+055.097  016.902  016.402: sourcing /nix/store/csnrzriq1fklga0izwqsaqnb7njrvdz0-vimplugin-moonlight/share/vim-plugins/moonlight/colors/moonlight.vim
+055.805  052.371  020.448: sourcing /nix/store/x3y98bs218lvn1ancwfclpk8k6dmvn4w-vimrc
+055.810  000.024: sourcing vimrc file(s)
+057.656  000.175  000.175: sourcing /nix/store/4n1m4ijz9wyamnbw8sdymsbxlh3r4rs4-vimplugin-vim-cool-2018-01-11/share/vim-plugins/vim-cool/plugin/cool.vim
+057.864  000.147  000.147: sourcing /nix/store/7kzmnbqamssxjypyyp8ikakmqs5nimnr-vimplugin-vim-tmux-navigator-2019-12-10/share/vim-plugins/vim-tmux-navigator/plugin/tmux_navigator.vim
+058.229  000.305  000.305: sourcing /nix/store/kjf5dk8xqsab645ic2cmr9gdbsd9w54x-vimplugin-editorconfig-vim-2019-12-27/share/vim-plugins/editorconfig-vim/plugin/editorconfig.vim
+058.346  000.048  000.048: sourcing /nix/store/lw7x6n4y8m315invzixv20gp8qrxfmy8-vimplugin-tmux-complete-vim-2019-11-10/share/vim-plugins/tmux-complete-vim/plugin/tmuxcomplete.vim
+058.525  000.122  000.122: sourcing /nix/store/i2nax2ql180f9kxyi5j0fbhgbgrnn4nv-vimplugin-vim-sleuth-2019-11-16/share/vim-plugins/vim-sleuth/plugin/sleuth.vim
+058.821  000.241  000.241: sourcing /nix/store/xdr2513wcndmdf92kiflz4wy52mz8nj9-vimplugin-vim-endwise-2019-11-13/share/vim-plugins/vim-endwise/plugin/endwise.vim
+059.052  000.079  000.079: sourcing /nix/store/wax3bgqi02jv5vyhlizjxwlyk6jxrl10-vimplugin-direnv-vim-2019-04-30/share/vim-plugins/direnv-vim/autoload/direnv.vim
+059.113  000.219  000.140: sourcing /nix/store/wax3bgqi02jv5vyhlizjxwlyk6jxrl10-vimplugin-direnv-vim-2019-04-30/share/vim-plugins/direnv-vim/plugin/direnv.vim
+059.456  000.274  000.274: sourcing /nix/store/1s0nxfkkp38dw68d1l3ijm3y6l7y80iq-vimplugin-vim-surround-2019-11-28/share/vim-plugins/vim-surround/plugin/surround.vim
+059.654  000.105  000.105: sourcing /nix/store/4in7732gy3p04mqfczw0047szj8xqs77-vimplugin-vim-commentary-2019-11-18/share/vim-plugins/vim-commentary/plugin/commentary.vim
+060.097  000.107  000.107: sourcing /nix/store/rf4yhs4zs3s2k8vp8v9mgdqyjfy5klz5-vimplugin-vim-gitgutter-2020-01-15/share/vim-plugins/vim-gitgutter/autoload/gitgutter/utility.vim
+060.532  000.086  000.086: sourcing /nix/store/rf4yhs4zs3s2k8vp8v9mgdqyjfy5klz5-vimplugin-vim-gitgutter-2020-01-15/share/vim-plugins/vim-gitgutter/autoload/gitgutter/highlight.vim
+061.183  001.459  001.265: sourcing /nix/store/rf4yhs4zs3s2k8vp8v9mgdqyjfy5klz5-vimplugin-vim-gitgutter-2020-01-15/share/vim-plugins/vim-gitgutter/plugin/gitgutter.vim
+061.299  000.052  000.052: sourcing /nix/store/6mspbm1h5maa55inx5yck1lajvlz4jyw-vimplugin-jdaddy-vim-2014-02-22/share/vim-plugins/jdaddy-vim/plugin/jdaddy.vim
+062.723  000.158  000.158: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/gzip.vim
+062.746  000.008  000.008: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/health.vim
+062.828  000.065  000.065: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/man.vim
+065.838  000.182  000.182: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+066.609  003.768  003.586: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/matchit.vim
+066.739  000.118  000.118: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/matchparen.vim
+067.124  000.371  000.371: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/netrwPlugin.vim
+067.226  000.007  000.007: sourcing /nix/store/9vkar26l0agwv1hvzlqkwxvanj2rhqbv-neovim-0.4.3/rplugin.vim
+067.396  000.254  000.247: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/rplugin.vim
+067.506  000.091  000.091: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/shada.vim
+067.545  000.020  000.020: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/spellfile.vim
+067.688  000.127  000.127: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/tarPlugin.vim
+067.772  000.063  000.063: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/tohtml.vim
+067.805  000.015  000.015: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/tutor.vim
+067.968  000.147  000.147: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/plugin/zipPlugin.vim
+068.048  003.883: loading plugins
+069.462  001.413: loading packages
+070.611  001.149: loading after plugins
+070.625  000.014: inits 3
+071.477  000.852: reading ShaDa
+071.670  000.193: opening buffers
+071.883  000.118  000.118: sourcing /nix/store/rf4yhs4zs3s2k8vp8v9mgdqyjfy5klz5-vimplugin-vim-gitgutter-2020-01-15/share/vim-plugins/vim-gitgutter/autoload/gitgutter.vim
+072.207  000.419: BufEnter autocommands
+072.209  000.002: editing files in windows
+12405.242  12333.032: VimEnter autocommands
+12405.249  000.007: UIEnter autocommands
+12406.170  000.219  000.219: sourcing /nix/store/id1h353l8ql2lhby04mzglnmng46b5px-neovim-unwrapped-0.4.3/share/nvim/runtime/autoload/provider/clipboard.vim
+12406.178  000.710: before starting main loop
+12406.741  000.564: first screen update
+12406.745  000.003: --- NVIM STARTED ---

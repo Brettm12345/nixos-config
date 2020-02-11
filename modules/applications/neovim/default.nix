@@ -10,33 +10,24 @@ let
   mynvim = (pkgs.neovim.override {
     configure = {
       customRC = builtins.readFile ./init.vim;
-      vam = {
-        knownPlugins = plugins;
-        pluginDictionaries = [
-          {
-            names = [
-              "moonlight"
-              "vim-tmux"
-              "vim-cool"
-              "vim-tmux-navigator"
-              "editorconfig-vim"
-              "tmux-complete-vim"
-              "vim-sleuth"
-              "vim-endwise"
-              "direnv-vim"
-              "polyglot"
-              "vim-surround"
-              "vim-commentary"
-              "vim-repeat"
-              "vim-gitgutter"
-            ];
-          }
-          {
-            names = [ "jdaddy-vim" ];
-            ft_regex = "^.json$";
-          }
-        ];
-      };
+
+      plug.plugins = with plugins; [
+        moonlight
+        vim-tmux
+        vim-cool
+        vim-tmux-navigator
+        editorconfig-vim
+        tmux-complete-vim
+        vim-sleuth
+        vim-endwise
+        direnv-vim
+        polyglot
+        vim-surround
+        vim-commentary
+        vim-repeat
+        vim-gitgutter
+        jdaddy-vim
+      ];
     };
   });
 

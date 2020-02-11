@@ -34,6 +34,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         nix-index
         ffmpeg-full
         gitAndTools.hub
+        mediainfo
         gnupg
         gopass
         grc
