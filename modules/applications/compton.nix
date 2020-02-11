@@ -1,10 +1,9 @@
-{ pkgs, ... }: {
+{ ... }: {
   home-manager.users.brett = {
     services.compton = {
       enable = false;
       backend = "xrender";
       shadow = true;
-      package = pkgs.compton;
       shadowExclude = [
         "_GTK_FRAME_EXTENTS@:c"
         "window_type *= 'menu'"
