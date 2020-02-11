@@ -26,6 +26,7 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05df", MODE:="0666"
   '';
   hardware = {
+    cpu.amd.updateMicrocode = true;
     sane.enable = true;
     logitech = {
       enable = true;

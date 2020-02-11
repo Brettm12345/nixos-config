@@ -20,6 +20,14 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         dfc
         dmenu
         gnome3.dconf
+        fd
+        feh
+        gksu
+        httpie
+        htop
+        jq
+        nix-du
+        nix-index
         ffmpeg-full
         gitAndTools.hub
         gnupg

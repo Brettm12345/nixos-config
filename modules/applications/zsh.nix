@@ -11,6 +11,7 @@
     initExtra = with config.themes.colors.grayscale; ''
       zinit ice wait"0a" compile'{src/*.zsh,src/strategies/*}' lucid
       zinit light zsh-users/zsh-autosuggestions
+      ZSH_AUTOSUGGEST_USE_ASYNC=1
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 
       zinit ice wait"0b" lucid
@@ -19,14 +20,15 @@
       zinit ice wait as"completion" lucid
       zinit snippet OMZ::plugins/gitfast/_git
 
+      zinit ice wait"1b"
       zinit light softmoth/zsh-vim-mode
+
       KEYTIMEOUT=5
       MODE_CURSOR_VICMD="block"
       MODE_CURSOR_VIINS="blinking bar"
       MODE_CURSOR_SEARCH="steady underline"
 
       zinit ice wait atinit"zpcompinit" lucid
-
       zinit light zdharma/fast-syntax-highlighting
 
       bindkey '^e' autosuggest-accept

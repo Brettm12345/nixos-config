@@ -94,6 +94,8 @@ with import ../support.nix { inherit lib pkgs config; }; {
       "nixos-config=/etc/nixos/configuration.nix"
     ];
     trustedUsers = [ "root" "brett" "@wheel" ];
+    autoOptimiseStore = true;
+    gc.automatic = true;
     optimise.automatic = true;
     binaryCaches = [
       "https://cache.nixos.org"

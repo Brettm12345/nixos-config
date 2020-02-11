@@ -6,7 +6,7 @@
       grub = {
         efiSupport = true;
         efiInstallAsRemovable = true;
-        gfxmodeEfi = "autl";
+        gfxmodeEfi = "auto";
         gfxpayloadEfi = "keep";
         device = "nodev";
       };
