@@ -216,3 +216,16 @@ if has('conceal') && v:version >= 703
 endif
 
 " }}}
+
+autocmd VimLeave * set guicursor=a:ver100-iCursor
+autocmd FileType crontab setlocal nobackup nowritebackup
+autocmd FileType yaml.docker-compose setlocal expandtab
+autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit,qfreplace setlocal nofoldenable
+autocmd FileType crontab setlocal nobackup nowritebackup
+autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true
+autocmd FileType yaml.docker-compose setlocal expandtab
+autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit,qfreplace setlocal nofoldenable
+
+

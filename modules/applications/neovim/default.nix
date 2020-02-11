@@ -19,6 +19,7 @@ let
         editorconfig-vim
         tmux-complete-vim
         vim-sleuth
+        vim-vinegar
         vim-endwise
         direnv-vim
         polyglot
