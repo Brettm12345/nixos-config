@@ -26,6 +26,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         gnome3.dconf
         fd
         feh
+        flameshot
         gksu
         httpie
         htop
