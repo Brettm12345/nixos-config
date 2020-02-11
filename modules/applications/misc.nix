@@ -44,6 +44,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         ranger
         stdman
         vscode
+        yank
         unrar
         wget
         xdg_utils
