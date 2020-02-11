@@ -8,9 +8,10 @@
     initExtraBeforeCompInit = ''
       source ~/.zinit/bin/zinit.zsh
     '';
-    initExtra = ''
+    initExtra = with config.themes.colors.grayscale; ''
       zinit ice wait"0a" compile'{src/*.zsh,src/strategies/*}' lucid
       zinit light zsh-users/zsh-autosuggestions
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=${base5}"
 
       zinit ice wait"0b" lucid
       zinit light hlissner/zsh-autopair
