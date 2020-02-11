@@ -14,6 +14,7 @@
       copycat
       yank
       open
+      fzf-tmux-url
       {
         plugin = continuum;
         extraConfig = "set -g @continuum-restore 'on'";

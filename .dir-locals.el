@@ -1,1 +1,1 @@
-((nil .  ((projectile-project-compilation-cmd . "./install"))))
+((nil . ((projectile-project-compilation-cmd . "./install"))))
