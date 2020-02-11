@@ -15,6 +15,7 @@ let
         moonlight
         deoplete-nvim
         vim-tmux
+        vim-fish
         vim-cool
         vim-tmux-navigator
         editorconfig-vim
@@ -22,10 +23,13 @@ let
         vim-sleuth
         vim-vinegar
         vim-endwise
+        vim-nix
         direnv-vim
         polyglot
         vim-surround
         vim-commentary
+        fzf-vim
+        nvim-yarp
         vim-repeat
         vim-gitgutter
         jdaddy-vim
