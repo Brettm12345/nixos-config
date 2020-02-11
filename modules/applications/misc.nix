@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
 with import ../../support.nix { inherit lib config pkgs; }; {
   systemd.coredump.enable = true;
-  environment.sessionVariables = with config.defaultApplications.editor; {
-    EDITOR = cmd;
-    VISUAL = cmd;
-    NIX_AUTO_RUN = "1";
-  };
+  environment.sessionVariables.NIX_AUTO_RUN = "1";
   services.atd.enable = true;
   home-manager.users.brett = {
     home = {

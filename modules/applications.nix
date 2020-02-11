@@ -10,10 +10,6 @@ with import ../support.nix { inherit lib config pkgs; }; {
         cmd = "${kitty}/bin/kitty";
         desktop = "kitty";
       };
-      editor = {
-        cmd = "${neovim}/bin/nvim";
-        desktop = "code";
-      };
       browser = {
         cmd = "${chromium}/bin/chromium";
         desktop = "chromium";
@@ -62,7 +58,6 @@ with import ../support.nix { inherit lib config pkgs; }; {
             "application/vnd.oasis.opendocument.text" = text_processor;
             "text/csv" = spreadsheet;
             "application/vnd.oasis.opendocument.spreadsheet" = spreadsheet;
-            "text/plain" = editor;
           };
         in genIni {
           "Default Applications" = apps;

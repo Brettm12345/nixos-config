@@ -41,7 +41,12 @@ in with lib; {
   home-manager.users.brett = {
     home = {
       packages = with pkgs; [ mynvim ];
-      sessionVariables.MANPAGER = "${mynvim}/bin/nvim -c 'set ft=man' -";
+      sessionVariables = let cmd = "${mynvim}/bin/nvim";
+      in {
+        EDITOR = cmd;
+        VISUAL = cmd;
+        MANPAGER = "${cmd} -c 'set ft=man' -";
+      };
     };
   };
 }
