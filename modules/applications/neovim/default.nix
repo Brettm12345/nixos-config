@@ -13,6 +13,7 @@ let
 
       plug.plugins = with plugins; [
         moonlight
+        deoplete-nvim
         vim-tmux
         vim-cool
         vim-tmux-navigator

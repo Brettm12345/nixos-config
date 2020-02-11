@@ -167,8 +167,6 @@ set noshowmode          " Don't show mode in cmd window
 set shortmess=aoOTI     " Shorten messages and don't show intro
 set scrolloff=2         " Keep at least 2 lines above/below
 set sidescrolloff=5     " Keep at least 5 lines left/right
-set nonumber            " Don't show line numbers
-set noruler             " Disable default status ruler
 set list                " Show hidden characters
 
 set showtabline=2       " Always show the tabs line
@@ -210,15 +208,11 @@ if has('patch-7.4.1570')
 	set shortmess+=F
 endif
 
-if has('conceal') && v:version >= 703
-	" For snippet_complete marker
-	set conceallevel=2 concealcursor=niv
-endif
-
 " }}}
 
 autocmd VimLeave * set guicursor=a:ver100-iCursor
 autocmd FileType crontab setlocal nobackup nowritebackup
+
 autocmd FileType yaml.docker-compose setlocal expandtab
 autocmd FileType gitcommit setlocal spell
 autocmd FileType gitcommit,qfreplace setlocal nofoldenable
@@ -228,4 +222,4 @@ autocmd FileType yaml.docker-compose setlocal expandtab
 autocmd FileType gitcommit setlocal spell
 autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
-
+let g:deoplete#enable_at_startup = 1
