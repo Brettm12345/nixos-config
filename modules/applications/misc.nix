@@ -11,6 +11,8 @@ with import ../../support.nix { inherit lib config pkgs; }; {
     home = {
       activation."mimeapps-remove" =
         afterLinkGen "rm -f /home/brett/.config/mimeapps.list";
+      activation."user-dirs-remove" =
+        afterLinkGen "rm -f /home/brett/.config/user-dirs.dirs";
       packages = with pkgs; [
         chromium
         clang
@@ -20,7 +22,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         curl
         dfc
         entr
-        lf
         dmenu
         gnome3.dconf
         fd
