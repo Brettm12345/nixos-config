@@ -16,6 +16,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         clang
         clang-tools
         bibata-cursors
+        catimg
         curl
         dfc
         dmenu
