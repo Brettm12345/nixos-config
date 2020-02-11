@@ -24,8 +24,8 @@
       $HOME/.cargo/bin/starship init fish | source
       source ${pkgs.imports.forgit}/forgit.plugin.fish
     '';
-    interactiveShellInit = with config.themes.colors.grayscale; ''
-      set fish_color_autosuggestion "${base5}"
+    interactiveShellInit = ''
+      set fish_color_autosuggestion "#5b6395"
       set fish_color_cancel -r
       set fish_color_command "#77e0c6" --bold
       set fish_color_comment "#7e8eda" --italics

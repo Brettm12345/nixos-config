@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh.enable = true;
   home-manager.users.brett.programs.zsh = {
@@ -8,7 +8,7 @@
     initExtraBeforeCompInit = ''
       source ~/.zinit/bin/zinit.zsh
     '';
-    initExtra = with config.themes.colors.grayscale; ''
+    initExtra = ''
       zinit ice wait"0a" compile'{src/*.zsh,src/strategies/*}' lucid
       zinit light zsh-users/zsh-autosuggestions
       ZSH_AUTOSUGGEST_USE_ASYNC=1
