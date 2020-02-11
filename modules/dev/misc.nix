@@ -6,6 +6,7 @@
     python3
     gnumake
     pkgconfig
+    shfmt
     shellcheck
   ];
 }
