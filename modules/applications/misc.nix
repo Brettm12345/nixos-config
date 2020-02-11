@@ -19,6 +19,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         catimg
         curl
         dfc
+        lf
         dmenu
         gnome3.dconf
         fd
