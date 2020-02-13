@@ -10,6 +10,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       activation."user-dirs-remove" =
         afterLinkGen "rm -f /home/brett/.config/user-dirs.dirs";
       packages = with pkgs; [
+        buku
         chromium
         clang
         clang-tools
@@ -30,6 +31,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         nix-du
         nix-index
         ffmpeg-full
+        haskellPackages.greenclip
         gitAndTools.hub
         mediainfo
         gnupg

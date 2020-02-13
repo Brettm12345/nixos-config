@@ -4,6 +4,7 @@
     cargo-outdated
     cargo-release
     cargo-tree
+    cargo-watch
     racer
     rustup
   ];
