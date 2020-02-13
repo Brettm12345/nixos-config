@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [ any-nix-shell exa grc ];
     shellAliases = {
