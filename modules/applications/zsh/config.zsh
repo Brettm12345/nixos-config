@@ -42,11 +42,7 @@ zinit light hlissner/zsh-autopair
 zinit ice wait"1b" lucid
 zinit light softmoth/zsh-vim-mode
 
-zinit wait"2" lucid as"null" for \
- sbin atclone"./build.zsh" atpull"%atclone" \
-    molovo/zunit \
- sbin"color.zsh -> color" \
-    molovo/color
+zinit wait"2" lucid for wfxr/forgit
 
 zinit ice from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
