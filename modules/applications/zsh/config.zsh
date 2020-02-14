@@ -66,6 +66,8 @@ zinit wait"0a" light-mode lucid for \
   sei40kr/zsh-fast-alias-tips \
   compile'{src/*.zsh,src/strategies/*}' atload'_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions \
+  blockf \
+    zsh-users/zsh-completions
   atload"zpcdreplay" \
     BuonOmo/yarn-completion
 
@@ -104,9 +106,9 @@ zinit light-mode wait"1" lucid as"completion" for \
     OMZ::plugins/gatsby/_gatsby
 
 zinit light-mode lucid for \
-  trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" atinit"zpcdreplay" \
+  trigger-load'!gh' onclone"cp ./zsh/gh/* ./" blockf \
     brettm12345/gh \
-  trigger-load'!x;!extract' atinit"zpcdreplay" \
+  trigger-load'!x;!extract' blockf \
     OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
     wfxr/forgit \
