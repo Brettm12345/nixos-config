@@ -116,6 +116,6 @@ MODE_CURSOR_VICMD="block"
 MODE_CURSOR_VIINS="blinking bar"
 MODE_CURSOR_SEARCH="steady underline"
 
-export KEYTIMEOUT=1
+KEYTIMEOUT=1
 
 bindkey '^e' autosuggest-accept
