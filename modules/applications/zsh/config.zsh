@@ -7,6 +7,13 @@ function prepend-sudo() {
   LBUFFER="sudo $LBUFFER"
 }
 
+function rebuild {
+  dir=$(pwd)
+  cd $HOME/src/github.com/brettm12345/nixos-config
+  ./install
+  cd $dir
+}
+
 zle -N prepend-sudo
 
 bindkey ^s prepend-sudo
@@ -35,11 +42,6 @@ zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1 atload'!source ~/.p10k.zsh'
 zinit light romkatv/powerlevel10k
-
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
 
 zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastle/pmy
 
