@@ -70,7 +70,7 @@ zinit light zimfw/archive
 zinit ice wait"1b" lucid
 zinit light hlissner/zsh-autopair
 
-zinit ice wait"1b" atinit"KEYTIMEOUT=1" lucid
+zinit ice wait"1b" atload"KEYTIMEOUT=1" lucid
 zinit light softmoth/zsh-vim-mode
 
 zinit wait"2" lucid for wfxr/forgit
