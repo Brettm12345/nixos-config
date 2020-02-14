@@ -8,6 +8,9 @@
     initExtraBeforeCompInit = ''
       source ~/.zinit/bin/zinit.zsh
     '';
-    initExtra = (builtins.readFile ./config.zsh);
+    initExtra = with builtins; ''
+      ${readFile ./completion.zsh}
+      ${readFile ./config.zsh}
+    '';
   };
 }

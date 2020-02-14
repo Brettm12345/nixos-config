@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-source $0:a:h/completion.zsh
-
 zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
 zinit light zsh-users/zsh-autosuggestions
 
