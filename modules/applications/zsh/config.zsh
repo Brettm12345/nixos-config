@@ -63,7 +63,7 @@ select-word-style shell
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-zinit ice wait"0a" light-mode lucid for \
+zinit wait"0a" light-mode lucid for \
     sei40kr/zsh-fast-alias-tips \
     compile'{src/*.zsh,src/strategies/*}' atload'_zsh_autosuggest_start' \
         zsh-users/zsh-autosuggestions \
@@ -71,7 +71,7 @@ zinit ice wait"0a" light-mode lucid for \
         BuonOmo/yarn-completion
 
 
-zinit ice wait"0b" light-mode lucid for \
+zinit wait"0b" lucid for \
     pick"autopair.zsh" nocompletions \
         hlissner/zsh-autopair \
     atload"KEYTIMEOUT=20" \
