@@ -77,7 +77,7 @@ zinit ice wait"0b" light-mode lucid for \
     atload"KEYTIMEOUT=20" \
         softmoth/zsh-vim-mode \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
-        zinit light zdharma/fast-syntax-highlighting \
+        zdharma/fast-syntax-highlighting \
     atload"bind_substring_search" \
         zsh-users/zsh-history-substring-search
 
@@ -100,7 +100,7 @@ zinit light-mode wait"0c" as"program" lucid for \
     make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
         relastle/pmy \
     from'gh-r' \
-        zinit light sei40kr/fast-alias-tips-bin
+        sei40kr/fast-alias-tips-bin
 
 zt light-mode for \
     trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" \
