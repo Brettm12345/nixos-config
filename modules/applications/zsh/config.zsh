@@ -122,12 +122,12 @@ zinit light-mode wait"0c" for \
     zinit-zsh/z-a-rust
 
 zinit as"null" wait"0c" lucid for \
-    sbin Fakerr/git-recall \
-    sbin paulirish/git-open \
-    sbin paulirish/git-recent \
-    sbin davidosomething/git-my \
-    sbin arzzen/git-quick-stats \
-    sbin iwata/git-now \
+    sbin"git-recall" Fakerr/git-recall \
+    sbin"git-open" paulirish/git-open \
+    sbin"git-recent" paulirish/git-recent \
+    sbin"git-my" davidosomething/git-my \
+    sbin"git-quick-stats" arzzen/git-quick-stats \
+    sbin"git-now" iwata/git-now \
     make"PREFIX=$ZPFX" tj/git-extras \
     sbin"git-url;git-guclone" make"GITURL_NO_CGITURL=1" zdharma/git-url
 
