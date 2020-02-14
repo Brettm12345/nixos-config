@@ -13,8 +13,7 @@ zle -N prepend-sudo
 bindkey ^s prepend-sudo
 
 function open-project {
-  selection=$(find-project)
-  test -n $selection && cd $selection || exit 1
+  cd $(find-project)
 }
 zle -N open-project
 bindkey ^o open-project
