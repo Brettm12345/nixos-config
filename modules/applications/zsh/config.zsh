@@ -29,6 +29,10 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit ice wait atinit"zpcompinit" lucid
 zinit light zdharma/fast-syntax-highlighting
 
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+  atpull'%atclone' pick"direnv" src"zhook.zsh" for direnv/direnv
+
+export RPROMPT=""
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 
