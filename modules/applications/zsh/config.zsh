@@ -3,7 +3,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 setopt autocd correct rcquotes notify globdots autoresume
 
 export LESS="-FX"
@@ -76,7 +75,7 @@ zinit wait"0b" light-mode lucid for \
         hlissner/zsh-autopair \
     atload"KEYTIMEOUT=20" \
         softmoth/zsh-vim-mode \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
         zdharma/fast-syntax-highlighting \
     atload"bind_substring_search" \
         zsh-users/zsh-history-substring-search
@@ -105,7 +104,7 @@ zinit light-mode wait"0c" as"program" lucid for \
 zt light-mode lucid for \
     trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" \
         brettm12345/gh
-    trigger-load'!x' \
+    trigger-load'!x;!extract' \
         OMZ::plugins/extract/extract.plugin.zsh \
     trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
         wfxr/forgit \
