@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 function prepend-sudo() {
   LBUFFER="sudo $LBUFFER"
@@ -30,22 +33,27 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit ice wait atinit"zpcompinit" lucid
 zinit light zdharma/fast-syntax-highlighting
 
-zinit ice depth=1
+zinit ice depth=1 atload'!source ~/.p10k.zsh'
 zinit light romkatv/powerlevel10k
 
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-  atpull'%atclone' pick"direnv" src"zhook.zsh" for direnv/direnv
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zinit light trapd00r/LS_COLORS
 
-export RPROMPT=""
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
+zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastle/pmy
 
-export KEYTIMEOUT=1
-export MODE_CURSOR_VICMD="block"
-export MODE_CURSOR_VIINS="blinking bar"
-export MODE_CURSOR_SEARCH="steady underline"
+zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
+  atpull"%atclone" pick"direnv" src"zhook.zsh" for direnv/direnv
+
+RPROMPT=""
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
+KEYTIMEOUT=1
+MODE_CURSOR_VICMD="block"
+MODE_CURSOR_VIINS="blinking bar"
+MODE_CURSOR_SEARCH="steady underline"
 
 bindkey '^e' autosuggest-accept
-
-eval "$(pmy init)"
-eval "$(dircolors)"
