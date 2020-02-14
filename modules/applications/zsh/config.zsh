@@ -36,8 +36,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit as"program" src"./zsh/gh"
 zinit light brettm12345/gh
 
-zinit ice atload"zpcdreplay" atclone'./zplug.zsh'
-zinit light g-plane/zsh-yarn-autocompletions
+zinit ice atload"zpcdreplay"
+zinit light BuonOmo/yarn-completion
 
 # zinit ice pick"async.zsh" src"pure.zsh"
 # zinit light sindresorhus/pure

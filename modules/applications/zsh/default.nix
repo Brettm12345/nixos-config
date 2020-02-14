@@ -9,9 +9,8 @@
       source ~/.zinit/bin/zinit.zsh
     '';
     initExtra = with builtins; ''
-      echo test
-        ${readFile ./config.zsh}
-        ${readFile ./completion.zsh}
+      ${readFile ./config.zsh}
+      ${readFile ./completion.zsh}
     '';
   };
   users.users.brett.shell = "/run/current-system/sw/bin/zsh";
