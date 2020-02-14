@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source ./completion.zsh
+source $(pwd)/completion.zsh
 
 zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
 zinit light zsh-users/zsh-autosuggestions
@@ -8,7 +8,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
-zinit ice wait"1b" as:"program" lucid
+zinit ice wait"1b" as"program" lucid
 zinit light zimfw/archive
 
 zinit ice wait"1b" lucid
