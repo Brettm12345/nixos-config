@@ -12,8 +12,14 @@ function prepend-sudo {
 zle -N prepend-sudo
 bindkey ^s prepend-sudo
 
+function copy {
+  print -rn -- $CUTBUFFER | xsel -i -p;
+}
+zle -N copy
+bindkey ^c copy
+
 function paste {
-  xsel -b
+  RBUFFER=$(xsel -o -p </dev/null)$RBUFFER
 }
 zle -N paste
 bindkey ^v paste
