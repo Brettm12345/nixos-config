@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 setopt auto_list
 setopt auto_menu
-setopt always_to_end
 
 # caching
 zstyle ':completion:*' accept-exact '*(N)'

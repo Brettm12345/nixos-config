@@ -3,6 +3,7 @@
 function prepend-sudo() {
   LBUFFER="sudo $LBUFFER"
 }
+
 zle -N prepend-sudo
 
 bindkey ^s prepend-sudo
@@ -43,4 +44,5 @@ export MODE_CURSOR_SEARCH="steady underline"
 
 bindkey '^e' autosuggest-accept
 
+eval "$(pmy init)"
 eval "$(dircolors)"
