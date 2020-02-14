@@ -121,16 +121,6 @@ zinit light-mode wait"0c" for \
     zinit-zsh/z-a-bin-gem-node \
     zinit-zsh/z-a-rust
 
-zinit as"null" wait"0c" lucid for \
-    sbin"git-recall" Fakerr/git-recall \
-    sbin"git-open" paulirish/git-open \
-    sbin"git-recent" paulirish/git-recent \
-    sbin"git-my" davidosomething/git-my \
-    sbin"git-quick-stats" arzzen/git-quick-stats \
-    sbin"git-now" iwata/git-now \
-    make"PREFIX=$ZPFX" tj/git-extras \
-    sbin"git-url;git-guclone" make"GITURL_NO_CGITURL=1" zdharma/git-url
-
 typeset -U PATH path
 path=("$HOME/bin" "$path[@]")
 export PATH
