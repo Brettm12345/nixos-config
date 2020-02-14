@@ -6,6 +6,8 @@ fi
 
 setopt autocd correct rcquotes notify globdots autoresume
 
+export LESS="-FX"
+
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
@@ -63,8 +65,9 @@ select-word-style shell
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
-zinit light zsh-users/zsh-autosuggestions
+zinit ice wait"0a" light-mode lucid for \
+  compile'{src/*.zsh,src/strategies/*}' atload'_zsh_autosuggest_start' \
+      zsh-users/zsh-autosuggestions
 
 zinit as"program" src"./zsh/gh/gh.plugin.zsh"
 zinit light brettm12345/gh
@@ -72,7 +75,7 @@ zinit light brettm12345/gh
 zinit ice atload"zpcdreplay"
 zinit light BuonOmo/yarn-completion
 
-zinit lucid wait for zsh-users/zsh-history-substring-search
+zinit ice wait "0b" light-mode lucid wait for zsh-users/zsh-history-substring-search
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
 zle -N history-substring-search-up
@@ -81,6 +84,7 @@ bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
 
 zinit ice wait"1b" as"program" lucid
 zinit light zimfw/archive
