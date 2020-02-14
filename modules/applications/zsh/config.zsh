@@ -30,6 +30,9 @@ zinit light sei40kr/zsh-fast-alias-tips
 zinit ice wait atinit"zpcompinit" lucid
 zinit light zdharma/fast-syntax-highlighting
 
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+
 zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
   atpull'%atclone' pick"direnv" src"zhook.zsh" for direnv/direnv
 
