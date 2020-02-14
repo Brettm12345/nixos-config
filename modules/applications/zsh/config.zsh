@@ -13,8 +13,18 @@ zle -N prepend-sudo
 bindkey ^s prepend-sudo
 
 function open-project {
-  cd $(find-project)
+  selection=$(find-project)
+  if [[ -z "$selection" ]]; then
+    zle redisplay
+    return 0
+  fi
+  cd "$selection"
+  unset selection
+  local ret=$?
+  zle fzf-redraw-prompt
+  return $ret
 }
+
 zle -N open-project
 bindkey ^o open-project
 
