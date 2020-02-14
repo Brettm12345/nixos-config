@@ -9,6 +9,14 @@ setopt autocd correct rcquotes notify globdots autoresume
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
+zle -N prepend-sudo
+bindkey ^s prepend-sudo
+
+function open-project {
+  selection=$(find-project)
+  test -n $selection && cd $selection || exit 1
+}
+bindkey ^o open-project
 
 function rebuild {
   dir=$(pwd)
@@ -17,9 +25,6 @@ function rebuild {
   cd $dir
 }
 
-zle -N prepend-sudo
-
-bindkey ^s prepend-sudo
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
