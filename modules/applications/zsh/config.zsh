@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-function prepend-sudo() {
+function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
 
@@ -33,7 +33,7 @@ zinit light hlissner/zsh-autopair
 zinit ice wait"1b" lucid
 zinit light softmoth/zsh-vim-mode
 
-zinit ice from'gh-r' as'program'
+zinit ice wait"1b" from"gh-r" as"program" lucid
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
 
@@ -42,6 +42,9 @@ zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1 atload'!source ~/.p10k.zsh'
 zinit light romkatv/powerlevel10k
+
+zinit as"program" pick"./zsh/gh/gh.plugin.zsh" atload 'compdef ./zsh/gh/_gh gh'
+zinit light brettm12345/gh
 
 zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastle/pmy
 
