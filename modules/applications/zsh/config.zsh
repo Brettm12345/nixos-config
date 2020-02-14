@@ -12,6 +12,12 @@ function prepend-sudo {
 zle -N prepend-sudo
 bindkey ^s prepend-sudo
 
+function paste {
+  xsel -b
+}
+zle -N paste
+bindkey ^v paste
+
 function open-project {
   selection=$(find-project)
   if [[ -z "$selection" ]]; then
