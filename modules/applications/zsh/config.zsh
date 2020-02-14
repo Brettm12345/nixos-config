@@ -70,7 +70,7 @@ zinit light zimfw/archive
 zinit ice wait"1b" lucid
 zinit light hlissner/zsh-autopair
 
-zinit ice wait"1b" lucid
+zinit ice wait"1b" atinit"KEYTIMEOUT=1" lucid
 zinit light softmoth/zsh-vim-mode
 
 zinit wait"2" lucid for wfxr/forgit
@@ -115,7 +115,5 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 MODE_CURSOR_VICMD="block"
 MODE_CURSOR_VIINS="blinking bar"
 MODE_CURSOR_SEARCH="steady underline"
-
-KEYTIMEOUT=1
 
 bindkey '^e' autosuggest-accept
