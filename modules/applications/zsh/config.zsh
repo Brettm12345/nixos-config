@@ -16,6 +16,7 @@ function open-project {
   selection=$(find-project)
   test -n $selection && cd $selection || exit 1
 }
+zle -N open-project
 bindkey ^o open-project
 
 function rebuild {
