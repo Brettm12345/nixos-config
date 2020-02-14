@@ -6,6 +6,7 @@ fi
 
 setopt autocd correct rcquotes notify globdots autoresume
 
+autoload -U edit-command-line, zle
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
@@ -25,7 +26,7 @@ zle -N paste
 bindkey ^v paste
 
 function open-project {
-  selection=$(find-project)
+  selection=$($HOME/bin/find-project)
   if [[ -z "$selection" ]]; then
     zle redisplay
     return 0
@@ -42,7 +43,6 @@ bindkey ^o open-project
 zle -N edit-command-line
 bindkey -M vicmd "^V" edit-command-line
 bindkey '^e^e' edit-command-line
-autoload -U edit-command-line
 
 
 bindkey jk vi-cmd-mode
