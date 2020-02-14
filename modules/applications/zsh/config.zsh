@@ -60,7 +60,7 @@ zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastl
 zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
   atpull"%atclone" pick"direnv" src"zhook.zsh" for direnv/direnv
 
-zinit ice wait atinit"zpcompinit; zpcreplay" lucid
+zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
 
 RPROMPT=""
