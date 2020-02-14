@@ -20,7 +20,7 @@
     ./misc.nix
     ./ssh.nix
     # ./termite.nix
-    ./zsh.nix
+    ./zsh
     ./xresources.nix
   ];
 }
