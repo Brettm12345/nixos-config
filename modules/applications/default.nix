@@ -4,6 +4,7 @@
     ./git
     ./rofi
     ./rtorrent
+    ./zsh
     ./tmux
     ./neovim
     ./bat.nix
@@ -20,7 +21,6 @@
     ./misc.nix
     ./ssh.nix
     # ./termite.nix
-    ./zsh
     ./xresources.nix
   ];
 }
