@@ -33,6 +33,10 @@ zle -N self-insert url-quote-magic
 zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
 zinit light zsh-users/zsh-autosuggestions
 
+
+zinit ice atload"zpcdreplay" atclone'./zplug.zsh'
+zinit light g-plane/zsh-yarn-autocompletions
+
 # zinit ice pick"async.zsh" src"pure.zsh"
 # zinit light sindresorhus/pure
 
