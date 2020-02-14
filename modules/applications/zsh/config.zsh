@@ -28,6 +28,8 @@ function open-project {
 zle -N open-project
 bindkey ^o open-project
 
+bindkey jk vi-cmd-mode
+
 function rebuild {
   dir=$(pwd)
   cd $HOME/src/github.com/brettm12345/nixos-config
@@ -70,7 +72,7 @@ zinit light zimfw/archive
 zinit ice wait"1b" lucid
 zinit light hlissner/zsh-autopair
 
-zinit ice wait"1b" atload"KEYTIMEOUT=1" lucid
+zinit ice wait"1b" atload"KEYTIMEOUT=20" lucid
 zinit light softmoth/zsh-vim-mode
 
 zinit wait"2" lucid for wfxr/forgit
