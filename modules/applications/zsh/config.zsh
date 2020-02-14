@@ -126,6 +126,9 @@ zinit as"null" wait"3" lucid for \
     make"PREFIX=$ZPFX" tj/git-extras \
     sbin"git-url;git-guclone" make"GITURL_NO_CGITURL=1" zdharma/git-url
 
+typeset -U PATH path
+path=("$HOME/bin" "$path[@]")
+export PATH
 RPROMPT=""
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
