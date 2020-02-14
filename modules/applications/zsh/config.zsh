@@ -103,7 +103,7 @@ zinit light-mode wait"0c" as"program" lucid for \
 
 zinit light-mode lucid for \
     trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" \
-        brettm12345/gh
+        brettm12345/gh \
     trigger-load'!x;!extract' \
         OMZ::plugins/extract/extract.plugin.zsh \
     trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
