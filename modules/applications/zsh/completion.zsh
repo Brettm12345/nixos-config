@@ -5,7 +5,6 @@ setopt auto_menu
 # caching
 zstyle ':completion:*' accept-exact '*(N)'
 
-
 ## completion system
 zstyle ':completion:*'                              use-cache yes
 zstyle ':completion::complete:*'                    cache-path $HOME/var/zsh
@@ -29,6 +28,8 @@ zstyle -e ':completion:*'                           special-dirs '[[ $PREFIX = (
 zstyle ':completion:*:messages'                     format '%d'                         #
 zstyle ':completion:*:options'                      auto-description '%d'               #
 zstyle ':completion:*:options'                      description 'yes'                   # describe options in full
+zstyle ":completion:*:descriptions"                 format "%B%d%b"
+zstyle ':completion:*:*:*:default'                  menu yes select search
 zstyle ':completion:*:processes'                    command 'ps -au$USER'               # on processes completion complete all user processes
 zstyle ':completion:*:*:-subscript-:*'              tag-order indexes parameters        # offer indexes before parameters in subscripts
 zstyle ':completion:*'                              verbose true                        # provide verbose completion information
@@ -45,7 +46,7 @@ zstyle ':completion:*:man:*'                        menu yes select
 
 
 # Kill
-zstyle ':completion:*:*:*:*:processes'              command 'ps -u $LOGNAME -o pid,user,command -w'
+zstyle ':completion:*:*:*:*:processes'              command 'ps -u $LOGNAME -o pid,user,command -w,nice'
 zstyle ':completion:*:*:kill:*:processes'           list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;36=0=01'
 zstyle ':completion:*:*:kill:*'                     menu yes select
 zstyle ':completion:*:*:kill:*'                     force-list always
@@ -79,11 +80,6 @@ _force_rehash() {
 
 hosts=(`hostname` "$_ssh_hosts[@]" "$_etc_hosts[@]" localhost)
 zstyle ':completion:*:hosts' hosts $hosts
-
-# pip
-if type pip &>/dev/null; then
-    eval "`pip completion --zsh`"
-fi
 
 # Complete words from tmux pane(s) {{{1
 # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
