@@ -71,7 +71,7 @@ zinit wait"0a" light-mode lucid for \
         BuonOmo/yarn-completion
 
 
-zinit wait"0b" lucid for \
+zinit wait"0b" light-mode lucid for \
     pick"autopair.zsh" nocompletions \
         hlissner/zsh-autopair \
     atload"KEYTIMEOUT=20" \
@@ -102,7 +102,7 @@ zinit light-mode wait"0c" as"program" lucid for \
     from'gh-r' \
         sei40kr/fast-alias-tips-bin
 
-zt light-mode for \
+zt light-mode lucid for \
     trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" \
         brettm12345/gh
     trigger-load'!x' \
