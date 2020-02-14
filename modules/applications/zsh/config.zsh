@@ -6,10 +6,6 @@ function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
 
-zle -N prepend-sudo
-
-bindkey ^s prepend-sudo
-
 function rebuild {
   dir=$(pwd)
   cd $HOME/src/github.com/brettm12345/nixos-config
@@ -17,8 +13,24 @@ function rebuild {
   cd $dir
 }
 
+zle -N prepend-sudo
+
+bindkey ^s prepend-sudo
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
+autoload -Uz select-word-style
+select-word-style shell
+
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
 zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
 zinit light zsh-users/zsh-autosuggestions
+
+# zinit ice pick"async.zsh" src"pure.zsh"
+# zinit light sindresorhus/pure
 
 zinit ice wait"1b" as"program" lucid
 zinit light zimfw/archive
@@ -29,23 +41,26 @@ zinit light hlissner/zsh-autopair
 zinit ice wait"1b" lucid
 zinit light softmoth/zsh-vim-mode
 
-zinit ice wait"1b" from"gh-r" as"program" lucid
+zinit wait"2" lucid as"null" for \
+ sbin atclone"./build.zsh" atpull"%atclone" \
+    molovo/zunit \
+ sbin"color.zsh -> color" \
+    molovo/color
+
+zinit ice from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
 
-zinit ice wait atinit"zpcompinit" lucid
-zinit light zdharma/fast-syntax-highlighting
-
 zinit ice depth=1 atload'!source ~/.p10k.zsh'
 zinit light romkatv/powerlevel10k
-
-zinit as"program" src"./zsh/gh"
-zinit light brettm12345/gh
 
 zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastle/pmy
 
 zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
   atpull"%atclone" pick"direnv" src"zhook.zsh" for direnv/direnv
+
+zinit ice wait atinit"zpcompinit; zpcreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
 
 RPROMPT=""
 ZSH_AUTOSUGGEST_USE_ASYNC=1

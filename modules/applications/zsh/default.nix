@@ -14,4 +14,5 @@
         ${readFile ./completion.zsh}
     '';
   };
+  users.users.brett.shell = "/run/current-system/sw/bin/zsh";
 }
