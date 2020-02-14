@@ -63,6 +63,13 @@ zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
 zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
 
+zinit light-mode for \
+    zinit-zsh/z-a-test \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-submods \
+    zinit-zsh/z-a-bin-gem-node \
+    zinit-zsh/z-a-rust
+
 zinit as"null" wait"3" lucid for \
     sbin Fakerr/git-recall \
     sbin paulirish/git-open \
