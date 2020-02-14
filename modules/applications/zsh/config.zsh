@@ -101,11 +101,11 @@ zinit light-mode wait"0c" as"program" lucid for \
     from'gh-r' \
         sei40kr/fast-alias-tips-bin
 
-zt light-mode lucid for \
+zinit light-mode lucid for \
     trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" \
         brettm12345/gh
     trigger-load'!x;!extract' \
-        snippet OMZ::plugins/extract/extract.plugin.zsh \
+        OMZ::plugins/extract/extract.plugin.zsh \
     trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
         wfxr/forgit \
     trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf \
