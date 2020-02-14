@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
-INSTANT_PROMPT="${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-test -r $INSTANT_PROMPT && source $INSTANT_PROMPT
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
