@@ -63,6 +63,16 @@ zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
 zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
 
+zinit as"null" wait"3" lucid for \
+    sbin Fakerr/git-recall \
+    sbin paulirish/git-open \
+    sbin paulirish/git-recent \
+    sbin davidosomething/git-my \
+    sbin arzzen/git-quick-stats \
+    sbin iwata/git-now \
+    make"PREFIX=$ZPFX" tj/git-extras \
+    sbin"git-url;git-guclone" make"GITURL_NO_CGITURL=1" zdharma/git-url
+
 RPROMPT=""
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
