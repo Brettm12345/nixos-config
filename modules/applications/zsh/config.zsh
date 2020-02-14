@@ -27,6 +27,11 @@ function open-project {
 
 zle -N open-project
 bindkey ^o open-project
+zle -N edit-command-line
+bindkey -M vicmd "^V" edit-command-line
+bindkey '^e^e' edit-command-line
+autoload -U edit-command-line
+
 
 bindkey jk vi-cmd-mode
 
