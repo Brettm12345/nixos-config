@@ -106,7 +106,7 @@ zinit light-mode wait"1" lucid as"completion" for \
 zinit light-mode lucid for \
   trigger-load'!gh' src"./zsh/gh/gh.plugin.zsh" atinit"zpcdreplay" \
     brettm12345/gh \
-  trigger-load'!x;!extract' \
+  trigger-load'!x;!extract' atinit"zpcdreplay" \
     OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
     wfxr/forgit \
