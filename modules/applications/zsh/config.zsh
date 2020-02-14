@@ -6,24 +6,23 @@ fi
 
 setopt autocd correct rcquotes notify globdots autoresume
 
-autoload -U edit-command-line, zle
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
 zle -N prepend-sudo
-bindkey ^s prepend-sudo
+bindkey -v ^s prepend-sudo
 
 function copy {
   print -rn -- $CUTBUFFER | xsel -i -p;
 }
 zle -N copy
-bindkey ^c copy
+bindkey -v ^c copy
 
 function paste {
   RBUFFER=$(xsel -o -p </dev/null)$RBUFFER
 }
 zle -N paste
-bindkey ^v paste
+bindkey -v ^v paste
 
 function open-project {
   selection=$($HOME/bin/find-project)
@@ -41,8 +40,8 @@ function open-project {
 zle -N open-project
 bindkey ^o open-project
 zle -N edit-command-line
-bindkey -M vicmd "^V" edit-command-line
-bindkey '^e^e' edit-command-line
+bindkey -a "^V" edit-command-line
+bindkey -v '^e^e' edit-command-line
 
 
 bindkey jk vi-cmd-mode
