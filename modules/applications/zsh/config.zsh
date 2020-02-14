@@ -88,18 +88,18 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 
-zinit ice wait"1b" as"program" lucid
+zinit ice wait"0b" as"program" lucid
 zinit light zimfw/archive
 
-zinit ice wait"1b" lucid
+zinit ice wait"0b" lucid
 zinit light hlissner/zsh-autopair
 
-zinit ice wait"1b" atload"KEYTIMEOUT=20" lucid
+zinit ice wait"0b" atload"KEYTIMEOUT=20" lucid
 zinit light softmoth/zsh-vim-mode
 
-zinit ice wait"1b" lucid for wfxr/forgit
+zinit ice wait"0b" lucid for wfxr/forgit
 
-zinit ice wait"1b" from'gh-r' as'program'
+zinit ice wait"0b" from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
 
@@ -111,17 +111,17 @@ zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastl
 zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
   atpull"%atclone" pick"direnv" src"zhook.zsh" for direnv/direnv
 
-zinit ice wait"1b" atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
+zinit ice wait"0b" atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
 
-zinit light-mode wait"2c" for \
+zinit light-mode wait"0c" for \
     zinit-zsh/z-a-test \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-submods \
     zinit-zsh/z-a-bin-gem-node \
     zinit-zsh/z-a-rust
 
-zinit as"null" wait"2c" lucid for \
+zinit as"null" wait"0c" lucid for \
     sbin Fakerr/git-recall \
     sbin paulirish/git-open \
     sbin paulirish/git-recent \
