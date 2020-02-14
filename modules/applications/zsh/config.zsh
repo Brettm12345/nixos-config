@@ -15,6 +15,9 @@ zinit light hlissner/zsh-autopair
 zinit ice wait"1b" lucid
 zinit light softmoth/zsh-vim-mode
 
+zinit ice wait"1b" lucid
+zinit light djui/alias-tips
+
 zinit ice wait atinit"zpcompinit" lucid
 zinit light zdharma/fast-syntax-highlighting
 
