@@ -6,7 +6,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = false;
-      enableZshIntegration = false;
+      enableZshIntegration = true;
       disabled = [ "battery" ];
       symbols = {
         aws = " ";
