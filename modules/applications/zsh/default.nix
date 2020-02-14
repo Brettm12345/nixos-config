@@ -9,8 +9,9 @@
       source ~/.zinit/bin/zinit.zsh
     '';
     initExtra = with builtins; ''
-      ${readFile ./config.zsh}
-      ${readFile ./completion.zsh}
+      echo test
+        ${readFile ./config.zsh}
+        ${readFile ./completion.zsh}
     '';
   };
 }
