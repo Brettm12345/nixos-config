@@ -3,6 +3,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+setopt autocd correct rcquotes notify globdots autoresume
+
 function prepend-sudo {
   LBUFFER="sudo $LBUFFER"
 }
@@ -56,7 +59,7 @@ zinit as"program" make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" for relastl
 zinit as"program" make"!" atclone"./direnv hook zsh > zhook.zsh" \
   atpull"%atclone" pick"direnv" src"zhook.zsh" for direnv/direnv
 
-zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
+zinit ice wait atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
 
 zinit light-mode for \
