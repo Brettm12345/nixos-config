@@ -7,6 +7,8 @@ zstyle ':completion:*' accept-exact '*(N)'
 
 
 ## completion system
+zstyle ':completion:*'                              use-cache yes
+zstyle ':completion::complete:*'                    cache-path $HOME/var/zsh
 zstyle ':completion:*:approximate:'                 max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )' # allow one error for every three characters typed in approximate completer
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'              # don't complete backup files as executables
 zstyle ':completion:*:correct:*'                    insert-unambiguous true             # start menu completion only if it could find no unambiguous initial string
