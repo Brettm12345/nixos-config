@@ -1,18 +1,20 @@
 #!/usr/bin/env zsh
 
-zinit ice wait:0a compile:'{src/*.zsh,src/strategies/*}' lucid
+source ./completions.zsh
+
+zinit ice wait"0a" compile:'{src/*.zsh,src/strategies/*}' lucid
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice wait:1b as:"program" lucid
+zinit ice wait"1b" as:"program" lucid
 zinit light zimfw/archive
 
-zinit ice wait:1b lucid
+zinit ice wait"1b" lucid
 zinit light hlissner/zsh-autopair
 
-zinit ice wait:1b lucid
+zinit ice wait"1b" lucid
 zinit light softmoth/zsh-vim-mode
 
-zinit ice wait atinit:"zpcompinit" lucid
+zinit ice wait atinit"zpcompinit" lucid
 zinit light zdharma/fast-syntax-highlighting
 
 ZSH_AUTOSUGGEST_USE_ASYNC=1
