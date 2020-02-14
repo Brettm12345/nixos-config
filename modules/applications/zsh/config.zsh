@@ -39,8 +39,15 @@ zinit light brettm12345/gh
 zinit ice atload"zpcdreplay"
 zinit light BuonOmo/yarn-completion
 
-# zinit ice pick"async.zsh" src"pure.zsh"
-# zinit light sindresorhus/pure
+zinit lucid wait for zsh-users/zsh-history-substring-search
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
+zle -N history-substring-search-up
+zle -N history-substring-search-down
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 zinit ice wait"1b" as"program" lucid
 zinit light zimfw/archive
