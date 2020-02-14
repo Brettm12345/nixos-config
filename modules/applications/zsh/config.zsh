@@ -68,13 +68,11 @@ zinit wait"0a" light-mode lucid for \
     zsh-users/zsh-autosuggestions \
   blockf \
     zsh-users/zsh-completions
-  atload"zpcdreplay" \
-    BuonOmo/yarn-completion
 
-zinit wait"0b" light-mode lucid for \
-  pick"autopair.zsh" nocompletions \
+zinit wait"0b" light-mode lucid nocompletions for \
+  pick"autopair.zsh" \
     hlissner/zsh-autopair \
-  atload"KEYTIMEOUT=20" \
+  atload"KEYTIMEOUT=20"  \
     softmoth/zsh-vim-mode \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
     zdharma/fast-syntax-highlighting \
@@ -102,8 +100,7 @@ zinit light-mode wait"0c" as"program" lucid for \
     sei40kr/fast-alias-tips-bin
 
 zinit light-mode wait"1" lucid as"completion" for \
-  trigger-load"!gatsby" \
-    OMZ::plugins/gatsby/_gatsby
+  OMZ::plugins/gatsby/_gatsby
 
 zinit light-mode lucid for \
   trigger-load'!gh' onclone"cp ./zsh/gh/* ./" blockf \
