@@ -9,7 +9,7 @@ with builtins; {
     programs.zsh = {
       enable = true;
       autocd = true;
-      enableCompletion = true;
+      enableCompletion = false;
       initExtraBeforeCompInit = ''
         source ~/.zinit/bin/zinit.zsh
       '';
