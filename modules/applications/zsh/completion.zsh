@@ -28,7 +28,6 @@ zstyle -e ':completion:*'                           special-dirs '[[ $PREFIX = (
 zstyle ':completion:*:messages'                     format '%d'                         #
 zstyle ':completion:*:options'                      auto-description '%d'               #
 zstyle ':completion:*:options'                      description 'yes'                   # describe options in full
-zstyle ":completion:*:descriptions"                 format "%B%d%b"
 zstyle ':completion:*:*:*:default'                  menu yes select search
 zstyle ':completion:*:processes'                    command 'ps -au$USER'               # on processes completion complete all user processes
 zstyle ':completion:*:*:-subscript-:*'              tag-order indexes parameters        # offer indexes before parameters in subscripts
