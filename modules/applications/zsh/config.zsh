@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+
+PROMPT_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+test -r "$PROMPT_CACHE" && source "$PROMPT_CACHE"
 
 setopt autocd correct rcquotes notify globdots autoresume
 
@@ -87,20 +87,16 @@ zle -N self-insert url-quote-magic
 
 zinit wait"0a" light-mode lucid for \
   sei40kr/zsh-fast-alias-tips \
+  blockf zsh-users/zsh-completions \
   compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions \
-  blockf \
-    zsh-users/zsh-completions
 
 zinit wait"0b" light-mode lucid nocompletions for \
-  pick"autopair.zsh" \
-    hlissner/zsh-autopair \
-  atload"KEYTIMEOUT=20"  \
-    softmoth/zsh-vim-mode \
+  pick"autopair.zsh" hlissner/zsh-autopair \
+  atload"KEYTIMEOUT=20"  softmoth/zsh-vim-mode \
+  atload"bind_substring_search" zsh-users/zsh-history-substring-search \
   atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
     zdharma/fast-syntax-highlighting \
-  atload"bind_substring_search" \
-    zsh-users/zsh-history-substring-search
 
 function bind_substring_search() {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
@@ -119,14 +115,13 @@ function set_enhancd_filter() {
 
 zinit light-mode wait"0c" as"program" lucid for \
   zimfw/archive \
+  from'gh-r' sei40kr/fast-alias-tips-bin \
   src"init.sh" atload"set_enhancd_filter" blockf \
     b4b4r07/enhancd \
   make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
     direnv/direnv \
   make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
     relastle/pmy \
-  from'gh-r' \
-    sei40kr/fast-alias-tips-bin
 
 zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gatsby/_gatsby \
@@ -151,9 +146,10 @@ zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh'
 zinit light romkatv/powerlevel10k
 
 typeset -U PATH path
-path=("$HOME/bin" "$path[@]")
-export GHQ_ROOT="$HOME/src"
+path=("$HOME/bin" "$path[@]") &&
 export PATH
+
+export GHQ_ROOT="$HOME/src"
 RPROMPT=""
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"

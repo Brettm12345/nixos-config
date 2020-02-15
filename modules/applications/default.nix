@@ -11,8 +11,8 @@
     ./fff.nix
     ./direnv.nix
     ./compton.nix
+    ./shell.nix
     ./dunst.nix
-    ./prompt.nix
     # ./plex.nix
     ./fish.nix
     ./kitty.nix
