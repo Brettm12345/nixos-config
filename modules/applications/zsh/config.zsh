@@ -7,7 +7,7 @@ setopt autocd correct rcquotes notify globdots autoresume
 
 export LESS="-FX"
 
-function fast-zcompinit() {
+function fast-zpcompinit() {
   setopt extendedglob local_options
   autoload -Uz compinit
   local zcompf="${ZINIT[ZCOMPDUMP_PATH]:-${ZDOTDIR:-$HOME}/.zcompdump}"
