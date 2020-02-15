@@ -12,10 +12,10 @@ zstyle ':completion:*:approximate:'                 max-errors 'reply=( $((($#PR
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'              # don't complete backup files as executables
 zstyle ':completion:*:correct:*'                    insert-unambiguous true             # start menu completion only if it could find no unambiguous initial string
 zstyle ':completion:*:corrections'                  format $'%{\e[0;31m%}%d (errors: %e)%{\e[0m%}' #
-zstyle ':completion:*:correct:*'                    original true                       #
-zstyle ':completion:*:default'                      list-colors ${(s.:.)LS_COLORS}      # activate color-completion(!)
-zstyle ':completion:*:descriptions'                 format $'%{\e[0;34m%}completing %{\e[0;35m%}%B%d%b%{\e[0m%}'  # format on completion
-zstyle ':completion:*:*:cd:*:directory-stack'       menu yes select                     # complete 'cd -<tab>' with menu
+zstyle ':completion:*:correct:*'                    original true
+zstyle ':completion:*:default'                      list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=00}:${(s.:.)LS_COLORS}")'
+zstyle ':completion:*:descriptions'                 format $'\n%F{magenta}%U%B%d%b%u%f\n'
+zstyle ':completion:*:*:cd:*:directory-stack'       menu yes select
 zstyle ':completion:*:expand:*'                     tag-order all-expansions            # insert all expansions for expand completer
 zstyle ':completion:*:history-words'                list false                          #
 zstyle ':completion:*:history-words'                menu yes                            # activate menu
@@ -72,6 +72,9 @@ zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle -e ':completion:*:approximate:*' \
   max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+
+# In menu-style completion, give a status bar
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 
 ## correction
 # run rehash on completion so new installed program are found automatically:

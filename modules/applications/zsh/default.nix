@@ -1,7 +1,10 @@
 { pkgs, ... }:
 with builtins; {
   environment.pathsToLink = [ "/share/zsh" ];
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableGlobalCompInit = false;
+  };
   home-manager.users.brett = {
     programs.zsh = {
       enable = true;
