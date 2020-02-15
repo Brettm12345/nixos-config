@@ -147,7 +147,7 @@ zinit light-mode lucid for \
   atload'alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"' \
     RobSis/zsh-completion-generator
 
-zinit ice depth=1 atload'!source ~/.config/p10k.zsh'
+zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh'
 zinit light romkatv/powerlevel10k
 
 typeset -U PATH path
