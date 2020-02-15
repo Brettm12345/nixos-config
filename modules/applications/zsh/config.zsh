@@ -100,9 +100,14 @@ zinit light-mode wait"0c" as"program" lucid for \
     sei40kr/fast-alias-tips-bin
 
 zinit light-mode wait"1" lucid as"completion" for \
-  OMZ::plugins/gatsby/_gatsby
+  OMZ::plugins/gatsby/_gatsby \
+  OMZ::plugins/gitfast/_git
 
 zinit light-mode lucid for \
+  OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
+  OMZ::plugins/yarn/yarn.plugin.zsh \
+  trigger-load"!alias-finder" nocompletions \
+    OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' onclone"cp ./zsh/gh/* ./" blockf \
     brettm12345/gh \
   trigger-load'!x;!extract' blockf \
