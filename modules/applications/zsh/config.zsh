@@ -90,9 +90,13 @@ function bind_substring_search() {
   bindkey -M vicmd 'j' history-substring-search-down
 }
 
+function set_enhancd_filter() {
+  ENHANCD_FILTER='fzf -0 -1 --ansi -n8 --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+}
+
 zinit light-mode wait"0c" as"program" lucid for \
   zimfw/archive \
-  src"init.sh" blockf \
+  src"init.sh" atload"set_enhancd_filter" blockf \
     b4b4r07/enhancd \
   make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
     direnv/direnv \
