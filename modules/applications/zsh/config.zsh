@@ -110,7 +110,7 @@ zinit light-mode lucid for \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load"!alias-finder" nocompletions \
     OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
-  trigger-load'!gh' atclone"cp ./zsh/gh/* ./" blockf \
+  trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf \
     brettm12345/gh \
   trigger-load'!x;!extract' blockf \
     OMZ::plugins/extract/extract.plugin.zsh \
