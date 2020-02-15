@@ -64,7 +64,7 @@ zle -N self-insert url-quote-magic
 
 zinit wait"0a" light-mode lucid for \
   sei40kr/zsh-fast-alias-tips \
-  compile'{src/*.zsh,src/strategies/*}' atload'_zsh_autosuggest_start' \
+  compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions \
   blockf \
     zsh-users/zsh-completions
