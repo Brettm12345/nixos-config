@@ -92,7 +92,7 @@ function bind_substring_search() {
 
 zinit light-mode wait"0c" as"program" lucid for \
   zimfw/archive \
-  src"init.sh" \
+  src"init.sh" blockf \
     b4b4r07/enhancd \
   make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
     direnv/direnv \
