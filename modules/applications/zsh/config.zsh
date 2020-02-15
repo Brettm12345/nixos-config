@@ -91,7 +91,7 @@ function bind_substring_search() {
 }
 
 function set_enhancd_filter() {
-  ENHANCD_FILTER='fzf -0 -1 --ansi -n8 --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
 }
 
 zinit light-mode wait"0c" as"program" lucid for \
