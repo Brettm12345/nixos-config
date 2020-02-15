@@ -92,6 +92,7 @@ function bind_substring_search() {
 
 zinit light-mode wait"0c" as"program" lucid for \
   zimfw/archive \
+  b4b4r07/enhancd \
   make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
     direnv/direnv \
   make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
@@ -123,6 +124,7 @@ zinit light romkatv/powerlevel10k
 
 typeset -U PATH path
 path=("$HOME/bin" "$path[@]")
+export GHQ_ROOT="$HOME/src"
 export PATH
 RPROMPT=""
 ZSH_AUTOSUGGEST_USE_ASYNC=1
