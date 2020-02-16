@@ -108,26 +108,29 @@ zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gitfast/_git \
   OMZ::plugins/gatsby/_gatsby
 
-function set-enhancd-filter() {
-  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+zinit lucid atinit"bind '^s' sudo-command-line"
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+
+function setup-clipboard() {
+  bind '^v' clippaste
+  bind '^c' clipcopy
 }
 
-
+zinit lucid atinit'setup-clipboard'
+zinit snippet OMZ::lib/clipboard.zsh
 
 function setup-completion-generator() {
   alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"
 }
 
-zinit lucid atinit"bind '^s' sudo-command-line"
-zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
-
-zinit lucid atinit"bind '^v' clippaste; bind '^v' clipcopy"
-zinit snippet OMZ::lib/clipboard.zsh
+function setup-enhancd {
+  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+}
 
 zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  trigger-load'!cd' src"init.sh" atload"set-enhancd-filter" blockf \
+  trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf \
     b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions \
     OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
