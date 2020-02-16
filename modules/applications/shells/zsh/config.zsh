@@ -59,7 +59,7 @@ with url-quote-magic; zle -N self-insert url-quote-magic
 
 # Suff that gets loaded immediately
 zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
-zinit light romkatv/powerlevel10k
+zinit light brettm12345/powerlevel10k
 
 
 function setup-autosuggest() {
