@@ -130,6 +130,7 @@ zinit light-mode wait"1" lucid as"completion" for \
 zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
+  OMZ::lib/clipboard \
   trigger-load"!alias-finder" nocompletions \
     OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf \
