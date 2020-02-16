@@ -104,9 +104,9 @@ zinit light-mode wait"0c" as"program" lucid for \
   make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
     relastle/pmy
 
+  # OMZ::plugins/gitfast/_git
 zinit light-mode wait"1" lucid as"completion" for \
-  OMZ::plugins/gatsby/_gatsby \
-  OMZ::plugins/gitfast/_git
+  OMZ::plugins/gatsby/_gatsby
 
 function set-enhancd-filter() {
   ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
@@ -121,7 +121,6 @@ function setup-completion-generator() {
 zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  trigger-load"!git" OMZ::lib/git.zsh \
   atinit"bind ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
   atinit"bind ^v clippaste; bind ^v clipcopy" OMZ::lib/clipboard.zsh \
   trigger-load'!cd' src"init.sh" atload"set-enhancd-filter" blockf \
