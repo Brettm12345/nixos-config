@@ -121,7 +121,7 @@ zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load"!git" OMZ::lib/git.zsh \
-  atinit "bindkey -v ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
+  atinit"bindkey -v ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
   atinit"bindkey -v ^v clippaste; bindkey -v ^c clipcopy" OMZ::lib/clipboard.zsh \
   trigger-load'!cd' src"init.sh" atload"set_enhancd_filter" blockf \
     b4b4r07/enhancd \
