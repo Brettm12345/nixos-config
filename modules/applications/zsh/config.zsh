@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+# Stuff I have copied and pasted from the internet
 PROMPT_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 test -r "$PROMPT_CACHE" && source "$PROMPT_CACHE"
 
@@ -30,24 +31,6 @@ function fast-zpcompinit() {
   fi
 }
 
-function prepend-sudo() {
-  LBUFFER="sudo $LBUFFER"
-}
-zle -N prepend-sudo
-bindkey -v ^s prepend-sudo
-
-function copy() {
-  print -rn -- $CUTBUFFER | xsel -i -p
-}
-zle -N copy
-bindkey -v ^c copy
-
-function paste() {
-  RBUFFER=$(xsel -o -p </dev/null)$RBUFFER
-}
-zle -N paste
-bindkey -v ^v paste
-
 function open-project() {
   selection=$($HOME/bin/find-project)
   if [[ -z "$selection" ]]; then
@@ -60,7 +43,6 @@ function open-project() {
   zle fzf-redraw-prompt
   return $ret
 }
-
 zle -N open-project
 bindkey ^o open-project
 zle -N edit-command-line
@@ -75,30 +57,31 @@ function rebuild() {
   ./install
   cd $dir
 }
+alias re=rebuild
 
-autoload -Uz edit-command-line
-zle -N edit-command-line
+function with() {
+  autoload -Uz $1
+}
 
-autoload -Uz select-word-style
-select-word-style shell
+with edit-command-line; zle -N edit-command-line
 
-autoload -Uz url-quote-magic
-zle -N self-insert url-quote-magic
+with select-word-style; select-word-style shell
+
+with url-quote-magic; zle -N self-insert url-quote-magic
+
+function setup-autosuggest() {
+  bindkey '^e' autosuggest-accept
+  ZSH_AUTOSUGGEST_USE_ASYNC=1
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
+}
 
 zinit wait"0a" light-mode lucid for \
   sei40kr/zsh-fast-alias-tips \
   blockf zsh-users/zsh-completions \
-  compile'{src/*.zsh,src/strategies/*}' atload'!_zsh_autosuggest_start' \
+  compile'{src/*.zsh,src/strategies/*}' atinit'setup-autosuggest' atload'!_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions \
 
-zinit wait"0b" light-mode lucid nocompletions for \
-  pick"autopair.zsh" hlissner/zsh-autopair \
-  atload"KEYTIMEOUT=20"  softmoth/zsh-vim-mode \
-  atload"bind_substring_search" zsh-users/zsh-history-substring-search \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
-    zdharma/fast-syntax-highlighting \
-
-function bind_substring_search() {
+function setup-substring-search() {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
   zle -N history-substring-search-up
@@ -109,28 +92,39 @@ function bind_substring_search() {
   bindkey -M vicmd 'j' history-substring-search-down
 }
 
-function set_enhancd_filter() {
-  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
-}
+zinit wait"0b" light-mode lucid nocompletions for \
+  pick"autopair.zsh" hlissner/zsh-autopair \
+  atload"KEYTIMEOUT=20"  softmoth/zsh-vim-mode \
+  atload"bind_substring_search" zsh-users/zsh-history-substring-search \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
+    zdharma/fast-syntax-highlighting
+
+
 
 zinit light-mode wait"0c" as"program" lucid for \
   zimfw/archive \
   from'gh-r' sei40kr/fast-alias-tips-bin \
-  src"init.sh" atload"set_enhancd_filter" blockf \
-    b4b4r07/enhancd \
   make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
     direnv/direnv \
   make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
-    relastle/pmy \
+    relastle/pmy
 
 zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gatsby/_gatsby \
   OMZ::plugins/gitfast/_git
 
+function set-enhancd-filter() {
+  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+}
+
 zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  OMZ::lib/clipboard.zsh \
+  trigger-load"!git" OMZ::lib/git.zsh \
+  atinit "bindkey -v ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
+  atinit"bindkey -v ^v clippaste; bindkey -v ^c clipcopy" OMZ::lib/clipboard.zsh \
+  trigger-load'!cd' src"init.sh" atload"set_enhancd_filter" blockf \
+    b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions \
     OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf \
@@ -143,7 +137,7 @@ zinit light-mode lucid for \
   atload'alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"' \
     RobSis/zsh-completion-generator
 
-zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh'
+zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
 zinit light romkatv/powerlevel10k
 
 typeset -U PATH path
@@ -152,12 +146,8 @@ export PATH
 
 export GHQ_ROOT="$HOME/src"
 RPROMPT=""
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 MODE_CURSOR_VICMD="block"
 MODE_CURSOR_VIINS="blinking bar"
 MODE_CURSOR_SEARCH="steady underline"
 
-bindkey '^e' autosuggest-accept
