@@ -18,6 +18,7 @@ with builtins; {
         ${readFile ./completion.zsh}
       '';
     };
+    xdg.configFile."zsh/hoc.zsh".text = readFile ./hoc.zsh;
     xdg.configFile."zsh/p10k.zsh".text = readFile ./p10k.zsh;
     xdg.configFile."fsh/overlay.ini".text = readFile ./moonlight.ini;
   };
