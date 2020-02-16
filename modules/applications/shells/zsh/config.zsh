@@ -118,13 +118,15 @@ function setup-completion-generator() {
   alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"
 }
 
-zinit snippet lucid for \
-  atinit"bind '^s' sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
-  atinit"bind '^v' clippaste; bind '^v' clipcopy" OMZ::lib/clipboard.zsh
-  OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
-  OMZ::plugins/yarn/yarn.plugin.zsh
+zinit lucid atinit"bind '^s' sudo-command-line"
+zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+
+zinit lucid atinit"bind '^v' clippaste; bind '^v' clipcopy"
+zinit snippet OMZ::lib/clipboard.zsh
 
 zinit light-mode lucid for \
+  OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
+  OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load'!cd' src"init.sh" atload"set-enhancd-filter" blockf \
     b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions \
