@@ -69,15 +69,24 @@ with select-word-style; select-word-style shell
 
 with url-quote-magic; zle -N self-insert url-quote-magic
 
+# Suff that gets loaded immediately
+zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
+zinit light romkatv/powerlevel10k
+
+
 function setup-autosuggest() {
   bindkey '^e' autosuggest-accept
   ZSH_AUTOSUGGEST_USE_ASYNC=1
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 }
 
-zinit wait"0a" light-mode lucid for \
+# Very important things
+zinit wait"0a" light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
+  atload"KEYTIMEOUT=20"  softmoth/zsh-vim-mode \
   blockf zsh-users/zsh-completions \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
+    zdharma/fast-syntax-highlighting \
   compile'{src/*.zsh,src/strategies/*}' atinit'setup-autosuggest' atload'!_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions
 
@@ -92,12 +101,10 @@ function setup-substring-search() {
   bindkey -M vicmd 'j' history-substring-search-down
 }
 
+# Stuff that can wait a minute
 zinit wait"0b" light-mode lucid nocompletions for \
   pick"autopair.zsh" hlissner/zsh-autopair \
-  atload"KEYTIMEOUT=20"  softmoth/zsh-vim-mode \
-  atload"bind_substring_search" zsh-users/zsh-history-substring-search \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
-    zdharma/fast-syntax-highlighting
+  atload"bind_substring_search" zsh-users/zsh-history-substring-search
 
 
 
@@ -145,8 +152,6 @@ zinit light-mode lucid for \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
     RobSis/zsh-completion-generator
 
-zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
-zinit light romkatv/powerlevel10k
 
 typeset -U PATH path
 path=("$HOME/bin" "$path[@]") &&
