@@ -1,8 +1,7 @@
-{ pkgs, config, lib, ... }:
-with import ../../support.nix { inherit lib config pkgs; }; {
+{ pkgs, config, lib, ... }: {
   programs.command-not-found.enable = true;
   environment = {
-    systemPackages = with pkgs; [ starship any-nix-shell exa grc ];
+    systemPackages = with pkgs; [ any-nix-shell exa grc ];
     shellAliases = {
       o = "open-project";
       l = "${pkgs.exa}/bin/exa -F --icons --git-ignore -1";
@@ -13,42 +12,5 @@ with import ../../support.nix { inherit lib config pkgs; }; {
       r = "exec $SHELL";
     };
   };
-  home-manager.users.brett = {
-    programs.starship = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = false;
-      enableZshIntegration = false;
-      disabled = [ "battery" ];
-      symbols = {
-        aws = " ";
-        conda = " ";
-        git_branch = " ";
-        golang = " ";
-        package = " ";
-        python = " ";
-      };
-      styles.directory = "blue";
-      settings = {
-        character.style_success = "purple";
-        nix_shell = {
-          symbol = " ";
-          use_name = true;
-        };
-        haskell = {
-          symbol = " ";
-          style = "purple";
-        };
-        rust = {
-          symbol = " ";
-          style = "208 bold";
-        };
-        git_status = {
-          prefix = "";
-          suffix = " ";
-          style = "yellow";
-        };
-      };
-    };
-  };
+  users.users.brett.shell = "/run/current-system/sw/bin/zsh";
 }
