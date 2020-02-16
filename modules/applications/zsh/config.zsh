@@ -79,7 +79,7 @@ zinit wait"0a" light-mode lucid for \
   sei40kr/zsh-fast-alias-tips \
   blockf zsh-users/zsh-completions \
   compile'{src/*.zsh,src/strategies/*}' atinit'setup-autosuggest' atload'!_zsh_autosuggest_start' \
-    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-autosuggestions
 
 function setup-substring-search() {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
@@ -117,12 +117,21 @@ function set-enhancd-filter() {
   ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
 }
 
+function bind() {
+  zle -N $2; bindkey -v $1 $2
+}
+
+
+function setup-completion-generator() {
+  alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"
+}
+
 zinit light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load"!git" OMZ::lib/git.zsh \
-  atinit"bindkey -v ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
-  atinit"bindkey -v ^v clippaste; bindkey -v ^c clipcopy" OMZ::lib/clipboard.zsh \
+  atinit"bind ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
+  atinit"bind clippaste; bind clipcopy" OMZ::lib/clipboard.zsh \
   trigger-load'!cd' src"init.sh" atload"set_enhancd_filter" blockf \
     b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions \
@@ -133,8 +142,7 @@ zinit light-mode lucid for \
     OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
     wfxr/forgit \
-  trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf \
-  atload'alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"' \
+  trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
     RobSis/zsh-completion-generator
 
 zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
