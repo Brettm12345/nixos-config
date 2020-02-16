@@ -119,12 +119,10 @@ function setup-completion-generator() {
 }
 
 zinit light-mode lucid for \
+  atinit"bind '^s' sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
+  atinit"bind '^v' clippaste; bind '^v' clipcopy" OMZ::lib/clipboard.zsh \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  atinit"bind ^s sudo-command-line" OMZ::plugins/sudo/sudo.plugin.zsh \
-  trigger-load"!git" \
-    OMZ::lib/git.zsh \
-  atinit"bind ^v clippaste; bind ^v clipcopy" OMZ::lib/clipboard.zsh \
   trigger-load'!cd' src"init.sh" atload"set-enhancd-filter" blockf \
     b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions \
