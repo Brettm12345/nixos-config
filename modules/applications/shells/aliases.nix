@@ -7,7 +7,6 @@ in {
     ls = "${exa} --git-ignore";
     ll = "${exa} -l --git -h --git-ignore";
     la = "${exa} -l --git -a -h -g";
-    git = "${pkgs.gitAndTools.hub}/bin/hub";
     r = "exec $SHELL";
     rebuild = "$CONFIG/install";
     re = "rebuild";
