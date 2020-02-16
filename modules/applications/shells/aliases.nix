@@ -1,11 +1,15 @@
-{ pkgs }: {
-  shellAliases = with pkgs; {
+{ pkgs, lib, ... }:
+let exa = "${pkgs.exa}/bin/exa $EXA_ARGS";
+in {
+  environment.shellAliases = {
     o = "open-project";
-    l = "${exa}/bin/exa -F --icons --git-ignore -1";
-    ls = "${exa}/bin/exa -F --icons --git-ignore";
-    ll = "${exa}/bin/exa -F --icons -l --git -h --git-ignore";
-    la = "${exa}/bin/exa -F --icons -l --git -a -h -g";
-    git = "${gitAndTools.hub}/bin/hub";
+    l = "${exa} --git-ignore -1";
+    ls = "${exa} --git-ignore";
+    ll = "${exa} -l --git -h --git-ignore";
+    la = "${exa} -l --git -a -h -g";
+    git = "${pkgs.gitAndTools.hub}/bin/hub";
     r = "exec $SHELL";
+    rebuild = "$CONFIG/install";
+    re = "rebuild";
   };
 }
