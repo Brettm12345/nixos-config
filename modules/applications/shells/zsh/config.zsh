@@ -51,19 +51,7 @@ bindkey -v '^e^e' edit-command-line
 
 bindkey jk vi-cmd-mode
 
-function rebuild() {
-  dir=$(pwd)
-  cd $HOME/src/github.com/brettm12345/nixos-config
-  ./install
-  cd $dir
-}
-alias re=rebuild
-
-function with() {
-  autoload -Uz $1
-}
-
-with edit-command-line; zle -N edit-command-line
+load edit-command-line
 
 with select-word-style; select-word-style shell
 
@@ -104,7 +92,7 @@ function setup-substring-search() {
 # Stuff that can wait a minute
 zinit wait"0b" light-mode lucid nocompletions for \
   pick"autopair.zsh" hlissner/zsh-autopair \
-  atload"bind_substring_search" zsh-users/zsh-history-substring-search
+  atload"setup-substring-search" zsh-users/zsh-history-substring-search
 
 
 
@@ -124,9 +112,6 @@ function set-enhancd-filter() {
   ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
 }
 
-function bind() {
-  zle -N $2; bindkey -v $1 $2
-}
 
 
 function setup-completion-generator() {
