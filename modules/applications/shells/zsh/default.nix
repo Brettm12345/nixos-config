@@ -23,5 +23,4 @@ with builtins; {
     xdg.configFile."zsh/p10k.zsh".text = readFile ./p10k.zsh;
     xdg.configFile."fsh/overlay.ini".text = readFile ./moonlight.ini;
   };
-  users.users.brett.shell = "/run/current-system/sw/bin/zsh";
 }
