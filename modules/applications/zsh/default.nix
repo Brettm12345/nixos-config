@@ -12,13 +12,14 @@ with builtins; {
       enableCompletion = false;
       initExtraBeforeCompInit = ''
         source ~/.zinit/bin/zinit.zsh
+        ${readFile ./util.zsh}
+        ${readFile ./hoc.zsh}
       '';
       initExtra = ''
         ${readFile ./config.zsh}
         ${readFile ./completion.zsh}
       '';
     };
-    xdg.configFile."zsh/hoc.zsh".text = readFile ./hoc.zsh;
     xdg.configFile."zsh/p10k.zsh".text = readFile ./p10k.zsh;
     xdg.configFile."fsh/overlay.ini".text = readFile ./moonlight.ini;
   };
