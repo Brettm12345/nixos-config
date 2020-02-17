@@ -12,6 +12,8 @@ with builtins; {
       enableCompletion = false;
       initExtraBeforeCompInit = ''
         source ~/.zinit/bin/zinit.zsh
+        ${readFile ./instant-prompt.zsh}
+        ${readFile ./fast-zcompinit.zsh}
         ${readFile ./util.zsh}
         ${readFile ./hoc.zsh}
       '';

@@ -18,6 +18,7 @@
     ./fuzzy.nix
     ./misc.nix
     ./ssh.nix
+    ./vsliveshare.nix
     # ./termite.nix
     ./xresources.nix
   ];
