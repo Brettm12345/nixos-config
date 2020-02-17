@@ -2,6 +2,7 @@
 setopt autocd correct rcquotes notify globdots autoresume
 
 export LESS="-FX"
+setopt promptsubst
 
 function open-project() {
   selection=$($HOME/bin/find-project)
@@ -21,8 +22,6 @@ zle -N edit-command-line
 bindkey -a "^V" edit-command-line
 bindkey -v '^e^e' edit-command-line
 
-bindkey jk vi-cmd-mode
-
 load edit-command-line
 
 with select-word-style
@@ -41,10 +40,18 @@ function setup-autosuggest() {
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 }
 
+function setup-vim-mode() {
+  bindkey jk vi-cmd-mode
+  KEYTIMEOUT=20
+  MODE_CURSOR_VICMD="block"
+  MODE_CURSOR_VIINS="blinking bar"
+  MODE_CURSOR_SEARCH="steady underline"
+}
+
 # Very important things
 zinit wait'0a' light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
-  atload'KEYTIMEOUT=20' softmoth/zsh-vim-mode \
+  atload'setup-vim-mode' softmoth/zsh-vim-mode \
   blockf zsh-users/zsh-completions \
   atinit'ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay' atpull'fast-theme XDG:overlay' \
   zdharma/fast-syntax-highlighting \
@@ -79,16 +86,22 @@ zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gitfast/_git \
   OMZ::plugins/gatsby/_gatsby
 
-zinit lucid atinit"bind '^s' sudo-command-line"
+zinit ice wait
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+
+zinit ice wait lucid atinit"bind '^s' sudo-command-line"
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+
+zinit ice wait lucid
+zinit snippet OMZ::lib/git.zsh
+
+zinit ice wait lucid atinit'setup-clipboard'
+zinit snippet OMZ::lib/clipboard.zsh
 
 function setup-clipboard() {
   bind '^v' clippaste
   bind '^c' clipcopy
 }
-
-zinit lucid atinit'setup-clipboard'
-zinit snippet OMZ::lib/clipboard.zsh
 
 function setup-completion-generator() {
   alias gencomp='zinit lucid nocd as"null" wait"1" atload"zinit creinstall -q _local/config-files; fast-zpcompinit" for /dev/null; gencomp'
@@ -110,12 +123,7 @@ zinit as"program" light-mode lucid for \
   RobSis/zsh-completion-generator
 
 typeset -U PATH path
-path=("$HOME/bin" "$path[@]") &&
-  export PATH
+path=("$HOME/bin" "$path[@]") && export PATH
 
-export GHQ_ROOT="$HOME/src"
 RPROMPT=""
-
-MODE_CURSOR_VICMD="block"
-MODE_CURSOR_VIINS="blinking bar"
-MODE_CURSOR_SEARCH="steady underline"
+GHQ_ROOT="$HOME/src"
