@@ -12,13 +12,13 @@ function load() {
   zle -N $1
 }
 
-function execute-command() {
-    local selected=$(printf "%s\n" ${(k)widgets} | fzf --reverse --prompt="cmd> " --height=50 )
-    [[ $selected ]] && {
-        zle redisplay
-        zle $selected
-    }
-}
+# function execute-command() {
+#     local selected=$(printf "%s\n" ${(k)widgets} | fzf --reverse --prompt="cmd> " --height=50 )
+#     [[ $selected ]] && {
+#         zle redisplay
+#         zle $selected
+#     }
+# }
 
 function open-project() {
   selection=$($HOME/bin/find-project)

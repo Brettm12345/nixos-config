@@ -29,34 +29,34 @@ zstyle ':completion:*:descriptions' format '[%d]'
 
 
 ## completion system
-zstyle ':completion:*:approximate:'                 max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )' # allow one error for every three characters typed in approximate completer
-zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'              # don't complete backup files as executables
-zstyle ':completion:*:correct:*'                    insert-unambiguous true             # start menu completion only if it could find no unambiguous initial string
-zstyle ':completion:*:corrections'                  format $'%{\e[0;31m%}%d (errors: %e)%{\e[0m%}' #
-zstyle ':completion:*:correct:*'                    original true
-zstyle ':completion:*:default'                      list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=00}:${(s.:.)LS_COLORS}")'
-zstyle ':completion:*:descriptions'                 format $'\n%F{magenta}%U%B%d%b%u%f\n'
-zstyle ':completion:*:*:cd:*:directory-stack'       menu yes select
-zstyle ':completion:*:expand:*'                     tag-order all-expansions            # insert all expansions for expand completer
-zstyle ':completion:*:history-words'                list false                          #
-zstyle ':completion:*:history-words'                menu yes                            # activate menu
-zstyle ':completion:*:history-words'                remove-all-dups yes                 # ignore duplicate entries
-zstyle ':completion:*:history-words'                stop yes                            #
-zstyle ':completion:*'                              matcher-list 'm:{a-z}={A-Z}'        # match uppercase from lowercase
-zstyle ':completion:*:matches'                      group 'yes'                         # separate matches into groups
-zstyle ':completion:*'                              group-name ''                       # group results by category
-zstyle -e ':completion:*'                           special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
-zstyle ':completion:*:messages'                     format '%d'                         #
-zstyle ':completion:*:options'                      auto-description '%d'               #
-zstyle ':completion:*:options'                      description 'yes'                   # describe options in full
-zstyle ':completion:*:processes'                    command 'ps -au$USER'               # on processes completion complete all user processes
-zstyle ':completion:*:*:-subscript-:*'              tag-order indexes parameters        # offer indexes before parameters in subscripts
-zstyle ':completion:*'                              verbose true                        # provide verbose completion information
-zstyle ':completion:*:warnings'                     format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d' # set format for warnings
-zstyle ':completion:*:*:zcompile:*'                 ignored-patterns '(*~|*.zwc)'       # define files to ignore for zcompile
-zstyle ':completion:correct:'                       prompt 'correct to: %e'             #
-zstyle ':completion::(^approximate*):*:functions'   ignored-patterns '_*'               # Ignore completion functions for commands you don't have:
-zstyle ':completion::complete:*'                    gain-privileges 1                   # enabling autocompletion of privileged environments in privileged commands
+# zstyle ':completion:*:approximate:'                 max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )' # allow one error for every three characters typed in approximate completer
+# zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'              # don't complete backup files as executables
+# zstyle ':completion:*:correct:*'                    insert-unambiguous true             # start menu completion only if it could find no unambiguous initial string
+# zstyle ':completion:*:corrections'                  format $'%{\e[0;31m%}%d (errors: %e)%{\e[0m%}' #
+# zstyle ':completion:*:correct:*'                    original true
+# zstyle ':completion:*:default'                      list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=00}:${(s.:.)LS_COLORS}")'
+# zstyle ':completion:*:descriptions'                 format $'\n%F{magenta}%U%B%d%b%u%f\n'
+# zstyle ':completion:*:*:cd:*:directory-stack'       menu yes select
+# zstyle ':completion:*:expand:*'                     tag-order all-expansions            # insert all expansions for expand completer
+# zstyle ':completion:*:history-words'                list false                          #
+# zstyle ':completion:*:history-words'                menu yes                            # activate menu
+# zstyle ':completion:*:history-words'                remove-all-dups yes                 # ignore duplicate entries
+# zstyle ':completion:*:history-words'                stop yes                            #
+# zstyle ':completion:*'                              matcher-list 'm:{a-z}={A-Z}'        # match uppercase from lowercase
+# zstyle ':completion:*:matches'                      group 'yes'                         # separate matches into groups
+# zstyle ':completion:*'                              group-name ''                       # group results by category
+# zstyle -e ':completion:*'                           special-dirs '[[ $PREFIX = (../)#(|.|..) ]] && reply=(..)'
+# zstyle ':completion:*:messages'                     format '%d'                         #
+# zstyle ':completion:*:options'                      auto-description '%d'               #
+# zstyle ':completion:*:options'                      description 'yes'                   # describe options in full
+# zstyle ':completion:*:processes'                    command 'ps -au$USER'               # on processes completion complete all user processes
+# zstyle ':completion:*:*:-subscript-:*'              tag-order indexes parameters        # offer indexes before parameters in subscripts
+# zstyle ':completion:*'                              verbose true                        # provide verbose completion information
+# zstyle ':completion:*:warnings'                     format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d' # set format for warnings
+# zstyle ':completion:*:*:zcompile:*'                 ignored-patterns '(*~|*.zwc)'       # define files to ignore for zcompile
+# zstyle ':completion:correct:'                       prompt 'correct to: %e'             #
+# zstyle ':completion::(^approximate*):*:functions'   ignored-patterns '_*'               # Ignore completion functions for commands you don't have:
+# zstyle ':completion::complete:*'                    gain-privileges 1                   # enabling autocompletion of privileged environments in privileged commands
 
 # complete manual by their section
 zstyle ':completion:*:manuals'                      separate-sections true
@@ -88,10 +88,12 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 
 # Fuzzy matching of completions
 # https://grml.org/zsh/zsh-lovers.html
-zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' completer _complete _match _approximate _extensions _files_enhance
 zstyle ':completion:*:match:*' original only
 zstyle -e ':completion:*:approximate:*' \
   max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+
+zstyle ':completion:*' regular false
 
 # In menu-style completion, give a status bar
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'

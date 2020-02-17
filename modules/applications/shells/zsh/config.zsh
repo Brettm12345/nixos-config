@@ -7,8 +7,8 @@ zle -N edit-command-line
 bindkey -a "^V" edit-command-line
 bindkey -v '^e^e' edit-command-line
 
-zle -N execute-command
-bindkey "^i" execute-command
+# zle -N execute-command
+# bindkey "^i" execute-command
 
 load edit-command-line
 
