@@ -2,12 +2,33 @@
 setopt auto_list
 setopt auto_menu
 
+zstyle ':completion:*' use-compctl false
+
+
+function _files_enhance() {
+    _files -M '' \
+        -M 'm:{[:lower:]-}={[:upper:]_}' \
+        -M 'r:|[.,_-]=* r:|=*' \
+        -M 'r:|.=* r:|=*'
+}
 # caching
 zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache yes
+zstyle ':completion::complete:*' cache-path $XDG_CACHE_HOME/zsh
+
+zstyle ':completion:*:*:*:*:*' menu true select search interactive
+zstyle ':completion:*' list-grouped false
+zstyle ':completion:*' list-separator ''
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:warnings' format '%F{red}%B-- No match for: %d --%b%f'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*:descriptions' format '[%d]'
+
 
 ## completion system
-zstyle ':completion:*'                              use-cache yes
-zstyle ':completion::complete:*'                    cache-path $HOME/var/zsh
 zstyle ':completion:*:approximate:'                 max-errors 'reply=( $((($#PREFIX+$#SUFFIX)/3 )) numeric )' # allow one error for every three characters typed in approximate completer
 zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'              # don't complete backup files as executables
 zstyle ':completion:*:correct:*'                    insert-unambiguous true             # start menu completion only if it could find no unambiguous initial string
@@ -28,7 +49,6 @@ zstyle -e ':completion:*'                           special-dirs '[[ $PREFIX = (
 zstyle ':completion:*:messages'                     format '%d'                         #
 zstyle ':completion:*:options'                      auto-description '%d'               #
 zstyle ':completion:*:options'                      description 'yes'                   # describe options in full
-zstyle ':completion:*:*:*:default'                  menu yes select search
 zstyle ':completion:*:processes'                    command 'ps -au$USER'               # on processes completion complete all user processes
 zstyle ':completion:*:*:-subscript-:*'              tag-order indexes parameters        # offer indexes before parameters in subscripts
 zstyle ':completion:*'                              verbose true                        # provide verbose completion information

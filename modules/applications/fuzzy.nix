@@ -3,7 +3,7 @@ let
   fuzzyConfig = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = true;
+    enableZshIntegration = false;
     defaultCommand =
       "git ls-tree -r --name-only HEAD 2> /dev/null || fd -H --type f . $HOME/src";
 

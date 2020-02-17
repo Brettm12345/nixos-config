@@ -3,23 +3,12 @@ setopt autocd correct rcquotes notify globdots autoresume promptsubst
 
 export LESS="-FX"
 
-function open-project() {
-  selection=$($HOME/bin/find-project)
-  if [[ -z "$selection" ]]; then
-    zle redisplay
-    return 0
-  fi
-  cd "$selection"
-  unset selection
-  local ret=$?
-  zle fzf-redraw-prompt
-  return $ret
-}
-zle -N open-project
-bindkey ^o open-project
 zle -N edit-command-line
 bindkey -a "^V" edit-command-line
 bindkey -v '^e^e' edit-command-line
+
+zle -N execute-command
+bindkey "^;" execute-command
 
 load edit-command-line
 
