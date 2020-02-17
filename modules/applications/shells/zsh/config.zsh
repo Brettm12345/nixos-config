@@ -48,14 +48,20 @@ function setup-vim-mode() {
   MODE_CURSOR_SEARCH="steady underline"
 }
 
-setup-lazyenv() {
+function setup-lazyenv() {
   export ZSH_EVALCACHE_DIR=$XDG_CACHE_HOME/lazyenv
   lazyenv-enabled
+  lazyload init:hub
+}
+
+function setup-fzf-tab() {
+  bindkey '^T' toggle-fzf-tab
 }
 
 # Very important things
 zinit wait'0a' light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
+  atload'setup-fzf-tab' Aloxaf/fzf-tab \
   atload'setup-lazyenv' black7375/zsh-lazyenv \
   atload'setup-vim-mode' softmoth/zsh-vim-mode \
   blockf zsh-users/zsh-completions \
