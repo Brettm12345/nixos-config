@@ -5,8 +5,8 @@ in {
     o = "open-project";
     l = "${exa} --git-ignore -1";
     ls = "${exa} --git-ignore";
-    ll = "${exa} -l --git -h --git-ignore";
-    la = "${exa} -l --git -a -h -g";
+    ll = "${exa} $EXA_DETAILED_ARGS --git-ignore";
+    la = "${exa} $EXA_DETAILED_ARGS -a -g";
     r = "exec $SHELL";
     rebuild = "$HOME/src/github.com/brettm12345/nixos-config/install";
     re = "rebuild";

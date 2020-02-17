@@ -110,7 +110,7 @@ zinit snippet OMZ::lib/clipboard.zsh
 alias -- -="cd -"
 
 function list() {
-  exa -F --icons -l --git -h --git-ignore --color=always -a
+  exa $EXA_DETAILED_ARGS --git-ignore --color=always -a
 }
 
 function setup-clipboard() {
