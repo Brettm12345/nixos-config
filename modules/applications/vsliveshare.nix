@@ -13,6 +13,6 @@
     enable = true;
     enableWritableWorkaround = true;
     enableDiagnosticsWorkaround = true;
-    extensionsDir = "/home/matthijs/.vscode/extensions";
+    extensionsDir = "/home/brett/.vscode/extensions";
   };
 }
