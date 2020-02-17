@@ -77,7 +77,7 @@ zinit wait'0b' light-mode lucid nocompletions for \
   atload'setup-substring-search' zsh-users/zsh-history-substring-search
 
 zinit light-mode wait'0c' as'program' lucid for \
-  zimfw/archive \
+  chisui/zsh-nix-shell \
   from'gh-r' sei40kr/fast-alias-tips-bin \
   make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick'direnv' src'zhook.zsh' \
   direnv/direnv \
@@ -89,7 +89,6 @@ zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gitfast/_git \
   OMZ::plugins/gatsby/_gatsby
 
-zinit ice lucid
 zinit ice lucid wait
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
@@ -124,7 +123,7 @@ function setup-enhancd() {
 zinit as"program" light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  trigger-load'!nix-shell' chisui/zsh-nix-shell \
+  trigger-load'!nix-shell' \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
