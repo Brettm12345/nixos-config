@@ -13,7 +13,7 @@ function load() {
 }
 
 function execute-command() {
-    local selected=$(printf "%s\n" ${(k)widgets} | fzf --reverse --prompt="cmd> " --height=10 )
+    local selected=$(printf "%s\n" ${(k)widgets} | fzf --reverse --prompt="cmd> " --height=50 )
     [[ $selected ]] && {
         zle redisplay
         zle $selected
