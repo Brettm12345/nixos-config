@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "0056574b0c0562a3c34d4ff937974af6e4239777",
-        "sha256": "1gnx03gyi9xs3v96q41xmr6xr4n2wz2cnk2p7m0mc3ib4fx16412",
+        "rev": "e0dbb72c745b9d4b5d42991600ca1f3f0f8d1eb6",
+        "sha256": "0v6838nmhivr9mxzz1clfkvdllcvgl0729yckci9qh0b4218p15x",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/0056574b0c0562a3c34d4ff937974af6e4239777.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/e0dbb72c745b9d4b5d42991600ca1f3f0f8d1eb6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "UserChrome-Tweaks": {
@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "Infinisil",
         "repo": "all-hies",
-        "rev": "92148680060ed68f24738128d8489f4f9387d2ff",
-        "sha256": "1yb75f8p09dp4yx5d3w3wvdiflaav9a5202xz9whigk2p9ndwbp5",
+        "rev": "d98bdbff3ebdab408a12a9b7890d4cf400180839",
+        "sha256": "1lr4dw10f37fp68b6ig065dgrl8h1v4xmigy5ncljdz74k0jvhg4",
         "type": "tarball",
-        "url": "https://github.com/Infinisil/all-hies/archive/92148680060ed68f24738128d8489f4f9387d2ff.tar.gz",
+        "url": "https://github.com/Infinisil/all-hies/archive/d98bdbff3ebdab408a12a9b7890d4cf400180839.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "base16-unclaimed-schemes": {
@@ -89,10 +89,10 @@
         "homepage": "",
         "owner": "hlissner",
         "repo": "doom-emacs",
-        "rev": "51d71ee7e3345e41812241143e5ba7b240713d50",
-        "sha256": "0gjlkvp1a8b5f3civlhzg70kf0dajqnskg6kggp2280y4aznh8sd",
+        "rev": "ca18034e329536d68100a45d6c6388342e6bdb38",
+        "sha256": "175xxzfrii11v6v16ng35awml6i02gc8h37cfq51xljgvl7dcw08",
         "type": "tarball",
-        "url": "https://github.com/hlissner/doom-emacs/archive/51d71ee7e3345e41812241143e5ba7b240713d50.tar.gz",
+        "url": "https://github.com/hlissner/doom-emacs/archive/ca18034e329536d68100a45d6c6388342e6bdb38.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "easy-purescript-nix": {
@@ -101,10 +101,10 @@
         "homepage": "",
         "owner": "justinwoo",
         "repo": "easy-purescript-nix",
-        "rev": "14e7d85431e9f9838d7107d18cb79c7fa534f54e",
-        "sha256": "0lmkppidmhnayv0919990ifdd61f9d23dzjzr8amz7hjgc74yxs0",
+        "rev": "340e82b6ecaccc4059740e69f8ec18546b527481",
+        "sha256": "1q2ciwd3193kig1paidzrgxl60y4rb39bsi97lk7m6ff8mis6z6i",
         "type": "tarball",
-        "url": "https://github.com/justinwoo/easy-purescript-nix/archive/14e7d85431e9f9838d7107d18cb79c7fa534f54e.tar.gz",
+        "url": "https://github.com/justinwoo/easy-purescript-nix/archive/340e82b6ecaccc4059740e69f8ec18546b527481.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "forgit": {
@@ -185,10 +185,10 @@
         "homepage": "",
         "owner": "vlaci",
         "repo": "nix-doom-emacs",
-        "rev": "2a85aac53da6de1c48d9b1b91848c5fa877b81ce",
-        "sha256": "1x58xa02zqnbxq4cv3kr0lmmrwm0hy3kb31kfdfaidayrl8x9pc8",
+        "rev": "065056219a4e6960bf6d25c72666eeefff2cfefe",
+        "sha256": "0lqdrsadcyz33psl9iphi6pcsmh6gydf56addhi6ykffjm5vhjpr",
         "type": "tarball",
-        "url": "https://github.com/vlaci/nix-doom-emacs/archive/2a85aac53da6de1c48d9b1b91848c5fa877b81ce.tar.gz",
+        "url": "https://github.com/vlaci/nix-doom-emacs/archive/065056219a4e6960bf6d25c72666eeefff2cfefe.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixfmt": {
@@ -258,10 +258,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "pypi2nix",
-        "rev": "73322bc61dfcace6c22d1ae5c043b2b72ad94c3e",
-        "sha256": "0l1n79cbzvl0c767v6nanbibfc44f6spwpmfj4fi4mfxmvr2mfwx",
+        "rev": "c0da71284f07f2a5a577c35f1c2e135d8266f55f",
+        "sha256": "1njdlyq2hdnkfa4n3sqq7pb5x6r4wn24vjawzxmnhgc7nkh4fnsq",
         "type": "tarball",
-        "url": "https://github.com/nix-community/pypi2nix/archive/73322bc61dfcace6c22d1ae5c043b2b72ad94c3e.tar.gz",
+        "url": "https://github.com/nix-community/pypi2nix/archive/c0da71284f07f2a5a577c35f1c2e135d8266f55f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "sddm-theme-clairvoyance": {
@@ -354,10 +354,10 @@
         "homepage": "https://zdharma.org/zinit/wiki/",
         "owner": "zdharma",
         "repo": "zinit",
-        "rev": "6301871d4353d8313349222cbe80443d0e6e3246",
-        "sha256": "0x601wxmszxka41gr3bk4200dbpd1dmrjlcmm3nccvylx3ky51rs",
+        "rev": "79c689f52d55f1f88409045bc9866cb8729eb5f8",
+        "sha256": "1lnkk3wq7lpv0qi3fy5v4j2nfqk6drqw7nnfzwwcq5hyrs1rvhys",
         "type": "tarball",
-        "url": "https://github.com/zdharma/zinit/archive/6301871d4353d8313349222cbe80443d0e6e3246.tar.gz",
+        "url": "https://github.com/zdharma/zinit/archive/79c689f52d55f1f88409045bc9866cb8729eb5f8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

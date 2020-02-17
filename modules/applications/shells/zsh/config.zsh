@@ -105,7 +105,6 @@ zinit snippet OMZ::lib/clipboard.zsh
 alias -- -="cd -"
 
 function list() {
-  exa $EXA_DETAILED_ARGS --git-ignore --color=always -a
 }
 
 function setup-clipboard() {
@@ -118,8 +117,8 @@ function setup-completion-generator() {
 }
 
 function setup-enhancd() {
-  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="list {}"'
-  ENHANCD_HOOK_AFTER_CD="list"
+  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -l --git -h --git-ignore --color=always -a {}"'
+  ENHANCD_HOOK_AFTER_CD="exa -l --git -h --git-ignore --color=always -a"
 }
 
 zinit as"program" light-mode lucid for \

@@ -15,15 +15,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
           doomPrivateDir = "${xdg.configHome}/doom";
         };
         xmonad = callPackage imports.xmonad-config { };
-        organizr = mkDerivation {
-          name = "organizr";
-          src = imports.organizr;
-          installPhase = ''
-            mkdir -p $out/config
-            cp -R . $out/
-            ln -s /var/lib/organizr/config.php $out/config/config.php
-          '';
-        };
         bs-platform = callPackage imports.bs-platform { };
         cached-nix-shell = callPackage imports.cached-nix-shell { };
         termite = self.termite;
@@ -39,7 +30,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
             cp -a ./source/* $out/share/themes/Juno
           '';
         };
-
         slack-theme = mkDerivation rec {
           name = "slack-theme";
           src = imports.slack-themes;
@@ -50,10 +40,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
           '';
         };
         slack = super.slack.override { theme = super.slack-theme-black; };
-
-        compton =
-          super.compton.overrideAttrs (old: { src = imports.compton; } // old);
-
         chromium = super.chromium.override {
           commandLineArgs = "--force-dark-mode --force-device-scale-factor=1.3";
         };
