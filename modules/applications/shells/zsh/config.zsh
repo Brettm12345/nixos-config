@@ -32,7 +32,7 @@ with url-quote-magic
 zle -N self-insert url-quote-magic
 
 # Suff that gets loaded immediately
-zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true'
+zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' cloneeopts'-b readonly-fix'
 zinit light brettm12345/powerlevel10k
 
 function setup-autosuggest() {
@@ -42,11 +42,11 @@ function setup-autosuggest() {
 }
 
 # Very important things
-zinit wait"0a" light-mode lucid nocompletions for \
+zinit wait'0a' light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
-  atload"KEYTIMEOUT=20" softmoth/zsh-vim-mode \
+  atload'KEYTIMEOUT=20' softmoth/zsh-vim-mode \
   blockf zsh-users/zsh-completions \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay" atpull"fast-theme XDG:overlay" \
+  atinit'ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay' atpull'fast-theme XDG:overlay' \
   zdharma/fast-syntax-highlighting \
   compile'{src/*.zsh,src/strategies/*}' atinit'setup-autosuggest' atload'!_zsh_autosuggest_start' \
   zsh-users/zsh-autosuggestions
@@ -63,16 +63,16 @@ function setup-substring-search() {
 }
 
 # Stuff that can wait a minute
-zinit wait"0b" light-mode lucid nocompletions for \
-  pick"autopair.zsh" hlissner/zsh-autopair \
-  atload"setup-substring-search" zsh-users/zsh-history-substring-search
+zinit wait'0b' light-mode lucid nocompletions for \
+  pick'autopair.zsh' hlissner/zsh-autopair \
+  atload'setup-substring-search' zsh-users/zsh-history-substring-search
 
-zinit light-mode wait"0c" as"program" lucid for \
+zinit light-mode wait'0c' as'program' lucid for \
   zimfw/archive \
   from'gh-r' sei40kr/fast-alias-tips-bin \
-  make"!" atclone"./direnv hook zsh > zhook.zsh" atpull"%atclone" pick"direnv" src"zhook.zsh" \
+  make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick'direnv' src'zhook.zsh' \
   direnv/direnv \
-  make"!" src"./_shell/_pmy.zsh" pick"$ZPFX/bin/pmy" \
+  make'!' src'./_shell/_pmy.zsh' pick"$ZPFX/bin/pmy" \
   relastle/pmy
 
 zinit light-mode wait"1" lucid as"completion" for \
@@ -91,19 +91,19 @@ zinit lucid atinit'setup-clipboard'
 zinit snippet OMZ::lib/clipboard.zsh
 
 function setup-completion-generator() {
-  alias gencomp="zinit lucid nocd as\"null\" wait\"1\" atload\"zinit creinstall -q _local/config-files; fast-zpcompinit\" for /dev/null; gencomp"
+  alias gencomp='zinit lucid nocd as"null" wait"1" atload"zinit creinstall -q _local/config-files; fast-zpcompinit" for /dev/null; gencomp'
 }
 
 function setup-enhancd() {
   ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
 }
 
-zinit light-mode lucid for \
+zinit as"program" light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
-  trigger-load'!gh' src"zsh/gh/gh" blockf brettm12345/gh \
+  trigger-load'!gh' source"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
   trigger-load'!x;!extract' blockf OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' wfxr/forgit \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
