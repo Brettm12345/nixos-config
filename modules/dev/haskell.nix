@@ -18,6 +18,7 @@
       ctags
       cabal2nix
       cabal-install
+      snack
       stack
       ghc
       (all-hies.selection { selector = p: { inherit (p) ghc865; }; })

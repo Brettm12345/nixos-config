@@ -1,8 +1,7 @@
 #!/usr/bin/env zsh
-setopt autocd correct rcquotes notify globdots autoresume
+setopt autocd correct rcquotes notify globdots autoresume promptsubst
 
 export LESS="-FX"
-setopt promptsubst
 
 function open-project() {
   selection=$($HOME/bin/find-project)
@@ -86,7 +85,8 @@ zinit light-mode wait"1" lucid as"completion" for \
   OMZ::plugins/gitfast/_git \
   OMZ::plugins/gatsby/_gatsby
 
-zinit ice wait
+zinit ice lucid
+zinit ice lucid wait
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 zinit ice wait lucid atinit"bind '^s' sudo-command-line"
@@ -116,7 +116,7 @@ zinit as"program" light-mode lucid for \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
-  trigger-load'!gh' source"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
+  trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
   trigger-load'!x;!extract' blockf OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' wfxr/forgit \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \

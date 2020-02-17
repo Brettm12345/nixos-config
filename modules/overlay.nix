@@ -24,27 +24,11 @@ with import ../support.nix { inherit lib pkgs config; }; {
             ln -s /var/lib/organizr/config.php $out/config/config.php
           '';
         };
-        taffybar = callPackage imports.taffybar-config { };
         bs-platform = callPackage imports.bs-platform { };
+        cached-nix-shell = callPackage imports.cached-nix-shell { };
         termite = self.termite;
+        snack = (import imports.snack).snack-exe;
         inherit (import imports.niv { }) niv;
-        sddm-theme-goodnight = mkDerivation {
-          name = "sddm-theme-goodnight";
-          installPhase = ''
-            mkdir -p $out/share/sddm/themes
-            cp -aR $src/src/goodnight $out/share/sddm/themes/goodnight
-          '';
-          src = imports.sddm-themes;
-        };
-        sddm-theme-clairvoyance = mkDerivation {
-          name = "sddm-theme-clairvoyance";
-          installPhase = ''
-            mkdir -p $out/share/sddm/themes
-            cp -aR $src $out/share/sddm/themes/clairvoyance
-          '';
-          src = imports.sddm-theme-clairvoyance;
-        };
-
         juno = mkDerivation rec {
           name = "Juno";
           src = imports.juno;

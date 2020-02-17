@@ -59,6 +59,18 @@
         "url": "https://github.com/turboMaCk/bs-platform.nix/archive/f153332cd377ef4e5b939b1ea8f24b64cb3e2dfb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "cached-nix-shell": {
+        "branch": "master",
+        "description": "Instant startup time for nix-shell",
+        "homepage": "",
+        "owner": "xzfc",
+        "repo": "cached-nix-shell",
+        "rev": "422036e95e30b25f8c67e44a45f779044ce0407e",
+        "sha256": "10y19z0aqk5pl8wnp1pmpyr43c5bv4jz0gjfsrsnfcphcyz2nq33",
+        "type": "tarball",
+        "url": "https://github.com/xzfc/cached-nix-shell/archive/422036e95e30b25f8c67e44a45f779044ce0407e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "compton": {
         "branch": "next",
         "description": "A compositor for X11, active fork.",
@@ -286,6 +298,18 @@
         "sha256": "0139nnlmn1dz1d9wchs7d25j9ayiyvlqm730rbczhxkrp3wzsr7p",
         "type": "tarball",
         "url": "https://github.com/brettm12345/slack-themes/archive/eb37abfe475cc9a56b13aabfc236cba3d4545af5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "snack": {
+        "branch": "master",
+        "description": "Nix-based incremental build tool for Haskell projects",
+        "homepage": "",
+        "owner": "nmattia",
+        "repo": "snack",
+        "rev": "d03a41eaba6536ae7b45c97a7c7fd9d8b73a7685",
+        "sha256": "0sz2kvr455xrzczd8fs02fbmn21rqycpyh1ckz0w6qx08dwqbx6h",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/snack/archive/d03a41eaba6536ae7b45c97a7c7fd9d8b73a7685.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "taffybar-config": {
