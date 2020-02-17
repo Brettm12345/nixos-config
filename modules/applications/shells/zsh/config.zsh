@@ -35,6 +35,7 @@ zinit light brettm12345/powerlevel10k
 
 function setup-autosuggest() {
   bindkey '^e' autosuggest-accept
+  ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
   ZSH_AUTOSUGGEST_USE_ASYNC=1
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 }
@@ -47,9 +48,15 @@ function setup-vim-mode() {
   MODE_CURSOR_SEARCH="steady underline"
 }
 
+setup-lazyenv() {
+  export ZSH_EVALCACHE_DIR=$XDG_CACHE_HOME/lazyenv
+  lazyenv-enabled
+}
+
 # Very important things
 zinit wait'0a' light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
+  atload'setup-lazyenv' black7375/zsh-lazyenv \
   atload'setup-vim-mode' softmoth/zsh-vim-mode \
   blockf zsh-users/zsh-completions \
   atinit'ZINIT[COMPINIT_OPTS]=-C; fast-zpcompinit; zpcdreplay' atpull'fast-theme XDG:overlay' \
@@ -60,6 +67,7 @@ zinit wait'0a' light-mode lucid nocompletions for \
 function setup-substring-search() {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
+  HISTORY_SUBSTRING_SEARCH_FUZZY=set
   zle -N history-substring-search-up
   zle -N history-substring-search-down
   bindkey '^[OA' history-substring-search-up
@@ -82,6 +90,7 @@ zinit light-mode wait'0c' as'program' lucid for \
   relastle/pmy
 
 zinit light-mode wait"1" lucid as"completion" for \
+  spwhitt/nix-zsh-completions \
   OMZ::plugins/gitfast/_git \
   OMZ::plugins/gatsby/_gatsby
 
@@ -98,6 +107,12 @@ zinit snippet OMZ::lib/git.zsh
 zinit ice wait lucid atinit'setup-clipboard'
 zinit snippet OMZ::lib/clipboard.zsh
 
+alias -- -="cd -"
+
+function list() {
+  exa -F --icons -l --git -h --git-ignore --color=always -a
+}
+
 function setup-clipboard() {
   bind '^v' clippaste
   bind '^c' clipcopy
@@ -108,12 +123,14 @@ function setup-completion-generator() {
 }
 
 function setup-enhancd() {
-  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -F --icons -l --git -h --git-ignore --color=always -a {}"'
+  ENHANCD_FILTER='fzf -0 -1 --ansi --preview="list {}"'
+  ENHANCD_HOOK_AFTER_CD="list"
 }
 
 zinit as"program" light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
+  trigger-load'!nix-shell' chisui/zsh-nix-shell \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \

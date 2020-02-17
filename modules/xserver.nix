@@ -1,7 +1,4 @@
 { pkgs, config, ... }: {
-  environment.systemPackages = with pkgs; [ sddm-theme-goodnight ];
-  # hardware.nvidia.modesetting.enable = true;
-  # https://twitter.com/ttuegel/status/997561239659270145
   environment.pathsToLink = [ "/share" ];
   services.xserver = {
     enable = true;
@@ -22,11 +19,6 @@
         background-image = "/home/brett/usr/img/bouquet.jpg"
       '';
     };
-    # displayManager.sddm = {
-    #   enable = true;
-    #   theme = "goodnight";
-    #   autoLogin = { user = "brett"; };
-    # };
     layout = "us";
     libinput = {
       enable = true;
