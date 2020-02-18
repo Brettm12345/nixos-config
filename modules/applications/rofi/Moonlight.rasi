@@ -4,15 +4,12 @@
   text-color: var(foreground);
   background-dark: #191a2a;
   foreground-light: #e4f3fa;
-  urgent-color: #ff757f;
   foreground: #c8d3f5;
   background-color: #171827;
-  background-light: #292e46;
   highlight: bold underline #c7f59b;
-  active-color: #baacff;
   foreground-dark: #444a73;
   border: #000000aa;
-  background: #1d1f31;
+  background-light: #1f2033;
   background-alt: #1b1c2d;
   main-color: #82aaff;
 }
@@ -43,7 +40,7 @@ prompt {
   border: 2px;
   border-color: var(border);
   spacing: 0;
-  text-color: var(background);
+  text-color: var(background-dark);
 }
 
 textbox-prompt-colon {
@@ -87,7 +84,7 @@ element {
 }
 
 element selected {
-  background-color: var(background);
+  background-color: var(background-light);
   highlight: var(highlight);
   border-color: var(main-color);
   text-color: var(main-color);
