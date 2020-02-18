@@ -93,10 +93,10 @@ zinit light-mode wait"1" lucid as"completion" for \
 zinit ice lucid wait
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-zinit lucid atinit"bind '^s' sudo-command-line"
+zinit ice wait lucid atinit"bind '^s' sudo-command-line"
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
 
-zinit ice wait lucid atload'unalias glo'
+zinit ice wait lucid
 zinit snippet OMZ::lib/git.zsh
 
 zinit ice wait lucid atinit'setup-clipboard'
@@ -121,7 +121,6 @@ setup-enhancd() {
 zinit as"program" light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
-  trigger-load'!nix-shell' \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
