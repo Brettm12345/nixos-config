@@ -40,8 +40,8 @@ let
 in with lib; {
   home-manager.users.brett = {
     home = {
-      packages = with pkgs; [ mynvim ];
-      sessionVariables = let cmd = "${mynvim}/bin/nvim";
+      packages = with pkgs; [ neovim ];
+      sessionVariables = let cmd = "${pkgs.neovim}/bin/nvim";
       in {
         EDITOR = cmd;
         VISUAL = cmd;
