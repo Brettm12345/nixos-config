@@ -6,7 +6,7 @@
   foreground-light: #e4f3fa;
   urgent-color: #ff757f;
   foreground: #c8d3f5;
-  background-color: var(background-dark);
+  background-color: #171827;
   background-light: #292e46;
   highlight: bold underline #c7f59b;
   active-color: #baacff;
