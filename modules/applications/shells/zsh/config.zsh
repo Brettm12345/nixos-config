@@ -133,6 +133,7 @@ zinit as"program" light-mode lucid for \
   RobSis/zsh-completion-generator
 
 CARGO_HOME="$HOME/.cargo"
+BROWSER="chromium"
 
 typeset -U PATH path
 path=("$HOME/bin" "$HOME/.npm/bin" "$CARGO_HOME/bin" "$HOME/.yarn/bin" "$HOME/.cabal/bin" "$HOME/.emacs.d/bin" "$path[@]") && export PATH
