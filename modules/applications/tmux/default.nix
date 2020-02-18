@@ -1,4 +1,16 @@
 { pkgs, ... }: {
+  home-manager.users.brett.systemd.user.services = {
+    tmux = {
+      Unit = { Description = "Start tmux in detached session"; };
+      Service = with pkgs; {
+        Type = "forking";
+        User = "%I";
+        ExecStart = "${tmux}/bin/tmux new-session -s %u -d";
+        ExecStop = "${tmux}/bin/tmux kill-session -t %u";
+      };
+      Install = { WantedBy = [ "multi-user.target" ]; };
+    };
+  };
   home-manager.users.brett.programs.tmux = with builtins; {
     enable = true;
     terminal = "tmux-256color";
