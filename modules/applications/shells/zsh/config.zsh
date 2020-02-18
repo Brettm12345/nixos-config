@@ -7,6 +7,9 @@ zle -N edit-command-line
 bindkey -a "^V" edit-command-line
 bindkey -v '^e^e' edit-command-line
 
+zle -N open-project
+bindkey ^o open-project
+
 # zle -N execute-command
 # bindkey "^i" execute-command
 

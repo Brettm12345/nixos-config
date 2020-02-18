@@ -32,5 +32,3 @@ function open-project() {
   zle fzf-redraw-prompt
   return $ret
 }
-zle -N open-project
-bindkey ^o open-project
