@@ -1,5 +1,5 @@
 { pkgs, lib, ... }:
-let exa = "${pkgs.exa}/bin/exa";
+let exa = "${pkgs.exa}/bin/exa --icons";
 in {
   environment.shellAliases = {
     br = "broot -p";
