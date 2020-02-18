@@ -24,8 +24,14 @@ mainbox {
   border-radius: 6px;
 }
 
+inputbar,
+prompt,
+textbox-prompt-colon,
+entry {
+  background-color: var(background-alt);
+}
+
 inputbar {
-  background-color: var(background-dark);
   margin: 4px 0px;
   spacing: 0;
   children: [ prompt, textbox-prompt-colon, entry ];
@@ -46,7 +52,6 @@ textbox-prompt-colon {
   font: "monospace";
   color: var(foreground-dark);
   border-color: var(border);
-  background-color: var(background-alt);
   expand: false;
   str: " :: ";
 }
@@ -55,7 +60,6 @@ entry {
   padding: 10px 10px 10px 0px;
   border: 1px 1px 1px 0px;
   border-color: var(border);
-  background-color: var(background-alt);
   spacing: 0;
   text-color: var(main-color);
 }
@@ -76,36 +80,17 @@ listview {
 
 element {
   padding: 12px;
-  margin: 4px 0px;
+  margin: 4px;
   border: 0px 0px 0px 8px;
-}
-
-element normal {
   background-color: var(background-alt);
   border-color: var(background-alt);
-}
-
-element normal active {
-  text-color: var(active-color);
-}
-
-element normal urgent {
-  text-color: var(urgent-color);
 }
 
 element selected {
   background-color: var(background);
   highlight: var(highlight);
   border-color: var(main-color);
-  text-color: var(foreground-light);
-}
-
-element selected active {
-  text-color: var(active-color);
-}
-
-element selected urgent {
-  text-color: var(urgent-color);
+  text-color: var(main-color);
 }
 
 button {
