@@ -132,8 +132,10 @@ zinit as"program" light-mode lucid for \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
   RobSis/zsh-completion-generator
 
+CARGO_HOME="$HOME/cargo"
+
 typeset -U PATH path
-path=("$HOME/bin" "$path[@]") && export PATH
+path=("$HOME/bin" "$HOME/.npm/bin" "$CARGO_HOME/bin" "$HOME/.yarn/bin" "$HOME/.cabal/bin" "$HOME/.emacs.d/bin" "$path[@]") && export PATH
 
 RPROMPT=""
 GHQ_ROOT="$HOME/src"

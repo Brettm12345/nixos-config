@@ -8,6 +8,7 @@ let
       type = nullOr str;
     };
 in {
+
   options.secrets = {
     aws = submodule {
       access-key = secret "Aws access key";

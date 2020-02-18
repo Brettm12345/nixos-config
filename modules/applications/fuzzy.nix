@@ -17,7 +17,7 @@ let
       "--bind ctrl-s:toggle-sort"
       "--ansi"
       "--cycle"
-      "--color='16,fg+:2,bg+:0,hl:4,hl+:4,prompt:4,pointer:8'"
+      "--color='16,fg+:2,bg+:0,hl:4,hl+:4,prompt:4,pointer:8,border:0,info:6'"
     ];
   };
 in {
