@@ -26,8 +26,6 @@ let
     show-icons = "true";
     threads = "8";
     kb-accept-entry = "Return";
-    kb-mode-next = "Control+Left";
-    kb-mode-previous = "Control+Right";
     kb-move-char-back = "Control+b";
     kb-move-char-forward = "Control+f";
     kb-remove-char-back = "BackSpace";
