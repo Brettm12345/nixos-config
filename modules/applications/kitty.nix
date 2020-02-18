@@ -8,6 +8,8 @@
         italic_font ${monospace-alt}
         bold_italic_font ${monospace-alt}
 
+        open_url_with ${pkgs.chromium}/bin/chromium
+
         input_delay 2
         sync_to_monitor yes
 
