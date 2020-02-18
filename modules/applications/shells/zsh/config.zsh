@@ -81,6 +81,7 @@ zinit wait'0b' light-mode lucid nocompletions for \
 
 zinit light-mode wait'0c' as'program' lucid for \
   chisui/zsh-nix-shell \
+  wfxr/forgit \
   from'gh-r' sei40kr/fast-alias-tips-bin \
   make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick'direnv' src'zhook.zsh' \
   direnv/direnv
@@ -125,7 +126,6 @@ zinit as"program" light-mode lucid for \
   trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
   trigger-load'!x;!extract' blockf OMZ::plugins/extract/extract.plugin.zsh \
-  trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' wfxr/forgit \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
   RobSis/zsh-completion-generator
 
