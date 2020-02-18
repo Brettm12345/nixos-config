@@ -10,7 +10,7 @@ let
         "projects:~/bin/rofi-projects"
       ];
     modi = "combi,keys,${combi-modi}";
-    columns = "2";
+    columns = "3";
     icon-theme = "Papirus";
     display-keys = "גּ ";
     display-window = " ";
@@ -24,6 +24,8 @@ let
     run-list-command = "'fish -c functions'";
     separator-style = "none";
     show-icons = "true";
+    kb-row-left = "Left";
+    kb-row-right = "Right";
     threads = "8";
     kb-accept-entry = "Return";
     kb-move-char-back = "Control+b";
