@@ -5,8 +5,8 @@
       Service = with pkgs; {
         Type = "forking";
         User = "%I";
-        ExecStart = "${tmux}/bin/tmux new-session -s %u -d";
-        ExecStop = "${tmux}/bin/tmux kill-session -t %u";
+        ExecStart = "${tmux}/bin/tmux new -s 0 -d";
+        ExecStop = "${tmux}/bin/tmux kill-server";
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };
