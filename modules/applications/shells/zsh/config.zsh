@@ -96,7 +96,7 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit lucid atinit"bind '^s' sudo-command-line"
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
 
-zinit ice wait lucid
+zinit ice wait lucid atload'unalias glo'
 zinit snippet OMZ::lib/git.zsh
 
 zinit ice wait lucid atinit'setup-clipboard'
