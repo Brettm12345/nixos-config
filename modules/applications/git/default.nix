@@ -22,7 +22,7 @@
           autocrlf = false;
           eol = "LF";
         };
-        ghq.root = "$PROJECTS";
+        ghq.root = "~/src";
         github.user = "Brettm12345";
         hub.protocol = "ssh";
         help.autocorrect = 1;
