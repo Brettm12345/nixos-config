@@ -19,7 +19,6 @@ let
     display-ssh = " ";
     display-drun = "   ";
     display-combi = "   ";
-    matching = "fuzzy";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";
     separator-style = "none";
