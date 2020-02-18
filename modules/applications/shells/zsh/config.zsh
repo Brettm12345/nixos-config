@@ -53,6 +53,7 @@ setup-fzf-tab() {
 # Very important things
 zinit wait'0a' light-mode lucid nocompletions for \
   sei40kr/zsh-fast-alias-tips \
+  jreese/zsh-titles \
   atload'setup-fzf-tab' Aloxaf/fzf-tab \
   atload'setup-lazyenv' black7375/zsh-lazyenv \
   atload'setup-vim-mode' softmoth/zsh-vim-mode \
