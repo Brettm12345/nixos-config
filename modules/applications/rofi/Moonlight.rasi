@@ -6,7 +6,7 @@
   foreground-light: #e4f3fa;
   urgent-color: #ff757f;
   foreground: #c8d3f5;
-  background-color: var(background);
+  background-color: var(background-dark);
   background-light: #292e46;
   highlight: bold underline #c7f59b;
   active-color: #baacff;
@@ -46,7 +46,7 @@ textbox-prompt-colon {
   font: "monospace";
   color: var(foreground-dark);
   border-color: var(border);
-  background-color: var(background-dark);
+  background-color: var(background-alt);
   expand: false;
   str: " :: ";
 }
@@ -55,7 +55,7 @@ entry {
   padding: 10px 10px 10px 0px;
   border: 1px 1px 1px 0px;
   border-color: var(border);
-  background-color: var(background-dark);
+  background-color: var(background-alt);
   spacing: 0;
   text-color: var(main-color);
 }
@@ -81,8 +81,8 @@ element {
 }
 
 element normal {
-  background-color: var(background-dark);
-  border-color: var(background-dark);
+  background-color: var(background-alt);
+  border-color: var(background-alt);
 }
 
 element normal active {
@@ -94,7 +94,7 @@ element normal urgent {
 }
 
 element selected {
-  background-color: var(background-alt);
+  background-color: var(background);
   highlight: var(highlight);
   border-color: var(main-color);
   text-color: var(foreground-light);

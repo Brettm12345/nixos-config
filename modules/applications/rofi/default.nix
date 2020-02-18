@@ -10,6 +10,7 @@ let
         "projects:~/bin/rofi-projects"
       ];
     modi = "combi,keys,${combi-modi}";
+    columns = "2";
     icon-theme = "Papirus";
     display-keys = "גּ ";
     display-window = " ";

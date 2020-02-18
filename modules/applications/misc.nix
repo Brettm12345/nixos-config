@@ -11,6 +11,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         afterLinkGen "rm -f /home/brett/.config/user-dirs.dirs";
       packages = with pkgs; [
         buku
+        bukubrow
         chromium
         clang
         clang-tools
@@ -32,7 +33,9 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         nix-index
         ffmpeg-full
         haskellPackages.greenclip
+        profile-sync-daemon
         gitAndTools.hub
+        gitAndTools.grv
         mediainfo
         gnupg
         gopass
@@ -41,9 +44,11 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         lldb
         ripgrep
         platinum-searcher
+        sd
         silver-searcher
         slack
         ranger
+        tokei
         stdman
         vscode
         yank
