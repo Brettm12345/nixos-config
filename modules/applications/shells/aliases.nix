@@ -2,6 +2,7 @@
 let exa = "${pkgs.exa}/bin/exa";
 in {
   environment.shellAliases = {
+    br = "broot -p";
     o = "open-project";
     l = "${exa} --git-ignore -1";
     ls = "${exa} --git-ignore";

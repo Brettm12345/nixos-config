@@ -1,26 +1,27 @@
-function bind() {
+redraw-prompt() {
+  local precmd
+  for precmd in $precmd_functions; do
+    $precmd
+  done
+  zle reset-prompt
+}
+zle -N redraw-prompt
+
+bind() {
   zle -N $2
   bindkey -v $1 $2
 }
 
-function with() {
+with() {
   autoload -Uz $1
 }
 
-function load() {
+load() {
   with $1
   zle -N $1
 }
 
-# function execute-command() {
-#     local selected=$(printf "%s\n" ${(k)widgets} | fzf --reverse --prompt="cmd> " --height=50 )
-#     [[ $selected ]] && {
-#         zle redisplay
-#         zle $selected
-#     }
-# }
-
-function open-project() {
+open-project() {
   selection=$($HOME/bin/find-project)
   if [[ -z "$selection" ]]; then
     zle redisplay
@@ -29,6 +30,6 @@ function open-project() {
   cd "$selection"
   unset selection
   local ret=$?
-  zle fzf-redraw-prompt
+  zle redraw-prompt
   return $ret
 }
