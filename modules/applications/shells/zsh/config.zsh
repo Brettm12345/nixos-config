@@ -25,14 +25,14 @@ zle -N self-insert url-quote-magic
 zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' cloneeopts'-b readonly-fix'
 zinit light brettm12345/powerlevel10k
 
-function setup-autosuggest() {
+setup-autosuggest() {
   bindkey '^e' autosuggest-accept
   ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
   ZSH_AUTOSUGGEST_USE_ASYNC=1
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5b6395"
 }
 
-function setup-vim-mode() {
+setup-vim-mode() {
   bindkey jk vi-cmd-mode
   KEYTIMEOUT=20
   MODE_CURSOR_VICMD="block"
@@ -40,13 +40,13 @@ function setup-vim-mode() {
   MODE_CURSOR_SEARCH="steady underline"
 }
 
-function setup-lazyenv() {
+setup-lazyenv() {
   export ZSH_EVALCACHE_DIR=$XDG_CACHE_HOME/lazyenv
   lazyenv-enabled
   lazyload init:hub
 }
 
-function setup-fzf-tab() {
+setup-fzf-tab() {
   bindkey '^T' toggle-fzf-tab
 }
 
@@ -62,7 +62,7 @@ zinit wait'0a' light-mode lucid nocompletions for \
   compile'{src/*.zsh,src/strategies/*}' atinit'setup-autosuggest' atload'!_zsh_autosuggest_start' \
   zsh-users/zsh-autosuggestions
 
-function setup-substring-search() {
+setup-substring-search() {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='underline'
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
   HISTORY_SUBSTRING_SEARCH_FUZZY=set
@@ -83,9 +83,7 @@ zinit light-mode wait'0c' as'program' lucid for \
   chisui/zsh-nix-shell \
   from'gh-r' sei40kr/fast-alias-tips-bin \
   make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick'direnv' src'zhook.zsh' \
-  direnv/direnv \
-  make'!' src'./_shell/_pmy.zsh' pick"$ZPFX/bin/pmy" \
-  relastle/pmy
+  direnv/direnv
 
 zinit light-mode wait"1" lucid as"completion" for \
   spwhitt/nix-zsh-completions \
@@ -95,7 +93,7 @@ zinit light-mode wait"1" lucid as"completion" for \
 zinit ice lucid wait
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-zinit ice wait lucid atinit"bind '^s' sudo-command-line"
+zinit lucid atinit"bind '^s' sudo-command-line"
 zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
 
 zinit ice wait lucid
@@ -106,19 +104,16 @@ zinit snippet OMZ::lib/clipboard.zsh
 
 alias -- -="cd -"
 
-function list() {
-}
-
-function setup-clipboard() {
+setup-clipboard() {
   bind '^v' clippaste
   bind '^c' clipcopy
 }
 
-function setup-completion-generator() {
+setup-completion-generator() {
   alias gencomp='zinit lucid nocd as"null" wait"1" atload"zinit creinstall -q _local/config-files; fast-zpcompinit" for /dev/null; gencomp'
 }
 
-function setup-enhancd() {
+setup-enhancd() {
   ENHANCD_FILTER='fzf -0 -1 --ansi --preview="exa -l --git -h --git-ignore --color=always -a {}"'
   ENHANCD_HOOK_AFTER_CD="exa -l --git -h --git-ignore --color=always -a"
 }
