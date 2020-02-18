@@ -15,6 +15,7 @@ let
     display-keys = "גּ ";
     display-window = " ";
     display-windowcd = " ";
+    sorting-method = "fzf";
     display-run = " ";
     display-ssh = " ";
     display-drun = "   ";
