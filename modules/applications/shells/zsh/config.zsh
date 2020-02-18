@@ -79,9 +79,11 @@ zinit wait'0b' light-mode lucid nocompletions for \
   pick'autopair.zsh' hlissner/zsh-autopair \
   atload'setup-substring-search' zsh-users/zsh-history-substring-search
 
-zinit light-mode wait'0c' as'program' lucid for \
-  chisui/zsh-nix-shell \
+zinit light-mode wait'0c' lucid for \
   wfxr/forgit \
+  chisui/zsh-nix-shell
+
+zinit light-mode wait'0c' as'program' lucid for \
   from'gh-r' sei40kr/fast-alias-tips-bin \
   make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick'direnv' src'zhook.zsh' \
   direnv/direnv
