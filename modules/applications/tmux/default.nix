@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home-manager.users.brett.systemd.user.services = {
-    tmux = {
+    "tmux@" = {
       Unit = { Description = "Start tmux in detached session"; };
       Service = with pkgs; {
         Type = "forking";
