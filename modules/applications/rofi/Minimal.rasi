@@ -53,18 +53,15 @@ scrollbar {
   handle-width: 1px;
 }
 inputbar {
-  children: [ textbox-icon, prompt, entry ];
+  children: [ prompt, entry ];
   border: 0 0 1px;
 }
-textbox-icon,
+
 prompt {
   padding: 11px;
   expand: false;
-  border: 0 1px 0 0;
   margin: 0 -2px 0 0;
-}
-textbox-icon {
-  padding: 7px -6px 0;
+  border: 0 1px 0 0;
 }
 entry,
 element {
