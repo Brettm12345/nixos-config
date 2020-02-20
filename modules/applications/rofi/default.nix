@@ -18,8 +18,8 @@ let
     sorting-method = "fzf";
     display-run = " ";
     display-ssh = " ";
-    display-drun = "   ";
-    display-combi = "   ";
+    display-drun = " ";
+    display-combi = "  ";
     run-command = "fish -c '{cmd}'";
     run-list-command = "'fish -c functions'";
     separator-style = "none";
@@ -44,7 +44,7 @@ in {
     padding = 10;
     lines = 10;
     location = "center";
-    theme = ./Moonlight.rasi;
+    theme = ./Minimal.rasi;
     width = 2000;
     extraConfig = with lib;
       concatStringsSep "\n"
