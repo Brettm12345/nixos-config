@@ -53,12 +53,29 @@ scrollbar {
   handle-width: 1px;
 }
 inputbar {
-  children: [ prompt, entry ];
+  children: [ textbox-icon, prompt, entry ];
   border: 0 0 1px;
 }
 
+textbox-icon {
+  str: "  ";
+}
+
 prompt {
+  enabled: false;
+}
+
+textbox-icon,
+prompt {
+  padding: 11px;
+  expand: false;
+  margin: 0 -2px 0 0;
+}
+prompt {
+  border-radius: 6px;
   border: 0 1px 0 0;
+}
+textbox-icon {
   padding: 7px -6px 0;
 }
 entry,
