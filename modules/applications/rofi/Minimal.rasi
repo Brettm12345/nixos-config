@@ -58,10 +58,10 @@ inputbar {
 }
 
 prompt {
-  padding: 11px;
   expand: false;
   margin: 0 -2px 0 0;
   border: 0 1px 0 0;
+  padding: 7px -6px 0;
 }
 entry,
 element {
