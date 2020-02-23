@@ -34,7 +34,6 @@ with builtins; {
           max_icon_size = 64;
           icon_position = "right";
           line_height = 0;
-          separator_color = thm.colors.grayscale.base1;
           separator_height = 2;
           show_age_threshold = 60;
           word_wrap = true;

@@ -6,4 +6,6 @@
 - [-] Add slack with themes
 - [-] Make a =/lib/= directory for all of my helper functions
 - [ ] Fix annoying `user-dirs.dirs` error
+- [ ] Finish theming rofi
+- [ ] Figure out how to use xmonad config
 - [ ] Symlink dotfiles
