@@ -11,6 +11,7 @@ configuration {
   bg: #1e2029fa;
   bg-light: #1c1c1c;
   bg-focus: #282a36;
+  bg-prompt: #2f313d;
   bg-dark: #181a23;
   fg: #bbc2cf;
   fg-list: #bbc2cf;
@@ -108,7 +109,7 @@ entry {
 }
 textbox-icon,
 prompt {
-  background-color: #2f313d;
+  background-color: @bg-prompt;
 }
 prompt {
   background-color: @bg-focus;
