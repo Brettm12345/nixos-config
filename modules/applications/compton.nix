@@ -2,6 +2,10 @@
   home-manager.users.brett = {
     services.compton = {
       enable = true;
+      backend = "glx";
+      refreshRate = 60;
+      fade = true;
+      fadeDelta = 5;
       shadow = true;
       shadowExclude = [
         "_GTK_FRAME_EXTENTS@:c"
