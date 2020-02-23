@@ -7,7 +7,7 @@ configuration {
 }
 
 * {
-  accent: #bd93f9;
+  accent: #c099ff;
   bg: #1e2029fa;
   bg-light: #1c1c1c;
   bg-focus: #282a36;

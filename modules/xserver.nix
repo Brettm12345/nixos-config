@@ -8,7 +8,7 @@
     videoDrivers = [ "nouveau" ];
     displayManager.lightdm.enable = true;
     displayManager.lightdm.greeters.mini = {
-      enable = true;
+      enable = false;
       user = "brett";
       extraConfig = with config.themes.colors.grayscale; ''
         [greeter]
