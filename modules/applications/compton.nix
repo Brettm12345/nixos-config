@@ -1,7 +1,7 @@
 { ... }: {
   home-manager.users.brett = {
     services.compton = {
-      enable = false;
+      enable = true;
       backend = "xrender";
       shadow = true;
       shadowExclude = [
