@@ -2,13 +2,6 @@
   home-manager.users.brett = {
     services.compton = {
       enable = true;
-      extraOptions = ''
-        sw-opti = true;
-        xrender-sync-fence = true;
-        fade-in-step = 0.03;
-        fade-out-step = 0.03;
-        vsync = "opengl-swc";
-            '';
       backend = "glx";
       refreshRate = 60;
       fade = true;
