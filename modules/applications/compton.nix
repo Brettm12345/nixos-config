@@ -2,7 +2,6 @@
   home-manager.users.brett = {
     services.compton = {
       enable = true;
-      backend = "xrender";
       shadow = true;
       shadowExclude = [
         "_GTK_FRAME_EXTENTS@:c"
@@ -13,13 +12,6 @@
         "class_g = 'dzen2'"
         "name    = 'dzen title'"
       ];
-      shadowOpacity = "0.3";
-      shadowOffsets = [ (-3) (-3) ];
-
-      extraOptions = ''
-        xinerama-shadow-crop = true;
-        corner-radius = 8;
-      '';
     };
   };
 }
