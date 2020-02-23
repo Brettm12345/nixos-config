@@ -5,3 +5,5 @@
 - [X] Add git config
 - [-] Add slack with themes
 - [-] Make a =/lib/= directory for all of my helper functions
+- [ ] Fix annoying `user-dirs.dirs` error
+- [ ] Symlink dotfiles
