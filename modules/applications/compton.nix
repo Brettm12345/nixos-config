@@ -5,7 +5,6 @@
       extraOptions = ''
         sw-opti = true;
         xrender-sync-fence = true;
-        fade-delta = 4;  # 30;
         fade-in-step = 0.03;
         fade-out-step = 0.03;
         # no-fading-openclose = true;
