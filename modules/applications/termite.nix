@@ -1,15 +1,10 @@
 { config, lib, ... }:
 with lib;
-with config.themes;
-let
-  foldLines = concatStringsSep "\n" foldl';
-  padding = "10px";
-  mkColors = x: foldLines (i: c: "color${i + x} = ${c}") attrValues;
-in {
+with config.themes; {
   home-manager.users.brett = {
-    gtk.gtk3.extraCss = ''
-      VteTerminal,
-      vte-terminal {
+    gtk.gtk3.extraCss = let padding = "10px";
+    in ''
+      VteTerminal, vte-terminal {
         -vteterminal-inner-border: ${padding};
       }
       .termite {
@@ -23,7 +18,24 @@ in {
         backgroundColor = background;
         browser = config.defaultApplications.browser.cmd;
         clickableUrl = true;
-        # colorsExtra = (foldLines (i: mkColors i * 8) [ normal bright ]);
+        colorsExtra = ''
+          color0 ${grayscale.base3}
+          color1 ${normal.red}
+          color2 ${normal.green}
+          color3 ${normal.yellow}
+          color4 ${normal.blue}
+          color5 ${normal.magenta}
+          color6 ${normal.cyan}
+          color7 ${normal.white}
+          color8 ${grayscale.base6}
+          color9 ${bright.red}
+          color10 ${bright.green}
+          color11 ${bright.yellow}
+          color12 ${bright.blue}
+          color13 ${bright.magenta}
+          color14 ${bright.cyan}
+          color15 ${bright.white}
+        '';
         cursorBlink = "on";
         cursorColor = normal.blue;
         cursorShape = "ibeam";
@@ -52,5 +64,4 @@ in {
         urgentOnBell = true;
       };
   };
-
 }

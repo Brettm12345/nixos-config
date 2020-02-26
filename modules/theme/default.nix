@@ -15,14 +15,15 @@ let
       base6 = 0.42;
       base7 = 0.52;
     };
-  basePair = i: nameValuePair "color${toString i}";
+  basePair = v: i: nameValuePair "color${toString i + v}";
   transformColors = theme:
     with theme; rec {
       inherit background foreground;
       grayscale = bases background;
       normal = getAttrs colors theme;
       bright = mapAttrs (_: lighten 1.9e-2) normal;
-      base16 = listToAttrs (imap0 basePair ((attrValues normal)));
+      base16 = listToAttrs (imap0 (basePair 0) ((attrValues normal)))
+        ++ listToAttrs (imap0 (basePair 0) ((attrValues bright)));
     };
 in {
   options.themes = import ./options.nix { inherit config lib pkgs; };
