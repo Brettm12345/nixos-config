@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -p git -i bash
+#!nix-shell -p git zsh -i zsh
 
 unset IN_NIX_SHELL
 
