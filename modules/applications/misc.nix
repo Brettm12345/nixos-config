@@ -35,7 +35,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         haskellPackages.greenclip
         profile-sync-daemon
         gitAndTools.hub
-        gitAndTools.grv
         mediainfo
         gnupg
         gopass

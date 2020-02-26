@@ -5,8 +5,11 @@
       backend = "glx";
       refreshRate = 60;
       fade = true;
-      fadeDelta = 4;
+      fadeDelta = 1;
+      fadeSteps = [ "0.01" "0.012" ];
       shadow = true;
+      shadowOffsets = [ (-10) (-10) ];
+      shadowOpacity = "0.22";
       shadowExclude = [
         "_GTK_FRAME_EXTENTS@:c"
         "window_type *= 'menu'"

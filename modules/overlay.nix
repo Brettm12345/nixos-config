@@ -74,7 +74,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
       "https://all-hies.cachix.org"
     ];
     binaryCachePublicKeys = [
-      "cache.dhall-lang.org:I9/H18WHd60olG5GsIjolp7CtepSgJmM2CsO813VTmM="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "all-hies.cachix.org-1:JjrzAOEUsD9ZMt8fdFbzo3jNAyEWlPAwdVuHw4RD43k="
     ];

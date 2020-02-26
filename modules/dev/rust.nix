@@ -11,7 +11,7 @@
     cargo-release
     cargo-tree
     cargo-watch
-    racer
+    # racer
     rustup
   ];
 }

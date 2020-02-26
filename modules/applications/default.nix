@@ -12,7 +12,7 @@
     ./compton.nix
     ./shells
     ./dunst.nix
-    # ./plex.nix
+    ./plex.nix
     ./kitty.nix
     ./locale.nix
     ./fuzzy.nix
