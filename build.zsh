@@ -1,9 +1,9 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -p git zsh -i zsh
+#!/usr/bin/env cached-nix-shell
+#! nix-shell -p git zsh -i zsh
 
 unset IN_NIX_SHELL
 
-nixpkgs=$(nix eval --raw '(import ./nix/sources.nix).nixpkgs-unstable')
+nixpkgs="$(nix eval --raw '(import ./nix/sources.nix).nixpkgs-unstable')"
 
 nix-store --realise "$nixpkgs" 2 &>/dev/null
 

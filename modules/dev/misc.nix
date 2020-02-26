@@ -3,6 +3,7 @@
     clang
     clang-tools
     lldb
+    checkbashisms
     python3
     gnumake
     pkgconfig
