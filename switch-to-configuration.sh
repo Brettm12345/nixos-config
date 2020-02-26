@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 PATH=/run/current-system/sw/bin
 
-nix-env --profile /nix/var/nix/profiles/system --set "$(readlink "$1"/result)"
-"$1"/result/bin/switch-to-configuration "$2"
+DIR="$(dirname "$0")"
+
+nix-env --profile /nix/var/nix/profiles/system --set "$(readlink "$DIR"/result)"
+"$DIR"/result/bin/switch-to-configuration "$1"

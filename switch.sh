@@ -1,3 +1,5 @@
 #!/bin/sh
 
-"$1"/switch-to-configuration.sh "$1" switch
+DIR="$(dirname "$0")"
+
+"$DIR"/switch-to-configuration.sh switch
