@@ -52,6 +52,7 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         vscode
         yank
         unrar
+        xst
         wget
         xdg_utils
         zip
