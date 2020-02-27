@@ -3,6 +3,7 @@
     enable = true;
     refreshRate = 60;
     fade = true;
+    vSync = "opengl";
     fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
     settings = { experimental-backends = true; };
