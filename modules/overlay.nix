@@ -16,6 +16,11 @@ with import ../support.nix { inherit lib pkgs config; }; {
         };
         xmonad = callPackage imports.xmonad-config { };
         bs-platform = callPackage imports.bs-platform { };
+        compton-rounded-corners = super.compton.overrideAttrs (_: {
+          name = "compton-rounded-corners";
+          version = "next";
+          src = imports.compton;
+        });
         cached-nix-shell = callPackage imports.cached-nix-shell { };
         termite = self.termite;
         snack = (import imports.snack).snack-exe;
