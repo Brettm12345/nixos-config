@@ -1,12 +1,9 @@
 { pkgs, ... }: {
-  home-manager.users.brett.services.compton = {
+  services.compton = {
     enable = true;
-    package = pkgs.compton-rounded-corners;
     refreshRate = 60;
-    vSync = "opengl-swc";
     fade = true;
-    fadeDelta = 1;
-    fadeSteps = [ "0.01" "0.012" ];
+    fadeSteps = [ "0.07" "0.07" ];
     shadow = true;
     shadowOffsets = [ (-10) (-10) ];
     shadowOpacity = "0.22";
