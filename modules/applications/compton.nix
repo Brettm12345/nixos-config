@@ -1,9 +1,9 @@
 { pkgs, ... }: {
-  services.picom = {
+  home-manager.user.brett.services.compton = {
     enable = true;
     refreshRate = 60;
     fade = true;
-    backend = "xr_glx_hybrid";
+    backend = "xrender";
     vSync = true;
     fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
