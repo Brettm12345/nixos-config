@@ -14,7 +14,7 @@ with import ../support.nix { inherit lib pkgs config; }; {
         doom-emacs = callPackage imports.nix-doom-emacs {
           doomPrivateDir = "${xdg.configHome}/doom";
         };
-        xmonad = callPackage imports.xmonad-config { };
+        xmonad-config = callPackage imports.xmonad-config { };
         bs-platform = callPackage imports.bs-platform { };
         compton-rounded-corners = super.compton.overrideAttrs (_: {
           name = "compton-rounded-corners";

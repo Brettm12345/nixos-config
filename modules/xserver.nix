@@ -28,8 +28,8 @@
       enable = true;
       enableContribAndExtras = true;
       extraPackages = haskellPackages: [
+        pkgs.xmonad-config
         haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
         haskellPackages.xmonad
       ];
     };

@@ -338,14 +338,14 @@
     },
     "xmonad-config": {
         "branch": "master",
-        "description": null,
+        "description": "My personal xmonad config WIP",
         "homepage": "",
         "owner": "brettm12345",
         "repo": "xmonad-config",
-        "rev": "f9efe4870421874fac7dd5e99a45bacfbe16a955",
-        "sha256": "0ijha8w4qf556h14r36l6zn1g9hg35yv9icz20m803pc0jia4z3f",
+        "rev": "bd6f58940e20da52dc97be3418a941617d7598d3",
+        "sha256": "1ym32z06bd9fz2lqsn5ink70rj2r2zn2rkwcb1gkzcn5kmmwhpjk",
         "type": "tarball",
-        "url": "https://github.com/brettm12345/xmonad-config/archive/f9efe4870421874fac7dd5e99a45bacfbe16a955.tar.gz",
+        "url": "https://github.com/brettm12345/xmonad-config/archive/bd6f58940e20da52dc97be3418a941617d7598d3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zinit": {
