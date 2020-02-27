@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home-manager.users.brett.services.compton = {
-    enable = true;
+    enable = false;
     package = pkgs.compton-rounded-corners;
     refreshRate = 60;
     fade = true;
