@@ -9,7 +9,7 @@ in {
     ll = "${exa} -l --git -h --git-ignore";
     la = "${exa} -l --git -h -a -g";
     r = "exec $SHELL";
-    rebuild = "$HOME/src/github.com/brettm12345/nixos-config/install";
+    rebuild = "$HOME/src/github.com/brettm12345/nixos-config/install.sh";
     re = "rebuild";
   };
 }
