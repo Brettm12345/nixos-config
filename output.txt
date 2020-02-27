@@ -1,0 +1,11 @@
+● nixos-activation.service - Run user-specific NixOS activation
+   Loaded: loaded (/nix/store/kxi4wi9ycqiar181ls1rzng7azgivpcw-unit-nixos-activation.service/nixos-activation.service; static; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Wed 2020-02-26 22:07:19 EST; 29s ago
+  Process: 16505 ExecStart=/nix/store/z07ggcqgi0b6imajc5z045x7isipbgf5-unit-script-nixos-activation-start (code=exited, status=1/FAILURE)
+ Main PID: 16505 (code=exited, status=1/FAILURE)
+
+Feb 26 22:07:19 uwu systemd[1533]: Starting Run user-specific NixOS activation...
+Feb 26 22:07:19 uwu z07ggcqgi0b6imajc5z045x7isipbgf5-unit-script-nixos-activation-start[16505]: /nix/store/z07ggcqgi0b6imajc5z045x7isipbgf5-unit-script-nixos-activation-start: line 22: XDG_CONFIG_HOME: parameter null or not set
+Feb 26 22:07:19 uwu systemd[1533]: nixos-activation.service: Main process exited, code=exited, status=1/FAILURE
+Feb 26 22:07:19 uwu systemd[1533]: nixos-activation.service: Failed with result 'exit-code'.
+Feb 26 22:07:19 uwu systemd[1533]: Failed to start Run user-specific NixOS activation.
