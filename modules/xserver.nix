@@ -5,7 +5,7 @@
     enableTCP = true;
     autoRepeatDelay = 300;
     autoRepeatInterval = 55;
-    videoDrivers = [ "nouveau" ];
+    videoDrivers = [ "nouveau" "nv" "nvidia" ];
     displayManager.lightdm.enable = true;
     displayManager.lightdm.greeters.mini = {
       enable = false;
