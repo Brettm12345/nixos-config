@@ -5,6 +5,7 @@
     fade = true;
     fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
+    settings = { experimental-backends = true; };
     shadow = true;
     shadowOffsets = [ (-10) (-10) ];
     shadowOpacity = "0.22";

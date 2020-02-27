@@ -20,7 +20,7 @@
     ./ssh.nix
     ./termite.nix
     ./vsliveshare.nix
-    # ./termite.nix
+    ./termite.nix
     ./xresources.nix
   ];
 }
