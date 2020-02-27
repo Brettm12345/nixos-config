@@ -33,10 +33,6 @@
       enableGraphical = true;
     };
     pulseaudio.enable = true;
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = false;
-    };
+    opengl.enable = true;
   };
 }
