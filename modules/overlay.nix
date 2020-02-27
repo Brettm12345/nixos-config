@@ -74,7 +74,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
     optimise.automatic = true;
     binaryCaches = [
       "https://cache.nixos.org"
-      "https://cache.dhall-lang.org"
       "https://brettm12345.cachix.org"
       "https://all-hies.cachix.org"
     ];
