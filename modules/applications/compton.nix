@@ -2,7 +2,7 @@
   home-manager.users.brett = {
     services.compton = {
       enable = true;
-      backend = "glx";
+      backend = "xrender";
       refreshRate = 60;
       fade = true;
       fadeDelta = 1;
