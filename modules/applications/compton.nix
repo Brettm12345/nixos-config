@@ -1,18 +1,18 @@
 { pkgs, ... }: {
-  home-manager.user.brett.services.compton = {
+  home-manager.users.brett.services.compton = {
     enable = true;
     package = pkgs.compton-rounded-corners;
     refreshRate = 60;
     fade = true;
     backend = "xrender";
-    vSync = true;
+    vSync = "opengl-swc";
     fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
-    settings = {
-      corner-radius = 6;
-      use-damage = true;
-      glx-no-stencil = true;
-    };
+    extraOptions = ''
+      corner-radius = 6
+      use-damage = true
+      glx-no-stencil = true
+    '';
     shadow = true;
     shadowOffsets = [ (-10) (-10) ];
     shadowOpacity = "0.22";

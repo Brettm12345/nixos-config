@@ -9,7 +9,7 @@
     ./bat.nix
     ./fff.nix
     ./direnv.nix
-    # ./compton.nix
+    ./compton.nix
     ./shells
     ./dunst.nix
     ./plex.nix
