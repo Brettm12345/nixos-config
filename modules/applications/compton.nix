@@ -3,10 +3,14 @@
     enable = true;
     refreshRate = 60;
     fade = true;
-    vSync = "opengl";
+    backend = "xr_glx_hybrid";
+    vSync = true;
     fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
-    settings = { experimental-backends = true; };
+    settings = {
+      use-damage = true;
+      glx-no-stencil = true;
+    };
     shadow = true;
     shadowOffsets = [ (-10) (-10) ];
     shadowOpacity = "0.22";
