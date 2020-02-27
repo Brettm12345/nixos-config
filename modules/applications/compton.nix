@@ -1,8 +1,9 @@
 { pkgs, ... }: {
-  services.compton = {
+  services.picom = {
     enable = true;
     refreshRate = 60;
     fade = true;
+    fadeDelta = 1;
     fadeSteps = [ "0.07" "0.07" ];
     shadow = true;
     shadowOffsets = [ (-10) (-10) ];
