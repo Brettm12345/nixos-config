@@ -49,7 +49,6 @@ with import ../../support.nix { inherit lib config pkgs; }; {
         ranger
         tokei
         stdman
-        vscode
         yank
         unrar
         xst

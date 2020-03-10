@@ -7,7 +7,6 @@ nixpkgs="$(nix eval --raw '(import ./nix/sources.nix).nixpkgs-unstable')"
 
 nix-store --realise "$nixpkgs" 2 &>/dev/null
 
-export XDG_CONFIG_HOME=$HOME/.config
 export NIX_PATH=nixpkgs=$nixpkgs:nixos-config=/etc/nixos/configuration.nix
 
 if [[ -n $INSIDE_EMACS ]]; then

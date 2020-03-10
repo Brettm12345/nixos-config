@@ -23,7 +23,7 @@ zle -N self-insert url-quote-magic
 
 # Suff that gets loaded immediately
 zinit ice depth=1 atload'!source ~/.config/zsh/p10k.zsh' atinit'POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' cloneeopts'-b readonly-fix'
-zinit light brettm12345/powerlevel10k
+zinit light 'romkatv/powerlevel10k'
 
 setup-autosuggest() {
   bindkey '^e' autosuggest-accept
@@ -108,9 +108,21 @@ zinit snippet OMZ::lib/clipboard.zsh
 
 alias -- -="cd -"
 
+clip() {
+  xclip -selection clipboard $@
+}
+
+paste() {
+  clip -out
+}
+
+copy() {
+  clip -in
+}
+
 setup-clipboard() {
-  bind '^v' clippaste
-  bind '^c' clipcopy
+  bind '^v' paste
+  bind '^c' copy
 }
 
 setup-completion-generator() {
@@ -126,14 +138,13 @@ zinit as"program" light-mode lucid for \
   OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh \
   OMZ::plugins/yarn/yarn.plugin.zsh \
   trigger-load'!cd' src"init.sh" atload"setup-enhancd" blockf b4b4r07/enhancd \
-  trigger-load"!alias-finder" nocompletions OMZ::plugins/alias-finder/alias-finder.plugin.zsh \
   trigger-load'!gh' src"zsh/gh/gh.plugin.zsh" blockf brettm12345/gh \
   trigger-load'!x;!extract' blockf OMZ::plugins/extract/extract.plugin.zsh \
   trigger-load'!gencomp' pick'zsh-completion-generator.plugin.zsh' blockf atload'setup-completion-generator' \
   RobSis/zsh-completion-generator
 
 CARGO_HOME="$HOME/.cargo"
-BROWSER="chromium"
+BROWSER="firefox"
 
 typeset -U PATH path
 path=("$HOME/bin" "$HOME/.npm/bin" "$CARGO_HOME/bin" "$HOME/.yarn/bin" "$HOME/.cabal/bin" "$HOME/.emacs.d/bin" "$path[@]") && export PATH

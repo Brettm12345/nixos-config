@@ -7,22 +7,22 @@ configuration {
 }
 
 * {
-  accent: #c099ff;
-  bg: #1e2029fa;
-  bg-light: #1c1c1c;
-  bg-focus: #282a36;
-  bg-prompt: #2f313d;
-  bg-dark: #181a23;
-  fg: #bbc2cf;
-  fg-list: #bbc2cf;
-  on: #8bd49c;
-  off: #cc6666;
+  accent: #82aaff;
+  bg: #191b28;
+  bg-light: #1e2030;
+  bg-focus: #222436;
+  bg-prompt: #2f334d;
+  bg-dark: #222436;
+  fg: #a9b8e8;
+  fg-list: #b4c2f0;
+  on: #c3e88d;
+  off: #ff757f;
 
-  magenta: #bd93f9;
-  blue: #61bfff;
+  magenta: #c099ff;
+  blue: #82aaff;
 
-  text-font: "Fira Sans 16";
-  text-mono-font: "Fira Code 14";
+  text-font: "Inter V 16";
+  text-mono-font: "Inter V 14";
   icon-font: "Hurmit Nerd Font Mono 26";
 
   background-color: transparent;
@@ -93,6 +93,9 @@ scrollbar {
   background-color: @bg-dark;
   handle-color: @accent;
   border-color: @bg-dark;
+}
+inputbar {
+  background-color: @bg-focus;
 }
 listview,
 inputbar {

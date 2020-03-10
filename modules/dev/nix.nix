@@ -3,7 +3,7 @@
   home-manager.users.brett.home.packages = with pkgs; [
     niv
     cached-nix-shell
-    nixfmt
+    # nixfmt
     nix-prefetch
   ];
 }

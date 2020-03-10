@@ -8,7 +8,7 @@
         italic_font ${monospace-alt}
         bold_italic_font ${monospace-alt}
 
-        open_url_with ${pkgs.chromium}/bin/chromium
+        open_url_with ${pkgs.firefox}/bin/firefox
 
         input_delay 2
         sync_to_monitor yes
@@ -18,6 +18,7 @@
         font_size 12
         adjust_line_height  120%
         placement_strategy center
+
         cursor ${normal.blue}
         foreground ${foreground}
         background ${background}

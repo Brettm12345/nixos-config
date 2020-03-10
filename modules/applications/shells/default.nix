@@ -1,8 +1,13 @@
 { pkgs, ... }:
 let current = "zsh";
 in {
-  imports =
-    [ ./aliases.nix ./sessionVariables.nix ./starship.nix ./fish ./zsh ];
+  imports = [
+    ./aliases.nix
+    ./sessionVariables.nix
+    # ./starship.nix
+    ./fish
+    ./zsh
+  ];
   programs.command-not-found.enable = true;
   home-manager.users.brett.programs.direnv = {
     enable = true;

@@ -19,9 +19,8 @@
       cabal2nix
       cabal-install
       snack
-      stack
       ghc
-      (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
+      (all-hies.selection { selector = p: { inherit (p) ghc882; }; })
     ]) ++ (with pkgs.haskellPackages; [
       brittany # Haskell formatter
       ghcid # GHCi as a daemon
@@ -30,7 +29,7 @@
       hoogle # type signature search
       hpack # yaml based package format
       hspec # testing framework
-      pointfree # http://pointfree.io/
+      # pointfree # http://pointfree.io/
     ]);
   };
 }

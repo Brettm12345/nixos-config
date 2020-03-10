@@ -1,3 +1,3 @@
 {
-  "nixEnvSelector.nixShellConfig": "${workspaceRoot}/default.nix"
+  "nixEnvSelector.nixShellConfig": "NOT_MODIFIED_ENV"
 }

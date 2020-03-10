@@ -10,12 +10,17 @@ with import ../support.nix { inherit lib pkgs config; }; {
       with self.stdenv; rec {
         inherit imports;
         unstable = new;
-        nixfmt = callPackage imports.nixfmt { };
+        # nixfmt = callPackage imports.nixfmt { };
         doom-emacs = callPackage imports.nix-doom-emacs {
           doomPrivateDir = "${xdg.configHome}/doom";
         };
         xmonad-config = callPackage imports.xmonad-config { };
         bs-platform = callPackage imports.bs-platform { };
+        vscode = unstable.vscode;
+        # zinit = mkDerivation rec {
+        #   name = "zinit";
+        #   src = imports.zinit;
+        # };
         compton-rounded-corners = super.compton.overrideAttrs (_: {
           name = "compton-rounded-corners";
           version = "next";
@@ -35,15 +40,6 @@ with import ../support.nix { inherit lib pkgs config; }; {
             cp -a ./source/* $out/share/themes/Juno
           '';
         };
-        slack-theme = mkDerivation rec {
-          name = "slack-theme";
-          src = imports.slack-themes;
-          sourceRoot = ".";
-          installPhase = ''
-            mkdir -p $out
-            cp $src/dist/slack.min.css $out/theme.css
-          '';
-        };
         slack = super.slack.override { theme = super.slack-theme-black; };
         chromium = super.chromium.override {
           commandLineArgs = "--force-dark-mode --force-device-scale-factor=1.3";
@@ -51,6 +47,7 @@ with import ../support.nix { inherit lib pkgs config; }; {
         all-hies = import imports.all-hies { };
       })
   ];
+
   nixpkgs.pkgs = import imports.nixpkgs {
     config = {
       allowUnfree = true;

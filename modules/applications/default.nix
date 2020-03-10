@@ -5,7 +5,7 @@
     ./rofi
     ./rtorrent
     ./tmux
-    ./neovim
+    # ./neovim
     ./bat.nix
     ./fff.nix
     ./direnv.nix
@@ -19,7 +19,7 @@
     ./misc.nix
     ./ssh.nix
     ./termite.nix
-    ./vsliveshare.nix
+    # ./vscode.nix
     ./termite.nix
     ./xresources.nix
   ];

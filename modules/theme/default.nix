@@ -32,4 +32,5 @@ in {
     fonts = import ./fonts.nix;
     icons = import ./icons.nix { inherit pkgs; };
   };
+
 }
