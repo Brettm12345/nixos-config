@@ -20,7 +20,7 @@
       cabal-install
       snack
       ghc
-      (all-hies.selection { selector = p: { inherit (p) ghc882; }; })
+      # (all-hies.selection { selector = p: { inherit (p) ghc883; }; })
     ]) ++ (with pkgs.haskellPackages; [
       brittany # Haskell formatter
       ghcid # GHCi as a daemon

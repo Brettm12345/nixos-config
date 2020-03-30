@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home-manager.users.brett.services.compton = {
+  home-manager.users.brett.services.picom = {
     enable = false;
     package = pkgs.compton-rounded-corners;
     refreshRate = 60;
